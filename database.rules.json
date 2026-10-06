@@ -1,0 +1,26 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "rooms": {
+      "$pin": {
+        ".read": "auth != null",
+        ".write": "auth != null && ((data.exists() && data.child('meta/host').val() === auth.uid) || (!data.exists() && newData.child('meta/host').val() === auth.uid))",
+        "players": {
+          "$uid": {
+            ".write": "auth != null && auth.uid === $uid && root.child('rooms').child($pin).child('meta').exists()",
+            ".validate": "newData.hasChildren(['name', 'avatar']) && newData.child('name').isString() && newData.child('name').val().length >= 1 && newData.child('name').val().length <= 16 && newData.child('avatar').isString() && newData.child('avatar').val().length <= 8"
+          }
+        },
+        "answers": {
+          "$q": {
+            "$uid": {
+              ".write": "auth != null && auth.uid === $uid && !data.exists() && root.child('rooms').child($pin).child('meta/state').val() === 'galdera' && root.child('rooms').child($pin).child('meta/qKey').val() === $q",
+              ".validate": "newData.hasChildren(['c', 't']) && newData.child('c').isNumber() && newData.child('t').val() === now"
+            }
+          }
+        }
+      }
+    }
+  }
+}

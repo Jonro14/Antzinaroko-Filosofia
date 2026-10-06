@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="eu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Logos Arena · Irakaslea</title>
+  <meta name="theme-color" content="#0b0d1f">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f5c542'/%3E%3Ctext x='32' y='46' font-size='40' text-anchor='middle' font-family='serif' font-weight='900' fill='%232a1c00'%3E%CE%9B%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estiloa.css">
+</head>
+<body>
+<div class="game">
+  <div class="topbar">
+    <a class="logo" href="index.html"><span class="logo-mark">Λ</span> LOGOS ARENA</a>
+    <div class="right">
+      <span class="count-pill" id="top-info" hidden></span>
+      <button class="btn btn-icon" id="btn-soinua" title="Soinua">🔊</button>
+      <button class="btn btn-icon" id="btn-fs" title="Pantaila osoa">⛶</button>
+    </div>
+  </div>
+
+  <!-- 1. MAILA-MAPA ----------------------------------------------- -->
+  <section class="screen top" data-screen id="s-mapa">
+    <div class="kicker" id="mapa-kicker">Irakaslearen panela</div>
+    <h1 class="big-title">Aukeratu maila</h1>
+    <p class="muted" style="margin:0">Mileto → Agora → Akademia → Polis → Alejandria → Olinpo</p>
+    <div class="map" id="map"></div>
+    <div class="settings">
+      <div class="grp"><label class="lbl">Galderak:</label>
+        <span class="chip" data-kop="10">10</span><span class="chip" data-kop="15">15</span><span class="chip" data-kop="0">Guztiak</span></div>
+      <div class="grp"><label class="lbl">Denbora:</label>
+        <span class="chip" data-den="1.5">Lasai</span><span class="chip" data-den="1">Normala</span><span class="chip" data-den="0.7">Azkarra</span></div>
+      <label class="switch" title="Mailak ordenan desblokeatzen dira: aurrekoa amaitu arte ezin da hurrengoa jokatu">
+        <input type="checkbox" id="opt-prog"> Mailak ordenan desblokeatu</label>
+      <button class="btn btn-ghost" id="btn-reset-prog" style="padding:.4em 1em;font-size:.85rem" hidden>Aurrerapena berrezarri</button>
+    </div>
+    <div class="actions">
+      <button class="btn btn-ghost" id="btn-itxi-gela" hidden>✖ Itxi gela</button>
+      <button class="btn btn-gold btn-big" id="btn-sortu" disabled>Sortu gela ▸</button>
+    </div>
+  </section>
+
+  <!-- 2. LOBBY ----------------------------------------------------- -->
+  <section class="screen" data-screen id="s-lobby">
+    <div class="lobby-head">
+      <div class="pin-box">
+        <div class="lbl">Sartu mugikorretik:</div>
+        <div class="url" id="lobby-url"></div>
+        <div class="lbl" style="margin-top:8px">Jokoaren PINa:</div>
+        <div class="pin" id="lobby-pin">------</div>
+      </div>
+      <div class="qr" id="qr"></div>
+    </div>
+    <div class="kicker" id="lobby-level"></div>
+    <div class="actions" style="align-items:center">
+      <span class="count-pill">👥 <span id="lobby-count">0</span> jokalari</span>
+      <button class="btn btn-gold btn-big" id="btn-hasi" disabled>Hasi jokoa ▸</button>
+    </div>
+    <div class="players" id="lobby-players"><span class="muted">Jokalarien zain... 🦉</span></div>
+    <small class="muted">Sakatu izen bat jokalaria kanporatzeko.</small>
+  </section>
+
+  <!-- 3. PREST (galdera aurkeztu) ---------------------------------- -->
+  <section class="screen" data-screen id="s-prest">
+    <div class="kicker" id="prest-num"></div>
+    <span class="q-type" id="prest-type"></span>
+    <div class="q-text" id="prest-text"></div>
+    <div class="countdown" id="prest-cd">3</div>
+  </section>
+
+  <!-- 4. GALDERA ---------------------------------------------------- -->
+  <section class="screen" data-screen id="s-galdera">
+    <div class="q-head">
+      <div class="timer" id="timer">
+        <svg viewBox="0 0 100 100" width="96" height="96">
+          <circle cx="50" cy="50" r="44" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="10"/>
+          <circle id="timer-arc" cx="50" cy="50" r="44" fill="none" stroke="#f5c542" stroke-width="10" stroke-linecap="round" stroke-dasharray="276.5" stroke-dashoffset="0"/>
+        </svg>
+        <div class="num" id="timer-num">20</div>
+      </div>
+      <div><div class="kicker" id="q-num"></div><span class="q-type" id="q-type"></span></div>
+      <div class="ans-count"><b id="q-answered">0</b><span class="muted">erantzun</span></div>
+    </div>
+    <div class="q-text" id="q-text"></div>
+    <div class="answers" id="q-answers"></div>
+    <div class="actions"><button class="btn btn-ghost" id="btn-saltatu">Amaitu denbora ⏭</button></div>
+  </section>
+
+  <!-- 5. EMAITZA ---------------------------------------------------- -->
+  <section class="screen" data-screen id="s-emaitza">
+    <div class="kicker" id="e-num"></div>
+    <div class="q-text" id="e-text"></div>
+    <div class="answers reveal" id="e-answers"></div>
+    <div class="explain" id="e-explain"></div>
+    <div class="actions"><button class="btn btn-gold btn-big" id="btn-e-next">Sailkapena ▸</button></div>
+  </section>
+
+  <!-- 6. SAILKAPENA ------------------------------------------------- -->
+  <section class="screen" data-screen id="s-sailkapena">
+    <h1 class="big-title">🏆 Sailkapena</h1>
+    <div class="board" id="board"></div>
+    <div class="actions"><button class="btn btn-gold btn-big" id="btn-s-next">Hurrengo galdera ▸</button></div>
+  </section>
+
+  <!-- 7. AMAIERA ---------------------------------------------------- -->
+  <section class="screen" data-screen id="s-amaiera">
+    <div class="kicker" id="end-level"></div>
+    <h1 class="big-title">Podioa</h1>
+    <div class="podium" id="podium"></div>
+    <div class="board" id="end-rest"></div>
+    <div class="actions">
+      <button class="btn btn-ghost" id="btn-csv">⬇ Emaitzak (CSV)</button>
+      <button class="btn btn-pink" id="btn-beste">Beste maila bat (gela berean)</button>
+      <button class="btn btn-ghost" id="btn-amaitu">✖ Itxi gela</button>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/backend.js"></script>
+<script src="js/galderak.js"></script>
+<script src="js/komuna.js"></script>
+<script src="js/irakaslea.js"></script>
+</body>
+</html>

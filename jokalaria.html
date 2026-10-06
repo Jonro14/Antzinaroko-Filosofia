@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="eu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Logos Arena · Jokatu</title>
+  <meta name="theme-color" content="#0b0d1f">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f5c542'/%3E%3Ctext x='32' y='46' font-size='40' text-anchor='middle' font-family='serif' font-weight='900' fill='%232a1c00'%3E%CE%9B%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estiloa.css">
+</head>
+<body>
+<div class="game">
+  <div class="topbar">
+    <a class="logo" href="index.html"><span class="logo-mark">Λ</span><span id="top-logo">LOGOS ARENA</span></a>
+    <div class="right">
+      <span class="me" id="me" hidden><span class="av" id="me-av"></span><span id="me-name"></span></span>
+      <span class="score-pill" id="me-score" hidden>0</span>
+      <button class="btn btn-icon" id="btn-soinua" title="Soinua">🔊</button>
+    </div>
+  </div>
+  <div id="p-timebar" style="height:6px;background:var(--gold);width:0;transition:width .2s linear"></div>
+
+  <!-- SARTU -->
+  <section class="p-screen" data-screen id="p-sartu">
+    <h1 class="big-title" style="font-size:2.2rem">Sartu jokora</h1>
+    <form class="p-card" id="join-form" autocomplete="off">
+      <label for="in-pin">Jokoaren PINa</label>
+      <input class="field pin" id="in-pin" inputmode="numeric" maxlength="6" placeholder="123456">
+      <label for="in-name">Zure ezizena</label>
+      <input class="field" id="in-name" maxlength="16" placeholder="Adib. Sokrates2007">
+      <label>Aukeratu abatarra</label>
+      <div class="av-grid" id="av-grid"></div>
+      <div style="margin-top:18px"><button class="btn btn-pink btn-big" style="width:100%" type="submit" id="btn-join">Sartu ▸</button></div>
+    </form>
+  </section>
+
+  <!-- ITXARON (lobby) -->
+  <section class="p-screen" data-screen id="p-itxaron">
+    <div class="big-av" id="w-av"></div>
+    <h2 style="margin:0" id="w-name"></h2>
+    <p style="margin:0;font-size:1.2rem;font-weight:700">Barruan zaude! 🎉</p>
+    <p class="muted" style="margin:0">Begiratu pantailari: zure izena agertu da. Irakasleak jokoa hasi arte itxaron.</p>
+    <div class="kicker" id="w-level"></div>
+    <div class="spinner"></div>
+  </section>
+
+  <!-- PREST -->
+  <section class="p-screen" data-screen id="p-prest">
+    <div class="kicker" id="r-num"></div>
+    <span class="q-type" id="r-type"></span>
+    <div class="countdown" style="font-size:5rem">⚡</div>
+    <h2 style="margin:0">Prestatu!</h2>
+    <p class="muted" style="margin:0">Irakurri galdera pantailan...</p>
+  </section>
+
+  <!-- GALDERA -->
+  <section class="p-screen" data-screen id="p-galdera" style="justify-content:flex-start">
+    <div class="kicker" id="g-num"></div>
+    <div class="p-q" id="g-text"></div>
+    <div class="p-answers" id="g-answers"></div>
+  </section>
+
+  <!-- BIDALITA -->
+  <section class="p-screen" data-screen id="p-bidalita">
+    <div class="spinner"></div>
+    <h2 style="margin:0">Erantzuna bidalita!</h2>
+    <p class="muted" style="margin:0" id="b-msg">Ikus dezagun besteek zer diote...</p>
+  </section>
+
+  <!-- EMAITZA -->
+  <section class="p-screen" data-screen id="p-emaitza">
+    <div class="result" id="res">
+      <div class="ico" id="res-ico"></div>
+      <h2 id="res-title"></h2>
+      <div class="pts" id="res-pts"></div>
+      <div class="streak" id="res-streak"></div>
+    </div>
+    <p style="margin:0;font-weight:700" id="res-rank"></p>
+    <p class="muted" style="margin:0;font-size:.95rem" id="res-az"></p>
+  </section>
+
+  <!-- SAILKAPENA -->
+  <section class="p-screen" data-screen id="p-sailkapena">
+    <div class="kicker">Zure postua</div>
+    <div class="rank-big" id="s-rank"></div>
+    <p class="muted" style="margin:0" id="s-of"></p>
+    <div class="score-pill" style="font-size:1.4rem" id="s-score"></div>
+    <p style="margin:0;font-weight:700" id="s-msg"></p>
+  </section>
+
+  <!-- AMAIERA -->
+  <section class="p-screen" data-screen id="p-amaiera">
+    <div class="big-av" id="f-medal"></div>
+    <div class="rank-big" id="f-rank"></div>
+    <p class="muted" style="margin:0" id="f-of"></p>
+    <div class="score-pill" style="font-size:1.4rem" id="f-score"></div>
+    <p style="margin:0;font-weight:700" id="f-msg"></p>
+    <p class="muted" style="margin:0">Itxaron: irakasleak beste maila bat jar dezake.</p>
+  </section>
+
+  <!-- KANPOAN -->
+  <section class="p-screen" data-screen id="p-kanpoan">
+    <div class="big-av">🏺</div>
+    <h2 style="margin:0" id="k-title">Gela itxi egin da</h2>
+    <p class="muted" style="margin:0" id="k-msg"></p>
+    <button class="btn btn-gold" id="btn-berriro">Berriro sartu</button>
+  </section>
+</div>
+
+<script src="js/firebase-config.js"></script>
+<script src="js/backend.js"></script>
+<script src="js/komuna.js"></script>
+<script src="js/jokalaria.js"></script>
+</body>
+</html>

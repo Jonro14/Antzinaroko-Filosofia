@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="eu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Logos Arena · Filosofiaren Historia</title>
+  <meta name="description" content="Filosofiaren Historia (Batxilergoa 2) · 1. blokea: Grezia eta Helenismoa. Ikasgelako galdera-erantzun jokoa, USaP prestatzeko.">
+  <meta name="theme-color" content="#0b0d1f">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f5c542'/%3E%3Ctext x='32' y='46' font-size='40' text-anchor='middle' font-family='serif' font-weight='900' fill='%232a1c00'%3E%CE%9B%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estiloa.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a class="logo" href="#"><span class="logo-mark">Λ</span> LOGOS ARENA</a>
+  <div class="nav-links">
+    <a href="#ibilbidea">Ibilbidea</a>
+    <a href="#filosofoak">Filosofoak</a>
+    <a href="#jokoa">Jokoa</a>
+  </div>
+  <a class="btn btn-gold" href="#jokoa">Jokatu ▸</a>
+</nav>
+
+<header class="hero">
+  <div class="floating" id="floating"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker">Filosofiaren Historia · 1. blokea</div>
+      <h1>Mitotik<br>logosera</h1>
+      <p class="lead">Tales, Sokrates, Platon, Aristoteles, Diogenes... Bi mila eta bostehun urteko eztabaida, galderaz galdera. Erakutsi zenbat dakizun eta lortu podioa!</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold btn-big" href="#jokoa">⚡ Jokatu</a>
+        <a class="btn btn-ghost btn-big" href="#ibilbidea">Ikasi lehenik</a>
+      </div>
+    </div>
+
+    <div class="join-card" id="jokoa">
+      <h2>🎮 Sartu jokora</h2>
+      <small>Idatzi irakasleak pantailan erakusten duen PINa.</small>
+      <form class="row" id="join-form" autocomplete="off">
+        <input class="field pin" id="pin" inputmode="numeric" maxlength="6" placeholder="PIN" aria-label="Jokoaren PINa">
+        <button class="btn btn-pink" type="submit">Sartu</button>
+      </form>
+      <hr>
+      <h2>🏛️ Irakaslea zara?</h2>
+      <small>Sortu gela, aukeratu maila eta proiektatu pantaila. Ikasleak mugikorretik sartzen dira.</small>
+      <div class="row"><a class="btn btn-gold" href="irakaslea.html">Sortu gela ▸</a></div>
+    </div>
+  </div>
+</header>
+
+<div class="meandroa"></div>
+
+<section id="ibilbidea">
+  <div class="wrap">
+    <div class="kicker">Ibilbidea</div>
+    <h2 class="sec-title">Bost geldialdi, bost maila</h2>
+    <p class="sec-sub">K.a. VI. mendeko Miletotik Helenismoko Alejandriaraino. Sakatu geldialdi bakoitza gakoak ikusteko: gero jokoan galdetuko zaizkizu!</p>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<div class="meandroa"></div>
+
+<section id="filosofoak">
+  <div class="wrap">
+    <div class="kicker">Filosofoak</div>
+    <h2 class="sec-title">Ezagutu protagonistak</h2>
+    <p class="sec-sub">Sakatu txartel bat buelta emateko: ideia nagusia eta aipu ospetsu bat ditu atzean.</p>
+    <div class="filters" id="filters"></div>
+    <div class="phil-grid" id="phil-grid"></div>
+  </div>
+</section>
+
+<div class="meandroa"></div>
+
+<section id="nola">
+  <div class="wrap">
+    <div class="kicker">Nola jokatu</div>
+    <h2 class="sec-title">Ikasgela osoa, lehia bakarra</h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Irakasleak gela sortzen du</h3><p>Maila bat aukeratu eta PINa eta QR kodea proiektatzen ditu.</p></div>
+      <div class="step"><div class="n">2</div><h3>Zu mugikorretik sartzen zara</h3><p>PINa idatzi edo QRa eskaneatu, ezizena eta abatarra aukeratu.</p></div>
+      <div class="step"><div class="n">3</div><h3>Erantzun azkar eta ondo</h3><p>Zuzen eta azkar erantzuteak puntu gehiago ematen ditu. Bolada luzeek bonusa dute. 🔥</p></div>
+    </div>
+    <div class="levels-strip" id="levels-strip"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="meandroa" style="margin-bottom:24px"></div>
+  Logos Arena · Batxilergoa 2. maila · Filosofiaren Historia · USaP prestaketa<br>
+  1. blokea: Mendebaldeko filosofiaren sorrera Grezian eta Helenismoa
+</footer>
+
+<script src="js/galderak.js"></script>
+<script src="js/hasiera.js"></script>
+</body>
+</html>
