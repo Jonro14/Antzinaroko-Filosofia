@@ -1,5 +1,5 @@
 /* =====================================================================
-   LOGOS ARENA · estiloa
+   ANTZINAKO FILOSOFIA · estiloa
    ===================================================================== */
 :root {
   /* Egeoko gaua: lapislazuli urdina, marmola, papiroa eta buztin gorria */
@@ -398,3 +398,13 @@ footer { padding: 40px 0 60px; color: var(--muted); font-size: .9rem; text-align
   .podium .pod .blk { font-size: 2rem; }
 }
 @media (max-width: 380px) { .av-grid { grid-template-columns: repeat(6, 1fr); } }
+
+/* Izen luzea (ANTZINAKO FILOSOFIA) lerro bakarrean mugikorretan */
+.logo { white-space: nowrap; }
+.nav .btn { white-space: nowrap; }
+@media (max-width: 560px) {
+  .logo { font-size: .92rem; letter-spacing: .02em; gap: .4rem; }
+  .logo-mark { width: 30px; height: 30px; }
+  .nav .btn:not(.btn-icon) { padding: .6em 1em; font-size: .9rem; }
+}
+@media (max-width: 360px) { .logo { font-size: .8rem; } }

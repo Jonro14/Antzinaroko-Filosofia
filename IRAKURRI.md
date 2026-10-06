@@ -1,4 +1,4 @@
-# Logos Arena · Filosofiaren Historia (1. blokea)
+# Antzinako Filosofia · Filosofiaren Historia (1. blokea)
 
 Ikasgelarako galdera-erantzun jokoa (Kahoot estiloa), USaP prestatzeko.
 Irakasleak gela bat sortu eta proiektagailuan erakusten du; ikasleak
