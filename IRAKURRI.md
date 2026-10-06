@@ -65,7 +65,7 @@ Firebasek (Google) mugikorrak eta proiektagailua denbora errealean lotzen ditu.
 Doako planarekin (Spark) nahikoa da ikasgela baterako.
 
 1. Joan <https://console.firebase.google.com> helbidera eta sartu Google kontuarekin.
-2. **Add project / Proiektua gehitu** → izena, adibidez `logos-arena`.
+2. **Add project / Proiektua gehitu** → izena: `lander-jakintza`.
    Google Analytics ez da beharrezkoa (desaktibatu dezakezu).
 
 ## 2. Realtime Database sortu
@@ -87,14 +87,14 @@ Doako planarekin (Spark) nahikoa da ikasgela baterako.
 
 1. Proiektuaren hasierako orrian (⚙️ **Project settings → General**), behean:
    **Your apps → `</>` (Web)**.
-2. Izena: `logos-arena`. **Ez** markatu "Firebase Hosting".
+2. Izena: `lander-jakintza`. **Ez** markatu "Firebase Hosting".
 3. **Register app** sakatzean `firebaseConfig` objektu bat erakutsiko dizu, honen antzekoa:
    ```js
    const firebaseConfig = {
      apiKey: "AIza...",
-     authDomain: "logos-arena.firebaseapp.com",
-     databaseURL: "https://logos-arena-default-rtdb.europe-west1.firebasedatabase.app",
-     projectId: "logos-arena",
+     authDomain: "lander-jakintza.firebaseapp.com",
+     databaseURL: "https://lander-jakintza-default-rtdb.europe-west1.firebasedatabase.app",
+     projectId: "lander-jakintza",
      ...
    };
    ```
@@ -114,25 +114,44 @@ Doako planarekin (Spark) nahikoa da ikasgela baterako.
    ⚠️ `databaseURL` ezinbestekoa da. Ez badago, kopiatu Realtime Database orriaren
    goialdeko helbidea (`https://...firebasedatabase.app`).
 
+   ⚠️ Konfigurazioa **ez** itsatsi `/* ... */` iruzkinaren barruan: han dagoena ez da exekutatzen
+   eta jokoa DEMO moduan geratzen da.
+
 > `apiKey` hori ez da pasahitz sekretua: web-aplikazio guztietan publikoa da.
-> Datuak 2. pausuko arauek babesten dituzte.
+> Datuak 2. pausuko arauek babesten dituzte. GitHub-ek "Publicly leaked secret"
+> abisua emango du; ikus 6. pausua.
 
 ## 5. GitHub Pages-en argitaratu
 
 1. Sortu kontu bat <https://github.com> helbidean (baldin ez baduzu).
-2. **New repository** → izena, adibidez `logos-arena` → **Public** → Create.
+2. **New repository** → izena: `Antzinaroko-Filosofia` → **Public** → Create.
 3. **Add file → Upload files** → arrastatu `webgunea` karpetaren **edukia**
    (`index.html`, `irakaslea.html`, `jokalaria.html`, `css/`, `js/`...;
    ez karpeta bera) → **Commit changes**.
 4. **Settings → Pages** → *Source*: **Deploy from a branch** → *Branch*: `main`, `/ (root)` → **Save**.
 5. Minutu batzuk barru webgunea hemen egongo da:
-   `https://ZURE-ERABILTZAILEA.github.io/logos-arena/`
+   `https://jonro14.github.io/Antzinaroko-Filosofia/`
 6. Firebase kontsolan: **Authentication → Settings → Authorized domains → Add domain**
-   → `ZURE-ERABILTZAILEA.github.io`.
+   → `jonro14.github.io`.
 
-## 6. Ikasgelan
+## 6. API gakoa webgunearen domeinura mugatu (GitHub-en abisua)
 
-1. Proiektagailuko ordenagailuan ireki `https://.../logos-arena/irakaslea.html`
+Firebase-ren `apiKey` publikoa da diseinuz, baina komeni da beste webguneek erabili ezin izateko mugatzea:
+
+1. <https://console.cloud.google.com/apis/credentials> → goian aukeratu proiektua (`lander-jakintza`).
+2. **API keys** zerrendan, sakatu **Browser key (auto created by Firebase)**.
+3. **Application restrictions → Websites** → gehitu:
+   - `https://jonro14.github.io/*`
+   - `https://lander-jakintza.firebaseapp.com/*`
+4. **Save**. (Aldaketak 5 minutu inguru behar ditu indarrean sartzeko.)
+5. GitHub-en abisuan: **Close as → False positive** (edo *Won't fix*), arrazoia: "Firebase web API key, public by design, restricted by HTTP referrer".
+
+Mugatu ondoren, fitxategiak ordenagailutik zuzenean (`file://`) irekita ez dabil Firebase-rekin:
+probak GitHub Pages helbidean egin.
+
+## 7. Ikasgelan
+
+1. Proiektagailuko ordenagailuan ireki `https://jonro14.github.io/Antzinaroko-Filosofia/irakaslea.html`
    (edo webgunean: **Sortu gela**). Pantaila osoa: ⛶ botoia.
 2. Aukeratu maila → **Sortu gela**. PINa eta QR kodea agertuko dira.
 3. Ikasleek mugikorrarekin QRa eskaneatu edo webgunean PINa idazten dute.

@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="eu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1. gaia · Mitotik logosera · Logos Arena</title>
+  <meta name="theme-color" content="#132b50">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f5c542'/%3E%3Ctext x='32' y='46' font-size='40' text-anchor='middle' font-family='serif' font-weight='900' fill='%232a1c00'%3E%CE%9B%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estiloa.css">
+  <link rel="stylesheet" href="css/ikastaroa.css">
+</head>
+<body style="--c: var(--cyan)">
+
+<nav class="nav">
+  <a class="logo" href="index.html"><span class="logo-mark">Λ</span> LOGOS ARENA</a>
+  <div class="nav-links"><a href="ikastaroa.html">Ikastaroa</a><a href="ikasi.html">Laburpena</a><a href="index.html#jokoa">Jokoa</a></div>
+  <button class="btn btn-icon" id="btn-soinua" title="Soinua">🔊</button>
+</nav>
+
+<div class="ik-layout">
+<aside class="stepper" id="stepper"></aside>
+<main class="ik-main">
+
+<header class="g-head">
+  <div class="g-badge">1</div>
+  <div class="ghtxt">
+    <div class="kicker">K.a. VI.–V. mendeak · Mileto, Krotona, Efeso, Elea</div>
+    <h1>Mitotik logosera eta presokratikoak</h1>
+    <p>Nola eta zergatik jaio zen filosofia Grezian, eta nola saiatu ziren lehen filosofoak natura arrazoiaren bidez azaltzen.</p>
+  </div>
+  <div class="progress"><span id="g-prog">0 / 7 atal</span><div class="bar"><i id="g-bar"></i></div></div>
+</header>
+<div class="howto"><span><b>Laburrean</b>: ideia nagusia</span><span><b>Irudiak eta jokoak</b>: sakatu eta arakatu</span><span><b>📚 Sakonago</b>: garapen osoa</span><span><b>✍️ Egiaztatu</b>: atala amaitzeko</span></div>
+
+<!-- =============================================================== -->
+<section class="atal" id="g1-1" data-n="1.1" data-title="Grezia klasikoaren testuingurua">
+  <div class="laburrean">
+    <p>Filosofia <b>K.a. VI. mendeko Grezian</b> jaio zen. Grezia ez zen estatu bat, <b>polis</b> (hiri-estatu) independenteen multzo bat baizik: <b>Helade</b>. Askatasunak, eztabaida publikoak, beste zibilizazioekiko kontaktuak eta idazkera alfabetikoak <b>pentsamendu kritikoa</b> ahalbidetu zuten.</p>
+  </div>
+
+  <div class="box" data-hs="mapa">
+    <div class="box-h"><span class="tag">MAPA</span> Greziar mundua <small>(eskema) · sakatu puntuak</small></div>
+    <div class="hs-wrap">
+      <svg viewBox="0 0 700 420" role="img" aria-label="Greziar munduaren mapa eskematikoa">
+        <rect width="700" height="420" fill="#1c5a86"/>
+        <g fill="#7fb3d5" opacity=".18"><path d="M0 120 Q120 100 240 140 T480 130 T700 150" stroke="#cfe6f5" fill="none" stroke-width="2"/><path d="M0 280 Q140 260 260 300 T520 290 T700 310" stroke="#cfe6f5" fill="none" stroke-width="2"/></g>
+        <g fill="#e2d2a8" stroke="#a88f5c" stroke-width="2">
+          <polygon points="30,40 110,55 150,120 172,198 152,240 122,212 92,142 40,100"/>
+          <polygon points="250,50 330,42 352,108 330,150 360,190 336,232 304,260 322,300 292,334 262,302 242,252 272,210 242,168 262,120"/>
+          <polygon points="420,40 700,28 700,262 522,272 472,244 444,204 458,160 432,118"/>
+          <polygon points="290,392 700,360 700,420 270,420"/>
+          <ellipse cx="392" cy="334" rx="62" ry="10"/>
+        </g>
+        <g font-family="Outfit, sans-serif" font-size="13" font-weight="800" fill="#2b1f10" opacity=".75">
+          <text x="80" y="80">ITALIA</text><text x="268" y="96">GREZIA</text><text x="560" y="100">ASIA TXIKIA</text><text x="372" y="338" font-size="11">Kreta</text>
+        </g>
+        <text x="478" y="318" font-family="Cinzel, serif" font-size="18" font-weight="700" fill="#cfe6f5" opacity=".6">Mediterraneoa</text>
+        <g data-k="atenas"><circle class="pin" cx="344" cy="214" r="13" fill="#ff4d8d" stroke="#fff" stroke-width="2"/><text x="360" y="212" font-family="Outfit, sans-serif" font-size="14" font-weight="800" fill="#2b1f10">Atenas</text></g>
+        <g data-k="esparta"><circle class="pin" cx="286" cy="300" r="13" fill="#ff4d8d" stroke="#fff" stroke-width="2"/><text x="208" y="320" font-family="Outfit, sans-serif" font-size="14" font-weight="800" fill="#2b1f10">Esparta</text></g>
+        <g data-k="korinto"><circle class="pin" cx="300" cy="240" r="13" fill="#ff4d8d" stroke="#fff" stroke-width="2"/><text x="214" y="246" font-family="Outfit, sans-serif" font-size="14" font-weight="800" fill="#2b1f10">Korinto</text></g>
+        <g data-k="mileto"><circle class="pin" cx="476" cy="222" r="13" fill="#22d3ee" stroke="#fff" stroke-width="2"/><text x="492" y="228" font-family="Outfit, sans-serif" font-size="14" font-weight="800" fill="#2b1f10">Mileto</text></g>
+        <g data-k="krotona"><circle class="pin" cx="160" cy="200" r="13" fill="#22d3ee" stroke="#fff" stroke-width="2"/><text x="96" y="232" font-family="Outfit, sans-serif" font-size="14" font-weight="800" fill="#2b1f10">Krotona</text></g>
+        <g data-k="egipto"><circle class="pin" cx="470" cy="392" r="13" fill="#f5c542" stroke="#fff" stroke-width="2"/><text x="488" y="398" font-family="Outfit, sans-serif" font-size="14" font-weight="800" fill="#2b1f10">Egipto</text></g>
+        <g data-k="ekialdea"><path d="M600 160 L680 160" stroke="#f5c542" stroke-width="5" marker-end="url(#ar)"/><circle class="pin" cx="600" cy="160" r="13" fill="#f5c542" stroke="#fff" stroke-width="2"/><text x="560" y="190" font-family="Outfit, sans-serif" font-size="13" font-weight="800" fill="#2b1f10">Mesopotamia, Persia</text></g>
+        <g data-k="itsasoa"><circle class="pin" cx="200" cy="370" r="13" fill="#f5c542" stroke="#fff" stroke-width="2"/></g>
+        <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#f5c542"/></marker></defs>
+      </svg>
+      <div class="hs-panel"><h4>Helade</h4><p>Mediterraneo ekialdean eta Asia Txikian zehar zabaldutako hiri-estatu txiki eta independenteak. Sakatu mapako puntuak: <b style="color:#c2185b">arrosak</b> polis ezagunak, <b style="color:#0b7285">urdinak</b> lehen filosofoen hiriak, <b style="color:#8a6a00">horiak</b> kanpo-eraginak.</p></div>
+    </div>
+  </div>
+
+  <h3>Lau faktore <small class="muted">(sakatu txartelak)</small></h3>
+  <div class="flips">
+    <div class="flip"><div class="fi"><div class="ff"><span class="e">🏛️</span><b>Politikoa</b><small>sakatu</small></div><div class="fb"><b>Polisa eta askatasuna</b>Ekialde Hurbileko inperio teokratikoek ez bezala, polisek askatasun handiagoa, bizitza publiko partaidetzazkoa eta demokrazia hasiberria (Atenas) zituzten. Horrek <b>eztabaida, arrazoiketa publikoa eta kritika</b> bultzatu zituen.</div></div></div>
+    <div class="flip"><div class="fi"><div class="ff"><span class="e">🧭</span><b>Geografikoa</b><small>sakatu</small></div><div class="fb"><b>Kokapen pribilegiatua</b>Egipto, Mesopotamia eta Persiarekiko kontaktua. Merkataritzan, bidaietan eta kolonietan zehar iritsi ziren eragin kultural eta zientifikoak.</div></div></div>
+    <div class="flip"><div class="fi"><div class="ff"><span class="e">⚖️</span><b>Ekonomikoa</b><small>sakatu</small></div><div class="fb"><b>Burgesia komertziala</b>Hiri batzuetan merkatari-burgesia hasiberria agertu zen, eta hiriak hazi egin ziren.</div></div></div>
+    <div class="flip"><div class="fi"><div class="ff"><span class="e">✍️</span><b>Teknikoa</b><small>sakatu</small></div><div class="fb"><b>Idazkera alfabetikoa</b>Teknika berriek pentsamoldea aldatu zuten: ikuspegi tradizional, erlijioso eta mitikotik, modu <b>arrazional, kritiko eta argudiatu</b> batera.</div></div></div>
+  </div>
+
+  <details class="sakonago"><summary>📚 Sakonago <small>garapen osoa</small></summary><div class="sak-body">
+    <p>Filosofia testuinguru zehatz batean jaio zen: <b>K.a. VI. mendeko Grezian</b>. Orduko Grezia ez zen gaur egun izen horrekin ezagutzen dugun lurralde-antolamendu politiko bera. Mediterraneo ekialdean eta Asia Txikian (egungo Turkia) zehar zabaldutako <b>hiri-estatu (polis) txiki eta independenteen</b> multzo anitza zen, garaikoek <b>Helade</b> deitzen zutena. Politikoki zatituta egon arren, kultura eta kosmologia partekatu batek elkartzen zituen Atenas, Mileto, Esparta edo Korinto bezalako hiriak.</p>
+    <p>Ekialde Hurbileko <b>inperio teokratiko</b> handiek ez bezala, greziar polisek herritarren askatasun-maila handiagoa, bizitza publiko partaidetzazkoa eta erregimen demokratikoen garapen hasiberria (Atenasen bezala) zituzten. Horrek eztabaida, arrazoiketa publikoa eta kritika bultzatu zituen, pentsamendu filosofikoa sortzeko funtsezko elementuak.</p>
+    <p>Gainera, Greziak <b>kokapen geografiko pribilegiatua</b> zuen, eta beste zibilizazio batzuekin (Egipto, Mesopotamia, Persia) harremanetan jartzea errazten zion. Eragin kultural eta zientifiko horiek merkataritzaren, bidaien eta kolonien bidez iritsi ziren pentsalari greziarrengana.</p>
+    <p>Ekonomiari dagokionez, hiri batzuetan <b>burgesia komertzial hasiberria</b> agertu zen eta hiriak hazi egin ziren. <b>Idazkera alfabetikoa</b> bezalako teknika berriekin batera, horrek pentsamoldea aldatu zuen: munduaren ikuspegi tradizional, erlijioso eta mitiko batetik, natura ulertzeko modu arrazional, kritiko eta argudiatuago batera.</p>
+  </div></details>
+
+  <div class="quiz" data-quiz="g1-1"></div>
+</section>
+
+<!-- =============================================================== -->
+<section class="atal" id="g1-2" data-title="Mitotik logosera" data-n="1.2">
+  <div class="laburrean">
+    <p><b>Mitoak</b>: jainko eta heroien narrazio tradizionalak, ahoz transmitituak, tradizioaren autoritatean oinarrituak eta zalantzan jartzen ez zirenak. <b>Logosa</b>: diskurtso arrazionala, azalpen koherente eta argudiatuak bilatzen dituena. Trantsizioa <b>ez zen berehalakoa ezta erabatekoa</b> izan.</p>
+  </div>
+
+  <div class="two-c">
+    <div class="mini-card"><div class="big-e">📜</div><b>MITOA</b><ul><li>Jainkoak eta heroiak protagonista</li><li>Galdera handiei erantzuna: munduaren jatorria, patua, ongia eta gaizkia</li><li>Ahoz transmititua; herriaren hezkuntza eta nortasunaren parte</li><li>Erantzun <b>itxiak</b>; poetak (Homero, Hesiodo) ez dira kritikatzen</li></ul></div>
+    <div class="mini-card"><div class="big-e">🧠</div><b>LOGOSA</b><ul><li>Arrazoia protagonista (diskurtso arrazionala)</li><li>Errealitatearen nolakotasunaz galdetzen du</li><li>Azalpen arrazional, koherente eta argudiatuak</li><li>Naturaz gaindiko jainkorik gabe azaltzen du mundua</li></ul></div>
+  </div>
+
+  <div class="box">
+    <div class="box-h"><span class="tag">JOKOA</span> Mitoa ala logosa? <small>sailkatu esaldiak</small></div>
+    <div class="sort" data-sort="mitologos"></div>
+  </div>
+
+  <details class="sakonago"><summary>📚 Sakonago <small>garapen osoa</small></summary><div class="sak-body">
+    <p>Filosofia agertu aurretik, greziarrek, inguruko zibilizazio gehienek bezala, <b>mitoen</b> bidez azaltzen zuten errealitatea: jainkoek eta heroiek protagonizatutako narrazio tradizionalak ziren, gizadiaren galdera handiei erantzuten saiatzen zirenak (munduaren jatorria, patua, ongia eta gaizkia...). Narrazio horiek ahoz transmititzen ziren, eta herriaren hezkuntzaren eta nortasun kulturalaren parte garrantzitsua ziren.</p>
+    <p>Mitoek <b>erantzun itxiak</b> ematen zituzten, tradizioaren autoritatean oinarrituak, eta horiek transmititzen zituzten poetak (Homero eta Hesiodo, adibidez) ez ziren kritikatzen ezta zalantzan jartzen ere. Filosofiarekin, aldiz, <b>logosean</b> (diskurtso arrazionalean) oinarritutako pentsaera berri bat sortu zen. Aldaketa sakona izan zen: pentsalariak errealitatearen nolakotasunaz galdezka hasi ziren, azalpen arrazional, koherente eta argudiatuak bilatuz, kontakizun erlijioso edo mitikoetara jo gabe.</p>
+    <p>Trantsizio hori <b>ez zen berehalakoa ezta erabatekoa</b> izan: denbora luzez pentsamendu mitikoa eta arrazionala elkarrekin bizi izan ziren. Baina lehen filosofoek, <b>presokratikoek</b>, inflexio-puntu bat markatu zuten: haiekin hasi zen mundua naturaz gaindiko jainkorik gabe azaldu nahi zuen tradizio intelektuala.</p>
+  </div></details>
+
+  <div class="quiz" data-quiz="g1-2"></div>
+</section>
+
+<!-- =============================================================== -->
+<section class="atal" id="g1-3" data-n="1.3" data-title="Presokratikoak: physis eta arkhea">
+  <div class="laburrean">
+    <p><b>Presokratikoak</b>: Sokratesen aurreko (edo haren eraginik jaso ez zuten) filosofoak. "Naturaren filosofoak" ere deitzen zaie, haien kezka nagusia <span class="gl" data-def="Natura, grezieraz.">physis</span>a eta kosmosaren jatorria azaltzea zelako. Helburua: <span class="gl" data-term="Arkhea" data-def="Gauza guztien lehen printzipioa edo jatorria: naturaren oinarrizko osagaia, kosmoseko elementu guztiak sortu eta eraldatzen dituena.">arkhea</span> aurkitzea.</p>
+  </div>
+  <h3>Hiztegi gakoa <small class="muted">(sakatu)</small></h3>
+  <div class="flips">
+    <div class="flip"><div class="fi"><div class="ff"><span class="e">🌿</span><b>Physis</b><small>grezierazko hitza</small></div><div class="fb"><b>Natura</b>Presokratikoen ikergaia: inguratzen gaituen mundua, modu arrazional, koherente eta ez-mitiko batean azaldu nahi zutena.</div></div></div>
+    <div class="flip"><div class="fi"><div class="ff"><span class="e">🌱</span><b>Arkhe</b><small>grezierazko hitza</small></div><div class="fb"><b>Lehen printzipioa</b>Gauza guztien jatorria eta oinarrizko osagaia; kosmoseko elementu guztiak sortu eta eraldatzen dituena.</div></div></div>
+    <div class="flip"><div class="fi"><div class="ff"><span class="e">✨</span><b>Kosmos</b><small>grezierazko hitza</small></div><div class="fb"><b>Unibertso ordenatua</b>Mundua ez da kaosa: ordena eta egitura logikoa du, arrazoiaz uler daitekeena.</div></div></div>
+    <div class="flip"><div class="fi"><div class="ff"><span class="e">🗝️</span><b>Alētheia</b><small>grezierazko hitza</small></div><div class="fb"><b>Egia</b>Benetako errealitatea, arrazoiaren bidez ezagutzen dena (Pitagoras, Heraklito, Parmenides).</div></div></div>
+  </div>
+  <details class="sakonago"><summary>📚 Sakonago <small>garapen osoa</small></summary><div class="sak-body">
+    <p><b>Presokratiko</b> izenak Sokratesen aurretik bizi izan ziren edo haren eraginik jaso ez zuten antzinako filosofoei egiten die erreferentzia.</p>
+    <p>Haien kezka nagusia <b>natura (physis)</b> eta kosmosaren jatorria azaltzea izan zen; horregatik deitu izan zaie "naturaren filosofoak": inguratzen zituen mundua modu arrazional, koherente eta ez-mitiko batean azaldu nahi zuten. Haien helburua gauza guztien <b>arkhea</b> (lehen printzipioa edo jatorria) aurkitzea zen: naturaren oinarrizko osagaia, kosmoseko elementu guztiak sortu eta eraldatzen dituena.</p>
+    <p>Pentsalari hauen lehen gogoetek ateak zabaldu zizkioten gerora garatuko zen <b>munduaren ikuspegi zientifiko-logikoari</b>.</p>
+  </div></details>
+  <div class="quiz" data-quiz="g1-3"></div>
+</section>
+
+<!-- =============================================================== -->
+<section class="atal" id="g1-4" data-n="1.4" data-title="Miletoko eskola">
+  <div class="laburrean">
+    <p>Lehen eskola filosofikoa <b>Mileton</b> (Asia Txikiko kostalde joniarra) sortu zen, K.a. VI. mendearen hasieran. Hiru pentsalari, galdera bera (zein da arkhe materiala?), hiru erantzun: <b>Tales → ura</b>, <b>Anaximandro → apeirona</b>, <b>Anaximenes → airea</b>.</p>
+  </div>
+  <div class="box" data-tabs>
+    <div class="tabs-b"><button type="button" data-tab="t">💧 Tales</button><button type="button" data-tab="am">🌀 Anaximandro</button><button type="button" data-tab="ax">🌬️ Anaximenes</button></div>
+    <div data-pane="t"><p><b>Miletoko Tales (K.a. 639-547).</b> <b>Ura</b> da gauza guztien iturburua: naturako elementu guztietan errepikatzen den sustantzia, unibertsoari bizia ematen dion elementu naturala. Talesen ikuspegian <b>jainkoek ez dute inolako parte-hartzerik</b>: arrazoiaz, gizakiak natura gobernatzen duten arauak deszifra ditzake.</p></div>
+    <div data-pane="am"><p><b>Anaximandro (K.a. 610-545)</b>, Talesen dizipulua, bere maisuaren kritiko gogorra izan zen. Argudioa:</p>
+      <ol><li>Lau elementu nagusiak (ura, sua, airea, lurra) <b>kontrajarriak</b> dira eta etengabeko borrokan daude.</li><li>Haietako bat infinitua balitz, <b>beste hirurak ezabatuko lituzke</b>.</li><li>Beraz, arkhea ezin da haietako bat izan: elementu <b>zehaztugabe, betiereko eta amaigabe</b> bat da, <b>apeirona</b>.</li></ol>
+      <p>Apeironetik bereizten dira kontrarioak: hotza eta beroa, bustia eta lehorra, bizitza eta heriotza. Hortik, ondo egituratutako <b>kosmos logiko eta arrazional</b> baten ideia zabaldu zuen.</p></div>
+    <div data-pane="ax"><p><b>Anaximenes (K.a. 585-524)</b>: <b>airea</b> da gauza guztien sorburua, "munduaren arnasa", bizitzaren printzipioa. <b>Rarefakzio</b> (lausotzea) eta <b>kondentsazio</b> (trinkotzea) prozesuen bidez, aireak forma ezberdinak hartzen ditu, eta transformazio horretatik sortzen dira munduko izate guztiak. Mugitu graduatzailea:</p>
+      <div class="stages" data-stages="anaximenes"></div>
+      <p class="hint">Sekuentzia zehatza tradizioak jaso duen adibidea da; apunteetan ideia nagusia dago: rarefakzioa eta kondentsazioa.</p></div>
+  </div>
+  <details class="sakonago"><summary>📚 Sakonago <small>garapen osoa</small></summary><div class="sak-body">
+    <p>Lehen eskola filosofikoa <b>Mileto</b> hirian sortu zen, Asia Txikiko kostalde joniarrean, K.a. VI. mendearen hasieran. Bertako ordezkariek (Tales, Anaximandro eta Anaximenes) kosmosaren <b>lehen printzipio materiala</b> aurkitu nahi zuten, baina irtenbide desberdinak proposatu zituzten.</p>
+    <ol>
+      <li><b>Miletoko Tales (K.a. 639-547)</b>: ura zen gauza guztien iturburua, naturako elementu guztietan errepikatzen zen sustantzia, unibertsoari bizia ematen zion elementu naturala. Ura zen kosmosaren oinarrizko osagaia, hots, arkhea. Talesen mundu-ikuspegian, jainko eta jainkosek ez zuten inolako parte-hartzerik ez boterik, eta gizakiak, arrazoiaz baliatuta, natura gobernatzen duten arauak deszifra zitzakeen.</li>
+      <li><b>Anaximandro (K.a. 610-545)</b> Talesen dizipulua izan zen, eta gogor kritikatu zuen bere maisua. Haren ustez, gauza guztien jatorria ezin zen lau elementu nagusietako bat izan: lau indar horiek kontrajarriak dira eta etengabeko borrokan daude; beraz, bat infinitua balitz, beste hirurak ezabatuko lituzke. Horregatik, Anaximandrok elementu zehaztugabe, betiereko eta amaigabe bat deskribatu zuen: <b>apeirona</b>. Apeironetik bereizten dira hotza eta beroa, bustia eta lehorra, bizitza eta heriotza. Apeironetik abiatuta, ondo egituratutako kosmos logiko eta arrazional baten ideia zabaldu zuen.</li>
+      <li><b>Anaximenes (K.a. 585-524)</b>: airea zen gauza guztien sorburua, munduaren arnasa, bizitzaren printzipioa. Rarefakzio eta kondentsazio prozesu baten bidez aireak forma ezberdinak hartzen zituela zioen, eta transformazio horretatik sortzen zirela munduko izate guztiak.</li>
+    </ol>
+  </div></details>
+  <div class="quiz" data-quiz="g1-4"></div>
+</section>
+
+<!-- =============================================================== -->
+<section class="atal" id="g1-5" data-n="1.5" data-title="Pitagoras eta pitagorikoak">
+  <div class="laburrean">
+    <p><b>Pitagoras (K.a. 570-495)</b> komunitate erlijioso eta zientifiko bat sortu zuen <b>Krotonan</b>. Pitagorikoentzat arkhea ez zen elementu material bat: <b>zenbakiak</b> ziren gauza guztien oinarria. Natura <b>hizkuntza matematikoz</b> idatzita dago, eta arrazoiaren bidez (ez zentzumenen bidez) ezagutzen da egia (alētheia).</p>
+  </div>
+  <div class="box">
+    <div class="box-h"><span class="tag">ENTZUN</span> Zenbakiak musikan <small>Pitagorikoen aurkikuntza ospetsua, tradizioaren arabera</small></div>
+    <p class="hint">Soka bat erdira laburtzean, nota bera entzuten da, zortzidun bat gorago. Proportzio sinpleek (1/2, 2/3, 3/4) soinu harmoniatsuak sortzen dituzte: naturaren azpian zenbakiak daude!</p>
+    <div class="three-c" id="pita">
+      <button type="button" class="chipb" data-f="220" data-w="100">🎵 Soka osoa <b>1</b></button>
+      <button type="button" class="chipb" data-f="440" data-w="50">🎵 Erdia <b>1/2</b> · zortziduna</button>
+      <button type="button" class="chipb" data-f="330" data-w="66.7">🎵 <b>2/3</b> · bostuna</button>
+      <button type="button" class="chipb" data-f="293.33" data-w="75">🎵 <b>3/4</b> · laukuna</button>
+      <button type="button" class="chipb" data-f="220,330,440" data-w="100">🎶 Hirurak batera</button>
+    </div>
+    <div style="margin-top:14px;background:rgba(255,255,255,.06);border-radius:10px;height:16px;overflow:hidden"><div id="pita-bar" style="height:100%;width:100%;background:linear-gradient(90deg,var(--gold),var(--terra));transition:width .4s"></div></div>
+    <div class="hint" id="pita-txt" style="margin-top:6px">Sokaren luzera: 1</div>
+  </div>
+  <details class="sakonago"><summary>📚 Sakonago <small>garapen osoa</small></summary><div class="sak-body">
+    <p><b>Pitagoras</b> funtsezko figura izan zen filosofian zein matematikan. <b>Krotonan</b> komunitate erlijioso eta zientifiko bat sortu zuen, mistika, etika eta kosmosaren azterketa arrazionala uztartzen zituena.</p>
+    <p>Pitagoras eta haren jarraitzaileentzat, arkhea <b>ez zen naturako elementu material bat</b>, aurrekoek zioten bezala: gauza guztien oinarria <b>zenbakiak</b> ziren. Natura hizkuntza matematikoaren bidez uler zitekeen, forma eta izate guztien oinarrian zenbakiak zeudelako, eta horiek logika eta arrazoiketa arrazionala erabiliz deszifra zitezkeen.</p>
+    <p>Horrela, natura ikertzeko <b>metodo berri</b> bat jarri zen abian: zentzumenen subjektibotasuna alde batera utzi eta arrazoiaren interpretazio logikoaz baliatu, horrela baino ezin baitzen benetako egia (<b>alētheia</b>) ezagutu.</p>
+  </div></details>
+  <div class="quiz" data-quiz="g1-5"></div>
+</section>
+
+<!-- =============================================================== -->
+<section class="atal" id="g1-6" data-n="1.6" data-title="Heraklito eta Parmenides">
+  <div class="laburrean">
+    <p>Biak <b>naturaren funtzionamenduaz</b> arduratu ziren, ez hainbeste arkheaz. <b>Ados</b>: unibertsoak ordena logiko bat (<b>logos</b>) jarraitzen du, eta egia (alētheia) arrazoiaz ezagutzen da. <b>Desados</b>: Heraklitorentzat <b>dena aldatzen da</b>; Parmenidesentzat <b>ezer ez da benetan aldatzen</b>.</p>
+  </div>
+  <div class="two-c">
+    <div class="mini-card" style="border-color:rgba(255,138,61,.6)">
+      <div class="big-e">🔥🌊</div><b>HERAKLITO (K.a. 536-470)</b>
+      <p>Natura mugimendu konstantean dago, <b>"jario amaigabe"</b> batean. Dena dago transformazioan.</p>
+      <div class="quote-b">«Ezin izango zara sekula bi aldiz ibai berean bainatu: bigarren aldian, ez zu ez ibaia ez zarete lehengoak izango.»</div>
+      <svg viewBox="0 0 300 70" style="width:100%;height:auto" aria-hidden="true"><defs><linearGradient id="riv" x1="0" x2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#1c5a86"/></linearGradient></defs>
+        <path d="M0 35 Q37 15 75 35 T150 35 T225 35 T300 35" stroke="url(#riv)" stroke-width="16" fill="none" stroke-dasharray="30 12"><animate attributeName="stroke-dashoffset" from="0" to="-84" dur="1.6s" repeatCount="indefinite"/></path></svg>
+    </div>
+    <div class="mini-card" style="border-color:rgba(34,211,238,.6)">
+      <div class="big-e">🗿</div><b>PARMENIDES (K.a. 515-450)</b>
+      <p>Izatearen <b>egonkortasuna</b>: gauzak ezin dira aldi berean "izan eta ez izan".</p>
+      <div class="quote-b">«Badena bada, eta ez dena ez da.»</div>
+      <p>Zentzumenek aldaketa erakusten digute, baina hori <b>itxura</b> besterik ez da: gauzen esentzia beti da bera.</p>
+    </div>
+  </div>
+  <div class="box">
+    <div class="box-h"><span class="tag">JOKOA</span> Nork esango luke? <small>sailkatu</small></div>
+    <div class="sort" data-sort="herpar"></div>
+  </div>
+  <details class="sakonago"><summary>📚 Sakonago <small>garapen osoa</small></summary><div class="sak-body">
+    <p><b>Heraklito (K.a. 536-470)</b> eta <b>Parmenides (K.a. 515-450)</b> izateen lehen printzipioan (arkhean) baino gehiago, <b>naturaren funtzionamenduan</b> zentratu zuten gogoeta. Biek argudiatu zuten unibertsoak <b>ordena logiko bat (logos)</b> jarraitzen duela: izateak elkarlotzen dituen harmonia bat dago, kosmos gidatu bat, eta egiazko errealitate hori (<b>alētheia</b>) arrazoiaren bidez ezagut daiteke. Hala ere, bien artean desadostasun nabarmena dago:</p>
+    <ul>
+      <li><b>Heraklitorentzat</b> natura edo unibertsoa <b>mugimendu konstantean</b> murgilduta dago, "jario amaigabe" batean. Berari egozten zaio esaldi famatu hau: «Ezin izango zara sekula bi aldiz ibai berean bainatu, bigarren aldian ez zu ez ibaia ez zaretelako lehengoak izango». Dena dago etengabeko transformazioan.</li>
+      <li><b>Parmenidesek</b>, aldiz, kontrako jarrera defendatu zuen: <b>izatearen egonkortasuna</b>. Gauzak ezin dira "izan eta ez izan" aldi berean; beraz, <b>badena bada eta ez dena ez da</b>. Zentzumenen bidez izateak eraldatzen direla antzematen dugu, baina hori itxurazkoa baino ez da: funtsean, gauzen esentzia beti bera da.</li>
+    </ul>
+  </div></details>
+  <div class="quiz" data-quiz="g1-6"></div>
+</section>
+
+<!-- =============================================================== -->
+<section class="atal" id="g1-7" data-n="1.7" data-title="Pluralistak: Enpedokles eta Demokrito">
+  <div class="laburrean">
+    <p>Orain arteko pentsalariak <b>monistak</b> dira: elementu nagusi bakarra. <b>Pluralistentzat</b>, unibertsoa <b>oinarrizko elementu ugariren konbinaziotik</b> sortzen da. <b>Enpedokles</b>: lau elementu, maitasunak elkartuta. <b>Demokrito</b>: atomoak eta hutsa.</p>
+  </div>
+  <div class="two-c">
+    <div class="mini-card"><b>🌍 ENPEDOKLES (K.a. 490-430)</b>
+      <p>Lau elementu nagusi: <b>ura 💧, sua 🔥, airea 🌬️ eta lurra 🪨</b>. Ezagutzen ditugun formak elementu horiek <b>elkartu edo banatzean</b> sortzen dira, beti ere <b>maitasunaren indarrak</b> bultzatuta.</p></div>
+    <div class="mini-card"><b>⚛️ DEMOKRITO (K.a. 460-370)</b>
+      <p><b>Atomismo klasikoaren</b> erreferentea. Mikroskopiorik gabe argudiatu zuen naturako izateak milaka <b>partikula ikusezin eta zatiezinez</b> osatuta daudela: <b>atomoak</b> ("zatiezinak").</p></div>
+  </div>
+  <div class="box">
+    <div class="box-h"><span class="tag">ZOOM</span> Zatitu, zatitu... noraino? <small>mugitu graduatzailea</small></div>
+    <div class="stages" data-stages="demokrito"></div>
+  </div>
+  <div class="quote-b">«Jendearen ohiko hizkeraren arabera, badira munduan koloreak, gozotasuna eta mingotsa. Baina, egiaz, atomoak eta hutsa baino ez dira existitzen.»<cite>Demokrito</cite></div>
+  <div class="box">
+    <div class="box-h"><span class="tag">ERRONKA</span> Presokratiko bakoitza bere arkhearekin <small>lotu</small></div>
+    <div class="match" data-match="arkhe"></div>
+  </div>
+  <details class="sakonago"><summary>📚 Sakonago <small>garapen osoa</small></summary><div class="sak-body">
+    <p>Orain arte ikusi ditugun pentsalariak <b>filosofo monistak</b> bezala ere ezagutzen dira: natura gobernatzen duen elementu nagusi bat zegoela uste zuten (arkhea edo logosa). Baziren, ordea, ikuspegi zabalagoa zuten pentsalariak ere, <b>filosofo pluralistak</b>: haien ustez, elementu nagusi bat izan beharrean, oinarrizko elementu ugariren konbinaziotik eratzen zen unibertsoa.</p>
+    <ol start="6">
+      <li><b>Enpedokles (K.a. 490-430)</b>: naturan lau elementu nagusi daude: ura, sua, airea eta lurra. Ezagutzen ditugun formak sortzeko, lau elementu horiek elkartu edo banatu egiten dira, betiere <b>maitasunaren indarrak</b> bultzatuta. Elementu horien elkartze eta banatzetik sortzen dira ezagutzen ditugun izate eta fenomenoak.</li>
+      <li><b>Demokrito (K.a. 460-370)</b> <b>atomismo klasikoaren</b> erreferente nagusitzat hartu ohi da. Inolako mikroskopio edo teknologia aurreraturik gabe, naturako izateak milaka partikula ikusezin eta zatiezinez osatuta daudela argudiatu zuen. Partikula horiei <b>"atomo"</b> izena eman zien, etimologikoki "zatiezina" esan nahi duena: existitu daitekeen elementurik txikiena. Atomoek forma sartu-irtenez beteak izan behar zutela zioen, eta espazioan mugitzen zirela, elkartu eta banatuz, forma eta izate ezberdinak sortuz.</li>
+    </ol>
+  </div></details>
+  <div class="quiz" data-quiz="g1-7"></div>
+</section>
+
+<div class="next-g">
+  <div><div class="kicker">Hurrengoa</div><b>2. gaia: Sofistak eta Sokrates</b></div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-ghost" href="ikastaroa.html">Gai guztiak</a><a class="btn btn-gold" href="gaia2.html">Jarraitu ▸</a></div>
+</div>
+</main>
+</div>
+
+<script src="js/komuna.js"></script>
+<script src="js/ikastaroa.js"></script>
+<script>
+window.GAIA = {
+  izena: '1. Mitotik logosera',
+  hs: { mapa: {
+    atenas: { t: 'Atenas', d: '<p>Polis garrantzitsuena. Herritarren askatasuna eta <b>demokrazia hasiberria</b>: eztabaida eta arrazoiketa publikoa. Hemen biziko dira gero Sokrates, Platon eta Aristoteles.</p>' },
+    esparta: { t: 'Esparta', d: '<p>Beste polis handi bat, Atenasekin batera. Polisak politikoki independenteak ziren, baina kultura eta kosmologia partekatzen zituzten.</p>' },
+    korinto: { t: 'Korinto', d: '<p>Merkataritza-hiri garrantzitsua. Hiri-estatuen arteko lotura: hizkuntza, kultura eta mundu-ikuskera partekatua.</p>' },
+    mileto: { t: 'Mileto', d: '<p>Asia Txikiko kostalde <b>joniarrean</b>. Hemen sortu zen <b>lehen eskola filosofikoa</b> (K.a. VI. mendearen hasieran): Tales, Anaximandro eta Anaximenes.</p>' },
+    krotona: { t: 'Krotona', d: '<p>Italia hegoaldean. <b>Pitagorasek</b> komunitate erlijioso eta zientifikoa sortu zuen hemen: mistika, etika eta kosmosaren azterketa arrazionala.</p>' },
+    egipto: { t: 'Egipto', d: '<p>Ekialde Hurbileko <b>inperio teokratiko</b> handietako bat. Grezia harremanetan zegoen Egiptorekin, eta haren ezagutza zientifikoak greziarrengana iritsi ziren.</p>' },
+    ekialdea: { t: 'Mesopotamia eta Persia', d: '<p>Eragin kultural eta zientifikoak <b>merkataritzaren, bidaien eta kolonien</b> bidez iritsi ziren. Inperio teokratikoetan ez bezala, polisetan askatasuna zegoen.</p>' },
+    itsasoa: { t: 'Mediterraneoa', d: '<p>Kokapen geografiko pribilegiatua: itsasoak beste zibilizazioekiko kontaktua errazten zuen. <b>Burgesia komertzial</b> hasiberria eta hirien hazkundea.</p>' }
+  } },
+  sort: {
+    mitologos: { bins: ['📜 Mitoa', '🧠 Logosa'], items: [
+      ['Zeusek tximistak jaurtitzen ditu haserre dagoenean', 0], ['Poetek (Homero, Hesiodo) esandakoa ez da zalantzan jartzen', 0],
+      ['Ahoz transmititzen den narrazio tradizionala', 0], ['Patua jainkoek erabakitzen dute', 0],
+      ['Natura arrazoiaren bidez uler daiteke', 1], ['Azalpen koherente eta argudiatuak bilatzen dira', 1],
+      ['Galdera: zein da gauza guztien lehen printzipioa?', 1], ['Mundua naturaz gaindiko jainkorik gabe azaltzen da', 1]
+    ] },
+    herpar: { bins: ['🔥 Heraklito', '🗿 Parmenides'], items: [
+      ['Dena dago etengabeko transformazioan', 0], ['Ezin zara bi aldiz ibai berean bainatu', 0], ['Natura jario amaigabe bat da', 0],
+      ['Badena bada eta ez dena ez da', 1], ['Aldaketa zentzumenen itxura bat besterik ez da', 1], ['Gauzen esentzia beti da bera', 1]
+    ] }
+  },
+  stages: {
+    anaximenes: [
+      { e: '🔥', t: 'Sua', l: 'sua', d: 'Airea asko <b>lausotzen</b> denean (rarefakzioa), sua bihurtzen da.' },
+      { e: '🌬️', t: 'Airea (arkhea)', l: 'AIREA', d: 'Abiapuntua: munduaren arnasa, bizitzaren printzipioa.' },
+      { e: '💨', t: 'Haizea', l: 'haizea', d: 'Airea pixka bat <b>trinkotzean</b> (kondentsazioa), haizea sortzen da.' },
+      { e: '☁️', t: 'Hodeiak', l: 'hodeiak', d: 'Gehiago trinkotuta: hodeiak.' },
+      { e: '💧', t: 'Ura', l: 'ura', d: 'Kondentsazioak aurrera jarraitzen du: ura.' },
+      { e: '🪨', t: 'Lurra eta harriak', l: 'lurra', d: 'Kondentsaziorik handiena: lurra eta harriak. Dena airea da, forma ezberdinetan!' }
+    ],
+    demokrito: [
+      { e: '🍎', t: 'Sagar bat', l: 'sagarra', d: 'Zentzumenek koloreak, zaporeak eta formak erakusten dizkigute.' },
+      { e: '🔪', t: 'Erdibitu', l: 'erdia', d: 'Bi zati. Eta zati bakoitza berriro zatitu daiteke...' },
+      { e: '🔬', t: 'Zati txikiagoak', l: 'txikiago', d: 'Ikusezinak izan arte. Baina mugagabe zatitu al daiteke?' },
+      { e: '⚛️', t: 'ATOMOA = zatiezina', l: 'atomoa', d: 'Demokritoren ustez, ez: badago zatitu ezin den elementurik txikiena, <b>atomoa</b>.' },
+      { e: '✳️', t: 'Atomoak eta hutsa', l: 'hutsa', d: 'Atomoek forma <b>sartu-irtenak</b> dituzte, <b>hutsean</b> mugitzen dira, eta elkartu eta banatuz forma eta izate ezberdinak sortzen dituzte.' }
+    ]
+  },
+  match: {
+    arkhe: { l: ['Tales', 'Anaximandro', 'Anaximenes', 'Pitagoras', 'Enpedokles', 'Demokrito'],
+             r: ['Ura', 'Apeirona', 'Airea', 'Zenbakiak', 'Lau elementu + maitasuna', 'Atomoak eta hutsa'] }
+  },
+  quiz: {
+    'g1-1': [
+      { m: 'Nola deitzen zieten greziarrek euren hiri-estatuen multzoari?', a: ['Helade', 'Persia', 'Inperioa', 'Akademia'], z: 0, az: 'Helade: polis txiki eta independenteen multzoa, kultura eta kosmologia partekatuarekin.' },
+      { m: 'Zerk bereizten zituen polisak Ekialde Hurbileko inperio teokratikoetatik?', a: ['Askatasuna eta bizitza publiko partaidetzazkoa', 'Errege-jainko baten boterea', 'Idazkerarik eza', 'Kanpoko kontakturik eza'], z: 0, az: 'Askatasunak eta demokraziak eztabaida eta kritika bultzatu zituzten.' },
+      { m: 'Zein ez da filosofiaren sorreran lagundu zuen faktore bat?', a: ['Tradizio mitikoaren autoritatea indartzea', 'Idazkera alfabetikoa', 'Burgesia komertziala', 'Beste zibilizazioekiko kontaktua'], z: 0, az: 'Alderantziz: filosofiak tradizio mitikoaren autoritatea zalantzan jarri zuen.' }
+    ],
+    'g1-2': [
+      { m: 'Zer da logosa?', a: ['Diskurtso arrazionala', 'Narrazio tradizionala', 'Jainkoen legea', 'Hiri-estatua'], z: 0, az: 'Logosa: azalpen arrazional, koherente eta argudiatuak.' },
+      { m: 'Nolakoa izan zen mitotik logoserako trantsizioa?', a: ['Motela eta partziala: denbora luzez elkarrekin bizi izan ziren', 'Berehalakoa eta erabatekoa', 'Erromatarrek inposatua', 'Ez zen inoiz gertatu'], z: 0, az: 'Ez zen berehalakoa ez erabatekoa izan; presokratikoek markatu zuten inflexio-puntua.' },
+      { m: 'Nortzuk ziren mitoak transmititzen zituzten poetak?', a: ['Homero eta Hesiodo', 'Tales eta Anaximandro', 'Platon eta Aristoteles', 'Gorgias eta Aspasia'], z: 0, az: 'Homero eta Hesiodo; ez ziren kritikatzen ezta zalantzan jartzen ere.' }
+    ],
+    'g1-3': [
+      { m: 'Zer da arkhea?', a: ['Gauza guztien lehen printzipioa edo jatorria', 'Hiriko batzarra', 'Mitoen jainko nagusia', 'Arimaren zati bat'], z: 0, az: 'Naturaren oinarrizko osagaia, kosmoseko elementu guztiak sortu eta eraldatzen dituena.' },
+      { m: 'Zergatik deitzen zaie presokratikoei "naturaren filosofoak"?', a: ['Natura (physis) eta kosmosaren jatorria azaldu nahi zutelako', 'Basoan bizi zirelako', 'Etika aztertu zutelako', 'Medikuak zirelako'], z: 0, az: 'Inguratzen zituen mundua modu arrazional eta ez-mitiko batean azaldu nahi zuten.' }
+    ],
+    'g1-4': [
+      { m: 'Zergatik ezin da arkhea lau elementuetako bat izan, Anaximandroren ustez?', a: ['Kontrajarriak direlako: bat infinitua balitz, besteak ezabatuko lituzke', 'Ikusezinak direlako', 'Jainkoek sortu zituztelako', 'Zenbakiak direlako'], z: 0, az: 'Horregatik proposatu zuen apeirona: zehaztugabea, betierekoa eta amaigabea.' },
+      { m: 'Nola sortzen dira gauzak airetik, Anaximenesen ustez?', a: ['Rarefakzio eta kondentsazioaren bidez', 'Maitasunaren indarrez', 'Atomoak elkartzean', 'Zenbakien harmoniaz'], z: 0, az: 'Airea lausotu edo trinkotu egiten da eta forma ezberdinak hartzen ditu.' },
+      { m: 'Talesen ikuspegian, zer paper dute jainkoek naturan?', a: ['Bat ere ez: arrazoiaz deszifra daitezke naturaren arauak', 'Dena gobernatzen dute', 'Ura sortu zuten', 'Patua erabakitzen dute'], z: 0, az: 'Hori da hain zuzen logoserako urratsa.' }
+    ],
+    'g1-5': [
+      { m: 'Pitagorikoentzat, zer zegoen gauza guztien oinarrian?', a: ['Zenbakiak', 'Ura', 'Sua', 'Atomoak'], z: 0, az: 'Natura hizkuntza matematikoaz uler daiteke.' },
+      { m: 'Nola ezagutzen da egia (alētheia), pitagorikoen arabera?', a: ['Arrazoiaren interpretazio logikoaz, zentzumenak alde batera utzita', 'Zentzumenen bidez soilik', 'Orakuluei galdetuz', 'Poetak irakurriz'], z: 0, az: 'Metodo berria: zentzumenen subjektibotasuna alde batera utzi.' },
+      { m: 'Non sortu zuen Pitagorasek bere komunitatea?', a: ['Krotonan', 'Mileton', 'Atenasen', 'Alejandrian'], z: 0, az: 'Krotonan (Italia hegoaldea): komunitate erlijioso eta zientifikoa.' }
+    ],
+    'g1-6': [
+      { m: 'Zertan zeuden ados Heraklito eta Parmenides?', a: ['Unibertsoak ordena logiko bat (logos) du eta arrazoiaz ezagutzen da', 'Dena aldatzen da', 'Ezer ez da aldatzen', 'Arkhea ura da'], z: 0, az: 'Ados zeuden logosean; aldaketan ez.' },
+      { m: 'Parmenidesen ustez, zentzumenek erakusten diguten aldaketa...', a: ['itxurazkoa da', 'benetakoa da', 'jainkoek eragina da', 'atomoen mugimendua da'], z: 0, az: 'Gauzen esentzia beti da bera: badena bada eta ez dena ez da.' }
+    ],
+    'g1-7': [
+      { m: 'Zer bereizten ditu monistak eta pluralistak?', a: ['Elementu nagusi bakarra vs elementu askoren konbinazioa', 'Erlijiosoak vs ateoak', 'Atenastarrak vs miletoarrak', 'Mitoa vs logosa'], z: 0, az: 'Pluralistentzat unibertsoa oinarrizko elementu ugariren konbinaziotik sortzen da.' },
+      { m: 'Zerk elkartzen ditu lau elementuak, Enpedoklesen ustez?', a: ['Maitasunaren indarrak', 'Aireak', 'Zenbakiek', 'Hutsak'], z: 0, az: 'Elementuen elkartze eta banatzetik sortzen dira izate eta fenomenoak.' },
+      { m: 'Zer esan nahi du "atomo" hitzak?', a: ['Zatiezina', 'Ikusezina', 'Txikia', 'Betierekoa'], z: 0, az: 'Existitu daitekeen elementurik txikiena.' }
+    ]
+  },
+  after() {
+    document.querySelectorAll('#pita .chipb').forEach(b => b.addEventListener('click', () => {
+      b.dataset.f.split(',').forEach((f, i) => setTimeout(() => IK.tone(+f, 1.6), i * 10));
+      document.getElementById('pita-bar').style.width = b.dataset.w + '%';
+      const txt = { '100': '1 (soka osoa)', '50': '1/2: nota bera, zortzidun bat gorago', '66.7': '2/3: bostuna', '75': '3/4: laukuna' };
+      document.getElementById('pita-txt').textContent = 'Sokaren luzera: ' + (b.dataset.f.includes(',') ? '1, 2/3 eta 1/2 batera: akorde harmoniatsua' : txt[b.dataset.w]);
+    }));
+  }
+};
+</script>
+</body>
+</html>

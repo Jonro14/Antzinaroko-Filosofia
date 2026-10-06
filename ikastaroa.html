@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="eu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ikastaroa · Logos Arena</title>
+  <meta name="description" content="Filosofiaren Historia, 1. blokea: ikastaro interaktiboa, gaiez gai. Mitotik logosera, sofistak eta Sokrates, Platon eta Aristoteles, Helenismoa.">
+  <meta name="theme-color" content="#132b50">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f5c542'/%3E%3Ctext x='32' y='46' font-size='40' text-anchor='middle' font-family='serif' font-weight='900' fill='%232a1c00'%3E%CE%9B%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estiloa.css">
+  <link rel="stylesheet" href="css/ikastaroa.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a class="logo" href="index.html"><span class="logo-mark">Λ</span> LOGOS ARENA</a>
+  <div class="nav-links"><a href="ikastaroa.html">Ikastaroa</a><a href="ikasi.html">Laburpena</a><a href="index.html#jokoa">Jokoa</a></div>
+  <a class="btn btn-gold" href="index.html#jokoa">Jokatu ▸</a>
+</nav>
+
+<main class="wrap" style="padding-block:48px 80px">
+  <div class="kicker">Filosofiaren Historia · 1. blokea · ikastaro interaktiboa</div>
+  <h1 class="sec-title" style="font-size:clamp(2.2rem,6vw,3.6rem);margin:.15em 0">Ikastaroa, gaiez gai</h1>
+  <p class="sec-sub">Apunte osoak, modu bisual eta interaktiboan. Gai bakoitza ataletan dago banatuta: irakurri laburpena, arakatu irudiak, jokatu, sakondu nahi duzuna eta egiaztatu ikasitakoa. Zure aurrerapena nabigatzaile honetan gordetzen da.</p>
+
+  <div class="progress" style="max-width:640px;margin:18px 0 28px"><span id="tot-t">0 / 35 atal</span><div class="bar"><i id="tot-b" style="background:linear-gradient(90deg,var(--cyan),var(--pink),var(--gold),var(--violet),var(--green))"></i></div></div>
+
+  <div class="course-map" id="cmap"></div>
+
+  <div class="two-c" style="margin-top:36px">
+    <div class="mini-card"><b>Nola ikasi</b>
+      <ol style="margin:.5em 0 0;padding-left:1.2em;display:grid;gap:4px">
+        <li><b>Laburrean</b> (papiro-kolorea): ideia nagusia, minutu batean.</li>
+        <li><b>Irudiak eta jokoak</b>: sakatu puntuak, txartelak eta botoiak.</li>
+        <li><b>📚 Sakonago</b>: apunteetako garapen osoa, azterketarako.</li>
+        <li><b>✍️ Egiaztatu</b>: galdera guztiak asmatzean, atala ✓ ikasita.</li>
+      </ol></div>
+    <div class="mini-card"><b>Eta gero?</b>
+      <p style="margin:.5em 0 0">Errepaso azkarra egiteko: <a href="ikasi.html">apunte bisualen laburpena</a>. Ikaskideen aurka lehiatzeko: <a href="index.html#jokoa">Logos Arena jokoa</a>.</p>
+      <p style="margin:.6em 0 0"><button type="button" class="btn btn-ghost btn-s" id="reset">↺ Aurrerapena berrezarri</button> <span class="hint" id="reset-t"></span></p></div>
+  </div>
+</main>
+
+<footer>
+  <div class="meandroa" style="margin-bottom:24px"></div>
+  Logos Arena · Batxilergoa 2. maila · Filosofiaren Historia · USaP prestaketa
+</footer>
+
+<script src="js/ikastaroa.js"></script>
+<script>
+(function () {
+  const GAIAK = [
+    { n: 1, f: 'gaia1.html', t: 'Mitotik logosera eta presokratikoak', d: 'Grezia klasikoa, mitoa eta logosa, arkhea, Miletoko eskola, Pitagoras, Heraklito eta Parmenides, pluralistak.', c: 'var(--cyan)', a: 7 },
+    { n: 2, f: 'gaia2.html', t: 'Sofistak eta Sokrates', d: 'Periklesen Atenas, sofisten hiru tesiak, definizio unibertsalak, intelektualismo morala, ironia eta maieutika.', c: 'var(--pink)', a: 6 },
+    { n: 3, f: 'gaia3.html', t: 'Ideia eta izaera', d: 'Platonen bi munduak, doxa eta episteme, haitzuloa, oroitzapena; Aristotelesen hilemorfismoa, aldaketa eta 4 kausak.', c: 'var(--gold)', a: 9 },
+    { n: 4, f: 'gaia4.html', t: 'Etika eta politika', d: 'Ongia, arimaren hiru zatiak, hiri ideala; Aristotelesen arima, eudaimonia, erdibide justua eta gobernu motak.', c: 'var(--violet)', a: 7 },
+    { n: 5, f: 'gaia5.html', t: 'Helenismoa', d: 'Alejandro Magno eta Alejandria; zinismoa, estoizismoa, epikureismoa eta eszeptizismoa.', c: 'var(--green)', a: 6 }
+  ];
+  const draw = () => {
+    const p = IK.progress();
+    let tot = 0, done = 0;
+    document.getElementById('cmap').innerHTML = GAIAK.map(g => {
+      const d = Object.keys(p).filter(k => k.startsWith('g' + g.n + '-') && p[k]).length;
+      tot += g.a; done += d;
+      const pct = Math.round(d / g.a * 100);
+      return `<a class="cm-card" href="${g.f}" style="--c:${g.c}"><span class="n">${g.n}</span><h3>${g.t}</h3><p>${g.d}</p><span class="pct">${pct === 100 ? '✓ Osatuta' : d + ' / ' + g.a + ' atal'}</span><div class="bar"><i style="width:${pct}%"></i></div></a>`;
+    }).join('');
+    document.getElementById('tot-t').textContent = `${done} / ${tot} atal`;
+    document.getElementById('tot-b').style.width = (done / tot * 100) + '%';
+  };
+  draw();
+  let arm = false;
+  document.getElementById('reset').onclick = () => {
+    const t = document.getElementById('reset-t');
+    if (!arm) { arm = true; t.textContent = 'Ziur? Sakatu berriro ezabatzeko.'; setTimeout(() => { arm = false; t.textContent = ''; }, 4000); return; }
+    try { localStorage.removeItem('ikastaroa-v1'); } catch (e) {}
+    arm = false; t.textContent = 'Aurrerapena ezabatuta.'; draw();
+  };
+})();
+</script>
+</body>
+</html>

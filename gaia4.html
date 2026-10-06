@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="eu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>4. gaia · Etika eta politika · Logos Arena</title>
+  <meta name="theme-color" content="#132b50">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f5c542'/%3E%3Ctext x='32' y='46' font-size='40' text-anchor='middle' font-family='serif' font-weight='900' fill='%232a1c00'%3E%CE%9B%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estiloa.css">
+  <link rel="stylesheet" href="css/ikastaroa.css">
+  <style>
+    .harm { display: grid; gap: 10px; }
+    .harm .cl { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: 10px 14px; border-radius: 14px; background: rgba(255,255,255,.05); border: 1px solid var(--line); }
+    .harm .cl .e { font-size: 1.8rem; }
+    .harm .cl small { display: block; color: var(--muted); }
+    .harm .cl.on { border-color: var(--ok); background: var(--ok-bg); }
+    .harm .meter { margin-top: 6px; padding: 14px; border-radius: 14px; text-align: center; font-weight: 900; font-size: 1.15rem; transition: background .3s; }
+    .beings { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+    .souls { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .soul-c { border-radius: 14px; padding: 12px; border: 2px solid var(--line); opacity: .3; transition: opacity .3s, transform .3s; text-align: center; }
+    .soul-c.on { opacity: 1; transform: translateY(-3px); }
+    .soul-c .e { font-size: 2rem; }
+    .soul-c small { display: block; color: var(--muted); }
+    .mean-track { position: relative; height: 54px; border-radius: 12px; overflow: hidden; display: grid; grid-template-columns: 2fr 1fr 2fr; font-weight: 800; font-size: .85rem; text-align: center; }
+    .mean-track span { display: grid; place-items: center; padding: 4px; }
+    .mean-track .l { background: rgba(62, 99, 221, .4); } .mean-track .m { background: rgba(245, 197, 66, .35); } .mean-track .r { background: rgba(229, 72, 77, .4); }
+    .gov-g { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .gov-c { border-radius: 16px; padding: 14px; border: 2px solid var(--ok); background: var(--ok-bg); cursor: pointer; text-align: center; transition: all .4s; }
+    .gov-c.bad { border-color: var(--bad); background: var(--bad-bg); }
+    .gov-c .e { font-size: 2rem; }
+    .gov-c b { display: block; font-size: 1.1rem; }
+    .gov-c small { color: var(--muted); }
+    @media (max-width: 560px) { .souls, .gov-g { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body style="--c: var(--violet)">
+
+<nav class="nav">
+  <a class="logo" href="index.html"><span class="logo-mark">Λ</span> LOGOS ARENA</a>
+  <div class="nav-links"><a href="ikastaroa.html">Ikastaroa</a><a href="ikasi.html">Laburpena</a><a href="index.html#jokoa">Jokoa</a></div>
+  <button class="btn btn-icon" id="btn-soinua" title="Soinua">🔊</button>
+</nav>
+
+<div class="ik-layout">
+<aside class="stepper" id="stepper"></aside>
+<main class="ik-main">
+
+<header class="g-head">
+  <div class="g-badge">4</div>
+  <div class="ghtxt">
+    <div class="kicker">Intelektualismo sokratiko-platonikoa eta Aristoteles</div>
+    <h1>Eztabaida etikoa eta politikoa</h1>
+    <p>Nola bizi behar dugu? Nork gobernatu behar du? Platonen arima eta hiri ideala, eta Aristotelesen zoriontasuna, erdibide justua eta gobernu motak.</p>
+  </div>
+  <div class="progress"><span id="g-prog">0 / 7 atal</span><div class="bar"><i id="g-bar"></i></div></div>
+</header>
+<div class="howto"><span><b>Laburrean</b>: ideia nagusia</span><span><b>Irudiak eta jokoak</b>: sakatu eta arakatu</span><span><b>📚 Sakonago</b>: garapen osoa</span><span><b>✍️ Egiaztatu</b>: atala amaitzeko</span></div>
+
+<!-- =============================================================== -->
+<section class="atal" id="g4-1" data-n="4.1" data-title="Platon: Ongiaren kontzeptua">
+  <div class="laburrean">
+    <p><b>Ongiaren ideia</b> da ideia gorena (haitzuloko <b>eguzkia</b>). Unibertsala eta bakarra da (sofisten erlatibismoaren aurka). Inork ez du nahita gaizki jokatzen (<b>intelektualismoa</b>). Heziketaren helburua: <b>bertutetsua</b> izatea (<span class="gl" data-term="Aretē" data-def="Bertutea, grezieraz: bikaintasuna, zerbaitek edo norbaitek bere egitekoa ondo betetzea.">aretē</span>). Ongia ezagutzen duten <b>filosofoek</b> gobernatu behar dute. Ongiaren bidea da <b>zoriontasunerako</b> bidea.</p>
+  </div>
+  <div class="flips">
+    <div class="flip"><div class="fi"><div class="ff"><span class="e">☀️</span><b>Ongia = eguzkia</b><small>zergatik?</small></div><div class="fb">Eguzkiak mundu sentikorra argitzen duen bezala, <b>Ongiaren ideiak beste ideia guztiak</b> egiten ditu ikusgarri.</div></div></div>
+    <div class="flip"><div class="fi"><div class="ff"><span class="e">🎯</span><b>Heziketaren helburua</b><small>zein?</small></div><div class="fb">Bertutetsua izatea (<b>aretē</b>): arrazoia eta dialogoa erabiliz, norberak barruan dituen ideiak ezagutzea, Ongiaren ideiara iritsi arte.</div></div></div>
+    <div class="flip"><div class="fi"><div class="ff"><span class="e">👑</span><b>Nork gobernatu?</b><small>espirituzko aristokrazia</small></div><div class="fb"><b>Filosofoek</b> soilik: Ongia ezagutu dutenez, beti ongi jokatuko dute eta hiria zuzen gobernatuko dute.</div></div></div>
+    <div class="flip"><div class="fi"><div class="ff"><span class="e">😊</span><b>Zoriontasuna</b><small>nola lortu?</small></div><div class="fb">Ongiaren ezagutzak soilik dakar: filosofoak <b>bere arimaren ataletan harmonia</b> aurkitzen du, eta hirian <b>justuki</b> jokatzen du.</div></div></div>
+  </div>
+  <details class="sakonago"><summary>📚 Sakonago <small>garapen osoa</small></summary><div class="sak-body">
+    <p>Platonen dualismo ontologikoaren arabera, bi errealitate daude: mundu sentikorra eta ideien mundua. Azken hori da benetako errealitatea, bertan baitaude ideiak: esentzia materiagabe, perfektu, hilezkor eta betierekoak.</p>
+    <p>Horien artean, <b>Ongiaren ideia</b> da gorena, garrantzitsuena. Haitzuloaren alegorian, eguzkiarekin alderatzen du: eguzkiak mundu sentikorra argitzen duen bezala, Ongiak beste ideia guztiak egiten ditu ikusgarri.</p>
+    <p>Sokratesen definizio unibertsalen teoriari jarraituz, Platonek dio ideiak <b>unibertsalak</b> direla, guztiontzat berdinak. Zentzu horretan, sofisten erlatibismoa kritikatuko du, eta <b>Ongia bat eta bakarra</b> dela azpimarratuko du. Era berean, Sokratesen antierlatibismo moralari jarraituz, esango du ezin dela nahita gaizki jokatu: gaizki jokatzen duenak Ongiaren ideia ezagutzen ez duelako jokatzen du hala.</p>
+    <p>Horregatik, heziketa-prozesuaren helbururik garrantzitsuena <b>bertutetsua</b> izatea da, <b>aretē</b> eskuratzea. Horretarako, arrazoiaren bidez eta dialogoaren teknika erabiliz, norberak bere barruan dituen ideiak ezagutzen ahalegindu behar du, Ongiaren ideiara iritsi arte.</p>
+    <p><b>Filosofoak</b> dira ezagutza hori eskuratzen dutenak, eta, beraz, prest daude hiria justuki gobernatzeko. Platonen "<b>espirituzko aristokrazian</b>", filosofoak bakarrik izan daitezke gobernari, haiek baino ez baitakite hiria zuzen gobernatzen: Ongiaren ideia ezagutu dutenez, beti ongi jokatuko dute. Azkenik, Ongiaren ezagutzaren bideak soilik ekarriko du <b>zoriontasuna</b>: ideien mundua ezagutzen ahalegintzean eta, batez ere, Ongiaren ideiara iristean, filosofoa gai da, batetik, bere arimaren ataletan harmonia aurkitzeko eta, bestetik, hirian justuki jokatzeko.</p>
+  </div></details>
+  <div class="quiz" data-quiz="g4-1"></div>
+</section>
+
+<!-- =============================================================== -->
+<section class="atal" id="g4-2" data-n="4.2" data-title="Dualismo antropologikoa eta eros">
+  <div class="laburrean">
+    <p><b>Dualismo antropologikoa</b> (antropologia = gizakia): gizakia bi atalez osatuta dago. <b>Arima</b>: jainkozkoa, betierekoa, hilezkorra, materiagabea (ideien mundukoa). <b>Gorputza</b>: hilkorra, materiaduna, ustelkorra, <b>arimaren kartzela</b> (mundu sentikorrekoa). Arimak ideien mundura itzultzeko duen desioa: <b>eros</b> (maitasuna).</p>
+  </div>
+  <div class="box">
+    <div class="box-h"><span class="tag">SAILKATU</span> Arima ala gorputza?</div>
+    <div class="sort" data-sort="arimagorp"></div>
+  </div>
+  <div class="box">
+    <div class="box-h"><span class="tag">BIDAIA</span> Erosen bidea <small>mugitu</small></div>
+    <div class="stages" data-stages="eros"></div>
+  </div>
+  <details class="sakonago"><summary>📚 Sakonago <small>garapen osoa</small></summary><div class="sak-body">
+    <p>Beste behin ere, dualismo hitzak "bi" esan nahi du, eta kasu honetan antropologiak "gizakia". Beraz, <b>dualismo antropologikoak</b> esan nahi du gizakia bi atalez osatuta dagoela: gorputza eta arima.</p>
+    <ul>
+      <li><b>Arima</b> jainkozkoa, betierekoa eta hilezkorra da. Materiagabea da, eta, beraz, ideien mundukoa.</li>
+      <li><b>Gorputza</b>, aldiz, hilkorra, zatarra eta <b>arimaren kartzela</b> da. Materiaduna eta ustelkorra da, eta, beraz, mundu sentikorrekoa.</li>
+    </ul>
+    <p>Arimak, ideien munduan zegoela, bertako ideia guztiak ezagutu zituen. Baina halako batean ideien mundutik erori eta gorputz batean giltzapetzen da, eta orduan ideien munduan ezagutu zuen guztia ahazten du. Hala ere, mundu sentikorreko objektu inperfektuak hautematen dituen heinean, arima pixkanaka gogoratzen hasten da. Era berean, bere jatorrizko etxera (ideien mundura) itzultzeko desioa pizten zaio. Desio horri Platonek <b>eros</b> deitzen dio, maitasuna, eta indar horrek eramaten du gizakia, arrazoia erabiliz, iraganean ezagutu zituen kontzeptu unibertsalak berreskuratzera. Horregatik dio Platonek ezagutzea ez dela zerbait berria bereganatzea, betidanik jakin duguna <b>gogoratzea</b> baizik ("reminiscencia").</p>
+  </div></details>
+  <div class="quiz" data-quiz="g4-2"></div>
+</section>
+
+<!-- =============================================================== -->
+<section class="atal" id="g4-3" data-n="4.3" data-title="Arimaren hiru zatiak">
+  <div class="laburrean">
+    <p>Gorputzaren hiru ataletan, arimaren hiru gaitasun, bakoitza bere bertutearekin: <b>burua → zati arrazionala → jakituria</b>; <b>bularraldea → suminezkoa → ausardia</b>; <b>sabela → irritsua → neurritasuna</b>. Zati arrazionalak zuhurtziaz <b>gidatu</b> behar ditu beste biak: hiru zatiak <b>harmonian</b> dituenak bakarrik lortzen du zoriontasuna.</p>
+  </div>
+  <div class="box" data-hs="gorputza">
+    <div class="box-h"><span class="tag">IRUDIA</span> Arima gorputzean <small>sakatu hiru atalak</small></div>
+    <div class="hs-wrap">
+      <svg viewBox="0 0 300 360" role="img" aria-label="Giza gorputza eta arimaren hiru zatiak" style="max-width:340px;margin:auto;background:#1a3762">
+        <rect x="58" y="110" width="22" height="130" rx="11" fill="#3a5a96"/><rect x="220" y="110" width="22" height="130" rx="11" fill="#3a5a96"/>
+        <rect x="112" y="262" width="30" height="90" rx="12" fill="#3a5a96"/><rect x="158" y="262" width="30" height="90" rx="12" fill="#3a5a96"/>
+        <g data-k="burua"><circle class="pin" cx="150" cy="56" r="40" fill="#f5c542" stroke="#fff" stroke-width="3"/><text x="150" y="64" text-anchor="middle" font-size="26">🧠</text></g>
+        <g data-k="bularra"><rect class="pin" x="90" y="102" width="120" height="86" rx="22" fill="#ff4d8d" stroke="#fff" stroke-width="3"/><text x="150" y="154" text-anchor="middle" font-size="28">🦁</text></g>
+        <g data-k="sabela"><rect class="pin" x="98" y="192" width="104" height="72" rx="20" fill="#30a46c" stroke="#fff" stroke-width="3"/><text x="150" y="238" text-anchor="middle" font-size="26">🍇</text></g>
+      </svg>
+      <div class="hs-panel"><h4>Hiru zati, hiru bertute</h4><p>Zati bakoitzaren egitekoa: bere gaitasunak muturrera eramatea, eta horrela bertutetsu jokatzea. Sakatu burua, bularraldea eta sabela.</p></div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="box-h"><span class="tag">LOTU</span> Arimaren zatia ↔ bertutea</div>
+    <div class="match" data-match="zatiak"></div>
+  </div>
+  <details class="sakonago"><summary>📚 Sakonago <small>garapen osoa</small></summary><div class="sak-body">
+    <p>Platonen arabera, giza gorputza 3 ataletan bana daiteke, eta bakoitzari arimaren gaitasun bat dagokio. Gainera, arimaren zati bakoitzaren egitekoa bere gaitasunak muturrera eramatea da, eta horrela bertutetsu jokatzea:</p>
+    <ul>
+      <li><b>Bularraldea</b>: arimaren <b>suminezko zatia</b>. Emozioekin, borondatearekin eta adorearekin lotuta dago, eta bere bertutea <b>ausardia</b> da.</li>
+      <li><b>Sabela</b>: arimaren <b>zati irritsua</b>. Desioarekin, pasioarekin eta bulkadekin lotuta dago, eta bere bertutea <b>neurritasuna</b> da, hots, desioen gaineko kontrola.</li>
+      <li><b>Burua</b>: arimaren <b>zati arrazionala</b>. Arrazoia, pentsatzeko gaitasuna eta adimena dagozkio, eta haren bertutea (lortu behar duen ideala) <b>jakituria</b> da.</li>
+    </ul>
+    <p>Atenastarraren esanetan, zati arrazionalak <b>zuhurtziaz</b> jokatu behar du beste bi zatiak gidatzeko, gizakiak sendotasunez eta neurriz joka dezan. Horrela, ideien mundua ezagutu eta bertutez jokatzea lortzen duen gizakia izango da zoriontsu bakarra, hark bakarrik izango baititu arimaren 3 zatiak harmonian.</p>
+  </div></details>
+  <div class="quiz" data-quiz="g4-3"></div>
+</section>
+
+<!-- =============================================================== -->
+<section class="atal" id="g4-4" data-n="4.4" data-title="Bertuteak eta hiri ideala">
+  <div class="laburrean">
+    <p><b>Hiria gizakiaren ispilua da</b>. Gorputzak burua, bularraldea eta sabela dituen bezala, hiriak <b>gobernariak</b> (filosofoak, zuhurtzia), <b>zaintzaileak</b> (soldaduak, sendotasuna) eta <b>produktugileak</b> (nekazari eta artisauak, neurritasuna) ditu. Klase bakoitzak bere egitekoa betetzen badu: <b>ordena, harmonia eta justizia</b>.</p>
+  </div>
+  <div class="box">
+    <div class="box-h"><span class="tag">SIMULAZIOA</span> Hiriaren harmonia <small>piztu klase bakoitza bere egitekoa betetzen duenean</small></div>
+    <div class="harm" id="harm">
+      <label class="cl"><span class="e">👑</span><span><b>Gobernariak (filosofoak)</b><small>arrazionala · zuhurtzia · beste biak gidatzen dituzte</small></span><input type="checkbox" class="sw" aria-label="Gobernariak"></label>
+      <label class="cl"><span class="e">🛡️</span><span><b>Zaintzaileak (soldaduak)</b><small>suminezkoa · sendotasuna · hiria defendatzen dute</small></span><input type="checkbox" class="sw" aria-label="Zaintzaileak"></label>
+      <label class="cl"><span class="e">🌾</span><span><b>Produktugileak</b><small>irritsua · neurritasuna · elikagaiak eta ondasunak</small></span><input type="checkbox" class="sw" aria-label="Produktugileak"></label>
+      <div class="meter" id="harm-m"></div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="box-h"><span class="tag">LOTU</span> Klasea ↔ arimaren zatia</div>
+    <div class="match" data-match="klaseak"></div>
+  </div>
+  <details class="sakonago"><summary>📚 Sakonago <small>garapen osoa</small></summary><div class="sak-body">
+    <p>Platonek proposatzen duen <b>espirituzko aristokrazian</b>, gizartea klase ezberdinetan banatzen da, bakoitza bere gaitasun eta betebeharren arabera. Hiriaren antolaketak gizakiaren banaketaren itxura hartzen du: gorputzak burua, bularraldea eta sabela dituen bezala, hiriak gobernariak, zaintzaileak eta produktugileak ditu, eta bakoitzak, arimaren bertuteen antzera, egiteko finko bat du:</p>
+    <ul>
+      <li><b>Produktugileak</b>: nekazaritzan eta eskulangintzan trebeak; hiria oinarrizko elikagaiz eta gaiez hornitu behar dute. Arimaren zati irritsuarekin lotzen dira, eta <b>neurritasuna</b> da haien bertutea.</li>
+      <li><b>Zaintzaileak</b>: gizartearen defentsaz arduratzen diren soldaduak; herriaren segurtasuna bermatzen dute. Arimaren suminezko zatia lirateke, eta <b>sendotasuna</b> da haien bertutea.</li>
+      <li><b>Gobernariak</b>: filosofoz osatutako talde politikoa. Arimaren zati arrazionalarekin lotuta daudenez, beste biak gidatzea da haien egitekoa. Heziketa-prozesu luze baten ondoren Ongiaren ideia ezagutzera iristen dira, eta prest daude hiria justuki gobernatzeko; <b>zuhurtzia</b> da haien bertutea.</li>
+    </ul>
+    <p>Gizaki osasuntsu izateko arimaren hiru zatiak orekatu behar diren bezala, gizarte-klase bakoitzak bere betebeharra betetzen badu, <b>ordena eta harmonia</b> nagusituko dira hirian, eta <b>zuzentasuna</b> ezarriko da. Horrela bakarrik izango da posible hiritarren zoriontasuna.</p>
+    <p>Hala ere, Platonek baldintza zorrotzak ezartzen ditu gobernuak funtziona dezan: goi-mailako bi klaseek ezin dute <b>ez jabetzarik ez familiarik</b> izan, horiek distrakzioak baino ez baitira kargu garrantzitsu horiek dituztenentzat; eta, bestetik, edonork ez duenez Ongiaren ideia ezagutzen, <b>estatua</b> arduratzen da ezkontzak zehazteaz eta umeen heziketaz.</p>
+  </div></details>
+  <div class="quiz" data-quiz="g4-4"></div>
+</section>
+
+<!-- =============================================================== -->
+<section class="atal" id="g4-5" data-n="4.5" data-title="Aristoteles: arimaren teoria">
+  <div class="laburrean">
+    <p>Aristotelesentzat arima ez dago gorputzetik bereizita: <b>batasun substantziala</b> dute. Eskema hilemorfikoan, <b>gorputza = materia</b> (potentzia) eta <b>arima = forma</b> (egintza): bizitzaren printzipioa. Ezin da gorputzik gabe existitu, eta ez dator ideien mundutik. Hiru arima mota: <b>begetatiboa</b> (landareak), <b>sentimenezkoa</b> (animaliak), <b>arrazionala</b> (gizakia). Arima <b>hutsik</b> jaiotzen da ("zuri-zurian").</p>
+  </div>
+  <div class="box">
+    <div class="box-h"><span class="tag">AUKERATU</span> Zein arima ditu...? <small>sakatu izaki bat</small></div>
+    <div class="beings" id="beings">
+      <button type="button" class="chipb" data-s="1">🌱 Landarea</button>
+      <button type="button" class="chipb" data-s="2">🐕 Txakurra</button>
+      <button type="button" class="chipb" data-s="3">🧑 Gizakia</button>
+    </div>
+    <div class="souls">
+      <div class="soul-c" style="border-color:var(--green)"><div class="e">🌱</div><b>Begetatiboa</b><small>elikatu, hazi, ugaldu: oinarrizko funtzio bitalak</small></div>
+      <div class="soul-c" style="border-color:var(--pink)"><div class="e">🐾</div><b>Sentimenezkoa</b><small>sentitu, desiratu, irudikatu, mugitu</small></div>
+      <div class="soul-c" style="border-color:var(--gold)"><div class="e">🧠</div><b>Arrazionala</b><small>pentsatu, arrazoitu, eztabaidatu</small></div>
+    </div>
+    <p class="hint" id="beings-t" style="margin-top:10px">Sakatu landarea, txakurra edo gizakia.</p>
+  </div>
+  <details class="sakonago"><summary>📚 Sakonago <small>garapen osoa</small></summary><div class="sak-body">
+    <p>Arimari dagokionez, Aristoteles ez zetorren bat bere maisu Platonekin. Platonen antropologia dualistaren arabera, gorputza eta arima bi izate ezberdin ziren, elkarrengandik independenteak eta kontrako ezaugarriak zituztenak. Aristotelesen iritziz, ordea, arima ez zen gorputzetik bereizitako sustantzia bat: <b>elkarrekiko batasunean</b> existitzen ziren.</p>
+    <p>Izaki bizidunetan, eskema hilemorfikoan oinarrituta, Aristotelesek materia gorputzarekin lotzen zuen (euskarri fisikoa), eta arima formarekin. Arima izaki bizidunen oinarrizko esentzia zen, <b>bizitzaren printzipioa</b>, existentziaren arrazoia: gauza bat den bezalakoa izatea egiten duena, haren forma, haren egintza. Gorputza, berriz, materia zen, potentzia, izan daitekeena.</p>
+    <p><i>De Anima</i> tratatuan, arima bizitzaren printzipio gisa agertzen da, izaki bizidunak mugiarazten dituen indar gisa: arimari esker mugitzen, hezten eta aktualizatzen dira izaki bizidunak; arima da izaki bizidunak bizigabeetatik bereizten dituen esentzia. Platon kritikatuz, esango du ezin dela arima gorputzik gabe existitu, bien arteko lotura nahitaezkoa (substantziala) dela, eta, beraz, <b>ez dela ideien mundutik etorri</b>.</p>
+    <p>Izaki bizidun guztiek ez dute modu berean jokatzen, eta gaitasunen arabera sailka daitezke: <b>3 arima mota</b> edo maila daude:</p>
+    <ul>
+      <li><b>Arima begetatiboa</b>: landareei dagokiena; nutrizioaz, hazkundeaz eta ugalketaz arduratzen da, oinarrizko funtzio bitalez.</li>
+      <li><b>Sentimenezko arima</b>: animalia guztietan dago; sentitzeko, desiratzeko, irudikatzeko eta mugitzeko gaitasuna ematen die.</li>
+      <li><b>Arima arrazionala</b>: gizakien esentzia; pentsatzeko, arrazoitzeko eta eztabaidatzeko gaitasuna ematen digu.</li>
+    </ul>
+    <p>Landareek arima begetatiboa soilik dute; animaliek bi (begetatiboa eta sentimenezkoa), maila bat gorago; eta maila gorenean, hiru arima motak biltzen dituena, <b>gizakia</b>: izaki bizidunik konplexuena, arima arrazionala duen bakarra delako. Arrazoitzeko gaitasun horri esker, gizakia gai da inguratzen duen mundua aztertu eta ulertzeko, baita naturaz gaindiko mundu jainkozkoak irudikatzeko ere.</p>
+    <p>Platonek ez bezala, Aristotelesek dio arima <b>hutsik</b> jaiotzen dela, "zuri-zurian", eta bertan ez dagoela ideia edo kontzeptu unibertsalik; jakinduria ez dago oroimenarekin lotuta. Egiazko ezagutza (episteme) eskuratzeko <b>zentzumenetatik</b> abiatzen gara: haien bidez mundu sentikorreko izateen pertzepzioak jasotzen ditugu, eta pixkanaka memorian biltzen ditugu, gero eta esperientzia handiagoa lortuz (beste animaliek ere egiten dute hori). Munduko izate eta fenomenoen <b>kausak</b> ulertzen saiatzen garenean, hots, arrazoia erabiliz izate bakoitzari buruzko judizio logikoak garatzen ditugunean, orduan bakarrik eskuratzen dugu benetako ezagutza, eta horretarako ezinbestekoa da arima arrazionala.</p>
+  </div></details>
+  <div class="quiz" data-quiz="g4-5"></div>
+</section>
+
+<!-- =============================================================== -->
+<section class="atal" id="g4-6" data-n="4.6" data-title="Etika: zoriontasuna eta erdibide justua">
+  <div class="laburrean">
+    <p><b>Nikomakorentzako Etika</b>: izate orok bere naturak zehaztutako <b>helburura</b> jotzen du (ikuspegi teleologikoa). Gizakiaren azken ongia: <b>zoriontasuna (eudaimonia)</b>, <b>bertutetsu</b> jokatuz lortzen dena. Bi bertute mota: <b>intelektualak (dianoetikoak)</b>, arrazoia landuz; <b>moralak (etikoak)</b>, ohituraz, <b>erdibide justua</b> bilatuz. Zoriontasuna ez da momentuko plazera: <b>ongizate iraunkorra</b> da.</p>
+  </div>
+  <div class="box">
+    <div class="box-h"><span class="tag">JOKOA</span> Aurkitu erdibide justua <small>mugitu markatzailea eta egiaztatu</small></div>
+    <div class="tabs-b" id="mean-b"><button type="button" data-v="0" class="on">🦁 Adorea</button><button type="button" data-v="1">🍷 Zuhurtzia (plazerretan)</button></div>
+    <div class="mean-track" id="mean-t"><span class="l"></span><span class="m"></span><span class="r"></span></div>
+    <input type="range" id="mean-r" min="0" max="100" value="10" style="width:100%;accent-color:var(--gold);margin-top:10px" aria-label="Markatzailea">
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:6px"><button type="button" class="btn btn-gold btn-s" id="mean-ok">Egiaztatu</button><span class="game-st" id="mean-st" style="margin:0"></span></div>
+  </div>
+  <div class="box">
+    <div class="box-h"><span class="tag">SAILKATU</span> Bertute intelektuala ala morala?</div>
+    <div class="sort" data-sort="bertuteak"></div>
+  </div>
+  <details class="sakonago"><summary>📚 Sakonago <small>garapen osoa</small></summary><div class="sak-body">
+    <p>Aristotelesen proiektu filosofikoak adar praktiko nabarmena du: giza jokabideari buruz hausnartzen du, bizitza eredugarri edo onuragarri baterako bidea zehazteko, bai plano indibidualean (<b>etika</b>), bai komunitatean (<b>politika</b>). Zer egin behar du gizakiak ongi jokatzeko?</p>
+    <p><i>Nikomakorentzako Etika</i> tratatuan, Aristotelesek ongiaren kontzeptuan sakontzen du. Haren ustez, <b>ongia</b> da munduko izaki guztiek desio duten azken helburua, eta denak daude ongirantz bideratuta. Gogoratu Aristotelesen mundu-ikuspegia <b>teleologikoa</b> dela: existitzen den izate eta izaki bizidun orok bere naturak (esentziak) zehaztutako helburua betetzeko joera du, programatuta dagoen azken perfekzio-maila eskuratzera bideratuta dago. Gizakiaren kasuan, eskuratu beharreko azken ongia <b>zoriontasuna (eudaimonia)</b> da.</p>
+    <p>Nola iritsi gaitezke zoriontsu izatera? <b>Bertutetsu jokatuz</b>. Zoriontasunerako bideak oinarri praktikoa du, jarrerazkoa: <b>ohitura zuzenen</b> ondorioa da, ez kanpotik datorkigun sentsazio bat. Bertutetsu (aretē) izanik bakarrik lortuko dugu zoriontsu izatea. Bide horretan, Aristotelesek bi bertute mota bereizten ditu:</p>
+    <ul>
+      <li><b>Bertute intelektualak (dianoetikoak)</b>: arrazoizko arima entrenatzearekin lotutako jarrerak. Giza kondizioaren ezaugarri bereizgarriena adimena eta arrazoia erabiltzeko gaitasuna da; beraz, bertutetsu jokatzeak esan nahi du heziketa eta prestakuntza etengabearen bidez egiazko ezagutza eskuratzea. Filosofo izaera geureganatzea da zoriontasunera iristeko lehen baldintza: <b>jakituriaren bidea</b>.</li>
+      <li><b>Bertute moralak (etikoak)</b>: komunitatean eta elkarbizitzan, ingurukoekin adiskidetasunean eta norberarekin bakean bizitzeko jarrerak. Izaerarekin eta emozioekin lotuta daude. Aristotelesen ustez, egunerokotasunean geureganatu dezakegun bertuterik garrantzitsuena <b>neurritasuna</b> da: gabeziaren eta gehiegikeriaren arteko <b>erdibide justua</b> aurkitzea. «Plazer materialei dagokienez, zuhurtzia lizunkeriaren eta sortasunaren arteko erdibidea da; adorea, beldurraren eta ausarkeriaren arteko erdigune justua». Bertute hauek ere praktikaz eta esperientziaz eskuratzen dira: norberak bere onena eman behar du, emozioak arrazoiaren bidez gobernatuz. <b>Arrazoiak</b> erakusten digu zein den erdibide justua.</li>
+    </ul>
+    <p>Azken batean, Aristotelesen ustez, zoriontasuna ez da momentuko plazer soil bat, kanpotik datorkigun opari bat: <b>ongizate-egoera iraunkor eta asebetegarri</b> bat da, bertutetsu bizitzearen ondorioz eskuratzen dena, plano indibidualean bizitza kontenplatibo edo filosofikoa garatuz eta komunitatean besteekin neurriz eta justuki jokatuz.</p>
+  </div></details>
+  <div class="quiz" data-quiz="g4-6"></div>
+</section>
+
+<!-- =============================================================== -->
+<section class="atal" id="g4-7" data-n="4.7" data-title="Teoria politikoa">
+  <div class="laburrean">
+    <p>«<b>Gizakia animalia politikoa da</b>»: ezin da gizartetik kanpo bizi. Elkarterik garrantzitsuena <b>familia</b> da; gero <b>auzoa</b>; azkenik <b>hiria</b>. Gobernu <b>zuzenek</b> guztien ongia bilatzen dute; <b>okerrek</b>, agintarien interesa. Onena: <b>erdiko klaseak</b> gidatutako <b>errepublika</b>. Justizia: <b>legezkotasuna + merezimendua</b>.</p>
+  </div>
+  <div class="box">
+    <div class="box-h"><span class="tag">SAKATU</span> Gobernu zuzen bat usteltzen denean... <small>sakatu txartelak</small></div>
+    <div class="gov-g" id="gov">
+      <div class="gov-c" data-a="👑|Monarkia|bakar baten gobernua, guztien onerako" data-b="🗡️|Tirania|bakar baten gobernua, bere interesen alde"><div class="e">👑</div><b>Monarkia</b><small>bakar baten gobernua, guztien onerako</small></div>
+      <div class="gov-c" data-a="🏛️|Aristokrazia|onenen gobernua, guztien onerako" data-b="💰|Oligarkia|gutxi batzuen gobernua, haien interesen alde"><div class="e">🏛️</div><b>Aristokrazia</b><small>onenen gobernua, guztien onerako</small></div>
+      <div class="gov-c" data-a="⚖️|Errepublika|askoren gobernua, guztien onerako" data-b="📢|Demagogia|askoren gobernua, interes partikularren alde"><div class="e">⚖️</div><b>Errepublika</b><small>askoren gobernua, guztien onerako</small></div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="box-h"><span class="tag">ERRONKA</span> Platon ala Aristoteles? <small>sailkatu</small></div>
+    <div class="sort" data-sort="politika"></div>
+  </div>
+  <details class="sakonago"><summary>📚 Sakonago <small>garapen osoa</small></summary><div class="sak-body">
+    <p>«<b>Gizakia animalia politikoa da</b>». Aipu honekin, Aristotelesek esan nahi du gizakia ezin dela gizartetik kanpo bizi: bere eguneroko eginkizunak betetzeko ezinbestekoa du ondo antolatutako gizarte bat. Zentzu horretan bat dator Platonekin, baina Aristotelesek dio elkarterik garrantzitsuena <b>familia</b> dela, nukleo txikia; ondoren, familiez osatutako <b>auzoa</b>; eta, azkenik, <b>hiria</b>.</p>
+    <p>Estatuaren antolaketari dagokionez, bi gobernu mota bereizten ditu: <b>zuzenak</b> eta <b>okerrak</b>. Zuzenek hiritar guztien ongia bilatzen dute; okerrek, aldiz, agintarien interes pertsonalak bultzatzen dituzte. Edozein gobernu on usteldu daiteke: <b>monarkia tirania</b> bihur daiteke; <b>aristokrazia, oligarkia</b>; eta <b>errepublika, demagogia</b>.</p>
+    <p>Gobernu-sistemarik onenari dagokionez, Platon eta Aristoteles ez datoz bat zenbait puntutan:</p>
+    <ul>
+      <li>Aristotelesentzat, <b>gehiengo erdiko klase</b> batek gidatutako <b>errepublika</b> da gobernu-sistemarik onena; beraz, politikariak ezin dira oso aberatsak izan, ezta pobreak ere.</li>
+      <li>Aristotelesen ustez, <b>hiritar guztiek</b> har dezakete parte polisaren erakundeetan, eta hori norberaren <b>merezimenduaren</b> arabera neurtu beharko litzateke. Ez dator bat Platonekin, zeinaren arabera filosofoak bakarrik ziren agintari.</li>
+      <li>Aristotelesen iritziz, zuzen jokatzeko <b>ez da nahikoa zuzena zer den jakitea</b> (Sokrates eta Platonen intelektualismoa): <b>borondatea</b> ere behar da; beraz, ohitura eta bertute onak sustatzea funtsezkoa da.</li>
+      <li>Azkenik, ez datoz bat <b>justizia</b> definitzean. Platonek justizia <b>harmonia eta orekarekin</b> lotzen du: hiritarrek euren betebehar espezifikoak betetzearekin. Aristotelesen arabera, hiri bat justua izateko bi baldintza bete behar dira: <b>legezkotasuna eta merezimendua</b>. Hiritar guztiek bete behar dute legea, baina legea ez da oligarkikoa ez demokratikoa izan behar, tarteko zerbait baizik: <b>erdigune justua</b> bilatu behar da beti.</li>
+    </ul>
+  </div></details>
+  <div class="quiz" data-quiz="g4-7"></div>
+</section>
+
+<div class="next-g">
+  <div><div class="kicker">Hurrengoa</div><b>5. gaia: Helenismoa</b></div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-ghost" href="gaia3.html">◂ 3. gaia</a><a class="btn btn-gold" href="gaia5.html">Jarraitu ▸</a></div>
+</div>
+</main>
+</div>
+
+<script src="js/komuna.js"></script>
+<script src="js/ikastaroa.js"></script>
+<script>
+window.GAIA = {
+  izena: '4. Etika eta politika',
+  hs: { gorputza: {
+    burua: { t: 'Burua · zati arrazionala', d: '<p>Arrazoia, pentsatzeko gaitasuna eta adimena. Bertutea: <b>jakituria</b>. Egitekoa: <b>zuhurtziaz</b> beste bi zatiak gidatzea. Hirian: <b>gobernariak</b>.</p>' },
+    bularra: { t: 'Bularraldea · zati suminezkoa', d: '<p>Emozioak, borondatea eta adorea. Bertutea: <b>ausardia</b> (sendotasuna). Hirian: <b>zaintzaileak</b> (soldaduak).</p>' },
+    sabela: { t: 'Sabela · zati irritsua', d: '<p>Desioa, pasioa eta bulkadak. Bertutea: <b>neurritasuna</b>, desioen gaineko kontrola. Hirian: <b>produktugileak</b>.</p>' }
+  } },
+  sort: {
+    arimagorp: { bins: ['✨ Arima', '🧱 Gorputza'], items: [
+      ['Jainkozkoa eta betierekoa', 0], ['Hilezkorra', 0], ['Materiagabea', 0], ['Ideien mundukoa', 0],
+      ['Hilkorra eta ustelkorra', 1], ['Materiaduna', 1], ['Arimaren kartzela', 1], ['Mundu sentikorrekoa', 1]
+    ] },
+    bertuteak: { bins: ['📚 Intelektualak (dianoetikoak)', '🤝 Moralak (etikoak)'], items: [
+      ['Heziketa etengabearen bidez egiazko ezagutza eskuratzea', 0], ['Filosofo izaera geureganatzea', 0], ['Arrazoizko arima entrenatzea', 0],
+      ['Adorea: beldurraren eta ausarkeriaren arteko erdibidea', 1], ['Neurritasuna eguneroko bizitzan', 1], ['Ingurukoekin adiskidetasunean bizitzea', 1]
+    ] },
+    politika: { bins: ['☀️ Platon', '🥚 Aristoteles'], items: [
+      ['Filosofoek soilik gobernatu behar dute', 0], ['Justizia = harmonia eta oreka', 0], ['Ongia ezagutzea nahikoa da zuzen jokatzeko', 0], ['Gobernariek ez dute familiarik ez jabetzarik', 0],
+      ['Erdiko klasearen errepublika da onena', 1], ['Hiritar guztiek parte har dezakete, merezimenduaren arabera', 1], ['Jakiteaz gain, borondatea behar da', 1], ['Justizia = legezkotasuna + merezimendua', 1]
+    ] }
+  },
+  stages: {
+    eros: [
+      { e: '✨', t: 'Ideien munduan', l: 'jatorria', d: 'Arimak ideia guztiak ezagutzen ditu.' },
+      { e: '⛓️', t: 'Gorputzean giltzapetuta', l: 'kartzela', d: 'Ideien mundutik erori eta gorputzean giltzapetzen da: <b>dena ahazten du</b>.' },
+      { e: '👀', t: 'Gauza inperfektuak ikusten ditu', l: 'gogora', d: 'Mundu sentikorreko objektu inperfektuak hautematean, pixkanaka <b>gogoratzen</b> hasten da.' },
+      { e: '❤️', t: 'Eros: itzultzeko desioa', l: 'eros', d: 'Bere jatorrizko etxera itzultzeko desioa pizten zaio: <b>maitasuna (eros)</b>.' },
+      { e: '🧠', t: 'Arrazoiaz berreskuratu', l: 'ezagutza', d: 'Erosek bultzatuta, arrazoia erabiliz berreskuratzen ditu kontzeptu unibertsalak: <b>ezagutzea = gogoratzea</b>.' }
+    ]
+  },
+  match: {
+    zatiak: { l: ['Zati arrazionala (burua)', 'Zati suminezkoa (bularraldea)', 'Zati irritsua (sabela)'], r: ['Jakituria', 'Ausardia', 'Neurritasuna'] },
+    klaseak: { l: ['Gobernariak (filosofoak)', 'Zaintzaileak (soldaduak)', 'Produktugileak'], r: ['Zati arrazionala · zuhurtzia', 'Zati suminezkoa · sendotasuna', 'Zati irritsua · neurritasuna'] }
+  },
+  quiz: {
+    'g4-1': [
+      { m: 'Platonentzat, zein da heziketaren helbururik garrantzitsuena?', a: ['Bertutetsua izatea (aretē)', 'Aberastea', 'Ondo hitz egitea', 'Gorputza lantzea'], z: 0, az: 'Arrazoiaz eta dialogoaz, Ongiaren ideiara iritsi arte.' },
+      { m: 'Zergatik gobernatu behar dute filosofoek?', a: ['Ongiaren ideia ezagutzen dutelako eta beti ongi jokatuko dutelako', 'Aberatsenak direlako', 'Herriak bozkatzen dituelako', 'Soldadu onenak direlako'], z: 0, az: 'Espirituzko aristokrazia.' },
+      { m: 'Zer dakar Ongiaren ezagutzak, gobernatzeaz gain?', a: ['Zoriontasuna: arimaren harmonia eta jokabide justua', 'Aberastasuna', 'Ospea', 'Botere militarra'], z: 0, az: 'Ongiaren bidea da zoriontasunerako bidea.' }
+    ],
+    'g4-2': [
+      { m: 'Zer da dualismo antropologikoa?', a: ['Gizakia gorputzaz eta arimaz osatuta dagoela', 'Bi mundu daudela', 'Bi ezagutza mota daudela', 'Bi gizarte-klase daudela'], z: 0, az: 'Antropologia = gizakia.' },
+      { m: 'Zer da eros Platonentzat?', a: ['Arimak ideien mundura itzultzeko duen desioa', 'Gorputzaren plazera', 'Gerra-jainkoa', 'Zati irritsuaren bertutea'], z: 0, az: 'Maitasunak bultzatzen gaitu ideiak berreskuratzera.' }
+    ],
+    'g4-3': [
+      { m: 'Zein da arimaren zati irritsuaren bertutea?', a: ['Neurritasuna', 'Ausardia', 'Jakituria', 'Justizia'], z: 0, az: 'Desioen gaineko kontrola.' },
+      { m: 'Zein zatik gidatu behar ditu beste biak?', a: ['Zati arrazionalak, zuhurtziaz', 'Suminezkoak', 'Irritsuak', 'Ez du inork gidatzen'], z: 0, az: 'Hiru zatiak harmonian dituenak lortzen du zoriontasuna.' },
+      { m: 'Non kokatzen du Platonek suminezko zatia?', a: ['Bularraldean', 'Buruan', 'Sabelean', 'Hanketan'], z: 0, az: 'Emozioak, borondatea eta adorea; bertutea: ausardia.' }
+    ],
+    'g4-4': [
+      { m: 'Hiri idealean, zein klase lotzen da zati irritsuarekin?', a: ['Produktugileak', 'Zaintzaileak', 'Gobernariak', 'Esklaboak'], z: 0, az: 'Neurritasuna da haien bertutea.' },
+      { m: 'Noiz da hiria justua, Platonentzat?', a: ['Klase bakoitzak bere betebeharra betetzen duenean', 'Denek gauza bera egiten dutenean', 'Aberastasuna berdin banatzen denean', 'Gehiengoak bozkatzen duenean'], z: 0, az: 'Ordena eta harmonia → zuzentasuna.' },
+      { m: 'Zer ezin dute izan gobernariek eta zaintzaileek?', a: ['Jabetzarik ez familiarik', 'Heziketarik', 'Armarik', 'Arima arrazionalik'], z: 0, az: 'Distrakzioak lirateke; estatuak erabakitzen ditu ezkontzak eta heziketa.' }
+    ],
+    'g4-5': [
+      { m: 'Aristotelesentzat, zer da arima?', a: ['Gorputzaren forma: bizitzaren printzipioa', 'Gorputzaren kartzela', 'Ideien mundutik datorrena', 'Materia hutsa'], z: 0, az: 'Gorputza = materia (potentzia); arima = forma (egintza).' },
+      { m: 'Zein arima mota ditu txakur batek?', a: ['Begetatiboa eta sentimenezkoa', 'Begetatiboa soilik', 'Hirurak', 'Arrazionala soilik'], z: 0, az: 'Arrazionala gizakiak bakarrik du.' },
+      { m: 'Nola jaiotzen da arima, Aristotelesen ustez?', a: ['Hutsik, "zuri-zurian"', 'Ideia guztiak dakizkiela', 'Ongiaren ideiarekin', 'Bertute guztiekin'], z: 0, az: 'Ezagutza zentzumenetatik abiatzen da.' }
+    ],
+    'g4-6': [
+      { m: 'Zer da eudaimonia?', a: ['Zoriontasuna: gizakiaren azken ongia', 'Momentuko plazera', 'Erretorika', 'Destinoa'], z: 0, az: 'Bertutetsu jokatuz lortzen den ongizate iraunkorra.' },
+      { m: 'Nola lortzen dira bertute moralak?', a: ['Ohituraz eta praktikaz, erdibide justua bilatuz', 'Jaiotzetik dira', 'Liburuak irakurriz soilik', 'Jainkoen oparia dira'], z: 0, az: 'Arrazoiak erakusten digu erdibide justua.' },
+      { m: 'Adorea zein bi muturren arteko erdibidea da?', a: ['Beldurra eta ausarkeria', 'Lizunkeria eta sortasuna', 'Aberastasuna eta pobrezia', 'Doxa eta episteme'], z: 0, az: 'Lizunkeria/sortasuna: zuhurtziaren muturrak (plazerretan).' }
+    ],
+    'g4-7': [
+      { m: 'Aristotelesentzat, zein da elkarterik garrantzitsuena?', a: ['Familia', 'Hiria', 'Inperioa', 'Auzoa'], z: 0, az: 'Familia → auzoa → hiria.' },
+      { m: 'Aristokrazia usteltzean...', a: ['Oligarkia', 'Tirania', 'Demagogia', 'Monarkia'], z: 0, az: 'Monarkia → tirania; errepublika → demagogia.' },
+      { m: 'Zergatik ez dator Aristoteles bat intelektualismo moralarekin?', a: ['Jakiteaz gain borondatea eta ohitura onak behar direlako', 'Ezagutza ezinezkoa delako', 'Ongia erlatiboa delako', 'Filosofoek gobernatu behar dutelako'], z: 0, az: 'Jakitea ez da nahikoa.' }
+    ]
+  },
+  after() {
+    // Hiriaren harmonia
+    const sw = [...document.querySelectorAll('#harm .sw')], m = document.getElementById('harm-m');
+    const upd = () => {
+      sw.forEach(s => s.closest('.cl').classList.toggle('on', s.checked));
+      const n = sw.filter(s => s.checked).length;
+      if (n === 3) { m.textContent = '⚖️ Harmonia → JUSTIZIA. Hiritarren zoriontasuna posible da.'; m.style.background = 'var(--ok-bg)'; if (window.K) K.sfx.ok(); }
+      else { m.textContent = `${n} / 3 klasek betetzen dute bere egitekoa: desoreka, ez dago justiziarik.`; m.style.background = 'var(--bad-bg)'; }
+    };
+    sw.forEach(s => s.addEventListener('change', upd)); upd();
+    // Arima motak
+    const T = { 1: 'Landareak: arima begetatiboa soilik.', 2: 'Animaliak: begetatiboa + sentimenezkoa (maila bat gorago).', 3: 'Gizakia: hiru arima motak. Arima arrazionala duen bakarra: izaki bizidunik konplexuena.' };
+    document.querySelectorAll('#beings .chipb').forEach(b => b.onclick = () => {
+      document.querySelectorAll('#beings .chipb').forEach(x => x.classList.toggle('sel', x === b));
+      document.querySelectorAll('.soul-c').forEach((c, i) => c.classList.toggle('on', i < +b.dataset.s));
+      document.getElementById('beings-t').textContent = T[b.dataset.s]; if (window.K) K.sfx.pop();
+    });
+    // Erdibide justua
+    const V = [['Beldurra', 'ADOREA', 'Ausarkeria', 'gabezia', 'gehiegikeria'], ['Lizunkeria', 'ZUHURTZIA', 'Sortasuna', 'muturra', 'muturra']];
+    let v = 0;
+    const r = document.getElementById('mean-r'), st = document.getElementById('mean-st'), tr = document.getElementById('mean-t');
+    const paint = () => { const x = V[v]; tr.innerHTML = `<span class="l">${x[0]}<br><small>${x[3]}</small></span><span class="m">${x[1]}<br><small>erdibidea</small></span><span class="r">${x[2]}<br><small>${x[4]}</small></span>`; r.value = Math.random() < .5 ? 8 : 92; st.textContent = ''; st.classList.remove('win'); };
+    document.querySelectorAll('#mean-b button').forEach(b => b.onclick = () => { document.querySelectorAll('#mean-b button').forEach(x => x.classList.toggle('on', x === b)); v = +b.dataset.v; paint(); });
+    document.getElementById('mean-ok').onclick = () => {
+      const x = +r.value;
+      if (x >= 40 && x <= 60) { st.textContent = `🎯 Hori da! ${V[v][1].toLowerCase()} = erdibide justua. Arrazoiak erakusten digu non dagoen.`; st.classList.add('win'); if (window.K) K.sfx.ok(); }
+      else { st.textContent = x < 40 ? `Gutxiegi: ${V[v][0].toLowerCase()}ra hurbiltzen zara. Mugitu erdirantz.` : `Gehiegi: ${V[v][2].toLowerCase()}ra hurbiltzen zara. Mugitu erdirantz.`; st.classList.remove('win'); if (window.K) K.sfx.bad(); }
+    };
+    paint();
+    // Gobernuak
+    document.querySelectorAll('#gov .gov-c').forEach(c => c.onclick = () => {
+      const bad = c.classList.toggle('bad'); const [e, n, d] = c.dataset[bad ? 'b' : 'a'].split('|');
+      c.innerHTML = `<div class="e">${e}</div><b>${n}</b><small>${d}</small>`; if (window.K) K.sfx[bad ? 'bad' : 'pop']();
+    });
+  }
+};
+</script>
+</body>
+</html>

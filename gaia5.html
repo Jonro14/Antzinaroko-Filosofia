@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="eu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>5. gaia · Helenismoa · Logos Arena</title>
+  <meta name="theme-color" content="#132b50">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f5c542'/%3E%3Ctext x='32' y='46' font-size='40' text-anchor='middle' font-family='serif' font-weight='900' fill='%232a1c00'%3E%CE%9B%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estiloa.css">
+  <link rel="stylesheet" href="css/ikastaroa.css">
+  <style>
+    .epo .st { padding: 12px 0; border-top: 1px solid var(--line); }
+    .epo .st:first-child { border-top: 0; }
+    .epo .st p { margin: 0 0 8px; font-weight: 700; }
+    .epo .bt { display: flex; gap: 8px; flex-wrap: wrap; }
+    .epo .re { margin-top: 8px; font-size: .9rem; padding: 8px 12px; border-radius: 10px; background: rgba(124, 92, 255, .15); }
+  </style>
+</head>
+<body style="--c: var(--green)">
+
+<nav class="nav">
+  <a class="logo" href="index.html"><span class="logo-mark">Λ</span> LOGOS ARENA</a>
+  <div class="nav-links"><a href="ikastaroa.html">Ikastaroa</a><a href="ikasi.html">Laburpena</a><a href="index.html#jokoa">Jokoa</a></div>
+  <button class="btn btn-icon" id="btn-soinua" title="Soinua">🔊</button>
+</nav>
+
+<div class="ik-layout">
+<aside class="stepper" id="stepper"></aside>
+<main class="ik-main">
+
+<header class="g-head">
+  <div class="g-badge">5</div>
+  <div class="ghtxt">
+    <div class="kicker">K.a. IV. mendea – K.o. 400 · Polisetik inperiora</div>
+    <h1>Helenismoa: zinismoa, estoizismoa, epikureismoa eta eszeptizismoa</h1>
+    <p>Hiri-estatuen mundua amaitzen da. Filosofia "bizitzaren arte" bihurtzen da: nola izan zoriontsu eta aske mundu ezegonkor batean?</p>
+  </div>
+  <div class="progress"><span id="g-prog">0 / 6 atal</span><div class="bar"><i id="g-bar"></i></div></div>
+</header>
+<div class="howto"><span><b>Laburrean</b>: ideia nagusia</span><span><b>Irudiak eta jokoak</b>: sakatu eta arakatu</span><span><b>📚 Sakonago</b>: garapen osoa</span><span><b>✍️ Egiaztatu</b>: atala amaitzeko</span></div>
+
+<!-- =============================================================== -->
+<section class="atal" id="g5-1" data-n="5.1" data-title="Filosofia, zientzia eta kultura Helenismoan">
+  <div class="laburrean">
+    <p>Aristoteles hil ondoren (K.a. IV. mendea) eta Erdi Aroaren hasierara arte (K.o. 400 inguru), Atenasek hegemonia galdu zuen eta <b>Mazedonia</b> gailendu zen. <b>Alejandro Magnok</b> Persiatik Indiaraino eta Egiptoraino zabaldu zuen inperioa: hiri-estatuak desagertu ziren eta kulturak nahastu ziren (<b>sinkretismoa</b>). <b>Alejandria</b> bihurtu zen zentro zientifikoa. Filosofia: <b>bizitzaren artea</b>, zoriontasuna eta askatasuna helburu.</p>
+  </div>
+  <div class="box" data-hs="inperioa">
+    <div class="box-h"><span class="tag">MAPA</span> Alejandro Magnoren inperioa <small>(eskema) · sakatu puntuak</small></div>
+    <div class="hs-wrap">
+      <svg viewBox="0 0 700 380" role="img" aria-label="Alejandro Magnoren inperioaren mapa eskematikoa">
+        <rect width="700" height="380" fill="#1c5a86"/>
+        <path d="M60 40 L700 30 L700 380 L380 380 L330 300 L250 300 L200 240 L120 230 L60 150 Z" fill="#e2d2a8" stroke="#a88f5c" stroke-width="2"/>
+        <path d="M120 100 L560 80 L640 160 L600 250 L420 260 L330 220 L210 210 L150 170 Z" fill="#30a46c" fill-opacity=".25" stroke="#30a46c" stroke-width="3" stroke-dasharray="8 6"/>
+        <path d="M150 300 Q250 260 330 300 L360 380 L150 380 Z" fill="#30a46c" fill-opacity=".25" stroke="#30a46c" stroke-width="3" stroke-dasharray="8 6"/>
+        <text x="380" y="120" font-family="Cinzel, serif" font-weight="900" font-size="15" fill="#1e6b46">ALEJANDRO MAGNOREN INPERIOA</text>
+        <g font-family="Outfit, sans-serif" font-weight="800" font-size="13" fill="#2b1f10">
+          <g data-k="mazedonia"><circle class="pin" cx="140" cy="110" r="13" fill="#ff4d8d" stroke="#fff" stroke-width="2"/><text x="156" y="105">Mazedonia</text></g>
+          <g data-k="atenas"><circle class="pin" cx="150" cy="175" r="13" fill="#ff4d8d" stroke="#fff" stroke-width="2"/><text x="166" y="188">Atenas</text></g>
+          <g data-k="alejandria"><circle class="pin" cx="250" cy="300" r="13" fill="#f5c542" stroke="#fff" stroke-width="2"/><text x="190" y="330">Alejandria (Egipto)</text></g>
+          <g data-k="siria"><circle class="pin" cx="320" cy="215" r="13" fill="#22d3ee" stroke="#fff" stroke-width="2"/><text x="336" y="210">Siria</text></g>
+          <g data-k="persia"><circle class="pin" cx="470" cy="200" r="13" fill="#22d3ee" stroke="#fff" stroke-width="2"/><text x="486" y="196">Persia, Babilonia</text></g>
+          <g data-k="india"><circle class="pin" cx="620" cy="170" r="13" fill="#22d3ee" stroke="#fff" stroke-width="2"/><text x="590" y="150">India</text></g>
+        </g>
+      </svg>
+      <div class="hs-panel"><h4>Polisetik inperiora</h4><p>Alejandro Magnoren (K.a. 356-323) konkistekin, hizkuntza eta kultura grekoa ekialdeko erreinuetan zabaldu ziren. Sakatu mapako puntuak.</p></div>
+    </div>
+  </div>
+  <div class="flips">
+    <div class="flip"><div class="fi"><div class="ff"><span class="e">🔀</span><b>Sinkretismoa</b><small>erlijioa</small></div><div class="fb">Kultura ezberdinen arteko <b>bateratze edo elkartruke erlijiosoa</b>: mediterraneoko eta ekialdeko jainko eta mundu-ikuskerak nahastu ziren.</div></div></div>
+    <div class="flip"><div class="fi"><div class="ff"><span class="e">🎭</span><b>Bizitzaren artea</b><small>filosofia</small></div><div class="fb">Naturaz edo politikaz baino gehiago, <b>arazo existentzial eta pertsonalez</b>: zoriontasuna eta askatasuna. Angustia, heriotzaren beldurra eta etsipenari aurre egiteko jarraibideak.</div></div></div>
+    <div class="flip"><div class="fi"><div class="ff"><span class="e">📚</span><b>Alejandria</b><small>zientzia</small></div><div class="fb">Zentro intelektual eta zientifiko handiena, etorkizuneko unibertsitate baten antzera: <b>museoa eta liburutegia</b>. Astronomia, matematika, biologia, medikuntza.</div></div></div>
+  </div>
+  <details class="sakonago"><summary>📚 Sakonago <small>garapen osoa</small></summary><div class="sak-body">
+    <p>Aristotelesen heriotzaz geroztik (K.a. IV. mendetik aurrera) eta Erdi Aroaren hasierara arte (K.o. 400. urtea gutxi gorabehera), Mediterraneoko hiri-estatu, kultura eta erreinuek eraldaketa izugarriak jasan zituzten. Ordurako, Atenasek galdua zuen Periklesekin izandako hegemonia eta protagonismoa, eta Greziako potentzien gainetik <b>Mazedoniako erreinua</b> gailendu zen. Garai honetan, <b>Alejandro Magno</b> (K.a. 356-323) Mazedoniako tronura iritsi zen eta ordura arte inoiz ikusi gabeko konkistak gidatu zituen: ekialdean Persia eta Siriatik Indiaraino iritsi zen, eta hegoaldean Egipto eta Afrikako iparraldea bereganatu zituen. Konkistekin batera, hizkuntza eta kultura grekoa izugarri zabaldu ziren ekialdeko erreinuetan, askotan bertako ideia eta ezagutzekin nahastuz; mundu-ikuskeren arteko elkartrukea oso handia izan zen.</p>
+    <p>Era berean, Alejandro Magnoren proiektu inperialistak antzinako <b>hiri-estatuen antolaketa politikoa deuseztatu</b> zuen, lurralde ezberdinen arteko mugak hautsiz eta konkistatutako eremu guztien bateratzea sustatuz. Antzinako zibilizazio grekoa, erromatarra, egiptoarra, babiloniarra, siriarra eta persiarra uztartu ziren, eta haien ideien arteko nahasketa gertatu zen; ondorioz, korronte erlijioso, zientifiko eta filosofiko berriak sortu ziren.</p>
+    <ul>
+      <li><b>Erlijioan</b>, garai bateko jainko eta mundu-ikuskerak nahasten zituzten korronte berriak sortu ziren. Kultura ezberdinen arteko bateratze edo elkartruke erlijioso horri <b>sinkretismo</b> deitu izan zaio.</li>
+      <li><b>Filosofian</b> ere antzeko zerbait gertatu zen: antzinako erreferente handiak ahaztu gabe, ideia berriez hornitutako korronteak agertu ziren. Garai honetako ezaugarri esanguratsuenetako bat da filosofia "<b>bizitzaren artea</b>" bezala errotzen hasi zela. Helenismoko pentsalariak, naturaz edo politikaz arduratu baino, arazo existentzial eta pertsonaletan zentratu ziren, eta <b>zoriontasuna eta askatasuna</b> hartu zituzten kezka nagusitzat. Filosofiak eguneroko bizitzan egoki jokatzeko tresna izan behar zuen, bide zuzena erakusteko, zoriontasuna helburu; gizakiaren angustia bitalari, heriotzaren beldurrari eta etsipenari aurre egiteko jarraibideak eskaini behar zituen.</li>
+      <li>Atenasek ideia eta korronte filosofiko berrien sorleku izaten jarraitu bazuen ere, <b>Alejandria</b> (Egipto) bihurtu zen garaiko zentro intelektual eta zientifiko handiena. Bertan biltzen ziren inperio osoko aurrerapen zientifiko-teknikoak, eta, etorkizuneko unibertsitate ospetsu bat balitz bezala, Alejandriako museoan eta liburutegian garatu ziren astronomia, matematika, biologia eta medikuntza bezalako zientziak.</li>
+    </ul>
+  </div></details>
+  <div class="quiz" data-quiz="g5-1"></div>
+</section>
+
+<!-- =============================================================== -->
+<section class="atal" id="g5-2" data-n="5.2" data-title="Zinismoa: Diogenes Sinopekoa">
+  <div class="laburrean">
+    <p><b>Antistenesek</b> (Sokratesen dizipulua) bultzatu zuen, K.a. 400 inguruan, Atenasen. Zoriona ez dago <b>kanpoko faktoreetan</b> (aberastasuna, ohorea, boterea, plazer sentsuala): galdu daitezke. Ezaugarriak: <b>naturaren legeetara itzulera</b>, <b>austeritatea eta aszetismoa</b>, <b>parresia</b> (zintzotasun erradikala) eta <b>sufrimenduaren ukapena</b>. Irudirik ezagunena: <b>Diogenes Sinopekoa</b>.</p>
+  </div>
+  <div class="quote-b">«Zoriontasuna beharrak murriztean datza, jabetzak handitzean baino gehiago.»<cite>Antistenes</cite></div>
+  <div class="flips">
+    <div class="flip"><div class="fi"><div class="ff"><span class="e">🌿</span><b>1. Naturara itzuli</b><small>sakatu</small></div><div class="fb">Naturaren araberako bizitza, <b>konbentzio sozial eta kulturalik gabe</b>. Ospea, politika eta luxua kritikatzen zituzten; askotan bakarrik eta ibiltari bizi ziren.</div></div></div>
+    <div class="flip"><div class="fi"><div class="ff"><span class="e">🥣</span><b>2. Austeritatea</b><small>sakatu</small></div><div class="fb">Ondasun materialen ukapen zorrotza; benetako askatasuna desio materialetatik aldentzea da. <b>Aszetismoa</b>: kale-bazterretan lo, oinarrizko beharrak soilik asetuz.</div></div></div>
+    <div class="flip"><div class="fi"><div class="ff"><span class="e">🗣️</span><b>3. Parresia</b><small>sakatu</small></div><div class="fb"><b>Zintzotasun erradikala</b>: pentsatzen dena esan, konbentzioei edo autoritateari men egin gabe. Pertsonaia deserosoak ziren.</div></div></div>
+    <div class="flip"><div class="fi"><div class="ff"><span class="e">🧊</span><b>4. Sufrimenduaren ukapena</b><small>sakatu</small></div><div class="fb">Alferrikakoa da heriotzaz edo sufrimenduaz arduratzea. Hortik gaurko "<b>ziniko</b>" hitza: besteen sufrimenduarekiko sentsibilitaterik ez duena.</div></div></div>
+  </div>
+  <div class="box">
+    <div class="box-h"><span class="tag">ISTORIOAK</span> Diogenesen pasadizoak <small>mugitu</small></div>
+    <div class="stages" data-stages="diogenes"></div>
+  </div>
+  <details class="sakonago"><summary>📚 Sakonago <small>garapen osoa</small></summary><div class="sak-body">
+    <p>Garai honetan sortutako korronte filosofiko zaharrenetako bat <b>zinikoena</b> izan zen, K.a. 400. urte inguruan, Atenasen bizi zen <b>Antistenesek</b> bultzatua. Antistenes Sokratesen dizipulua izan zen, eta miretsita geratu zen bere maisuaren bizimodu apalaz. Gogoratu Sokratesek, sofistek ez bezala, ez zuela inoiz kobratzen bere irakaspenengatik, ez zuela diru-iturri finkorik eta ondasun materialak baztertzen zituela.</p>
+    <p>Sokratesek bezala, zinikoek uste zuten benetako zoriona ez dagoela <b>kanpoko faktoreen</b> mende (aberastasuna, ohorea, boterea edo plazer sentsuala), faktore horiek ustekabekoak eta ustelgarriak direlako: izan daitezkeen bezala, gal daitezke. Luxua gorroto zuten, eta bizimodu oso apalaren alde egin zuten, ondasun material gehiagok kezka gehiago ekarri ohi dutela argudiatuz. Zoriona <b>norberaren barruan</b> aurkitu behar zela aldarrikatzen zuten, luxuak alboratuz eta naturaren arabera biziz, alferrikako desioetatik libre.</p>
+    <ol>
+      <li><b>Naturaren legeetara itzulera</b>: konbentzio sozial eta kulturalik gabeko bizitza naturala defendatzen zuten. Gizartearen arau eta ohiturak gaitzesten zituzten, eta askotan modu bakarti eta ibiltarian bizi ziren. Ospea, politika eta luxua kritikatzen zituzten, eta barre egiten zieten "sasi-zoriontasun" horien atzetik bizitza galtzen zutenei.</li>
+      <li><b>Austeritatea eta aszetismoa</b>: ondasun materialen ukapen zorrotza bultzatu zuten, benetako askatasuna desio materialetatik aldentzean zetzala aldarrikatuz. Jakintsuak nahikoa zuen bere buruarekin. Barne-sendotasun hori bultzatzeko, askotan modu aszetikoan bizi ziren: kale-bazterretan lo eginez, kanpoko begiraden kritikei kasurik egin gabe, gorputza zikin eta zaindu gabe, oinarrizko beharrak soilik asetuz, munduari erakusteko horrela ere zoriontsu izan zitekeela.</li>
+      <li><b>Parresia (zintzotasun erradikala)</b>: pentsatzen dena esan behar dela aldarrikatzen zuten, konbentzioei edo autoritateari men egin gabe eta besteak mintzeaz kezkatu gabe. Iritzi-askatasun erradikala defendatzen zuten, eta, ondorioz, askotan pertsonaia deserosotzat hartzen ziren.</li>
+      <li><b>Sufrimenduaren ukapena</b>: zinikoen ustez, alferrikakoa zen heriotzaz edo sufrimenduaz arduratzea, eta kasu gutxi egiten zioten norberaren eta besteen osasunari. Gaur egun, pertsona bat "zinikoegia" dela esaten dugu ingurukoen sufrimenduarekiko sentsibilitaterik erakusten ez duenean.</li>
+    </ol>
+    <p>Zinismoaren irudirik adierazgarriena <b>Diogenes Sinopekoa</b> da (K.a. 412-323), Antistenesen ikaslea. Muturreko pobrezian bizi zen, Atenasko kale-bazter batean botatako <b>upel</b> baten barruan. Alferrikako ondasun material guztiak baztertu eta gutxienekoarekin bizi zen. Pasadizo ospetsu batek dio haur bat eskuekin ura edaten ikusi zuenean, bere katilua ere bota zuela, esanez: «Ume batek gainditu nau sinpletasunean». Haren jarrera probokatzailea zen, iraingarria ere bai, baina beti asmo filosofikoz. Figura boteretsuei aurre egin zien, Alejandro Handiari barne: pasadizo ezagunenaren arabera, Alejandro bera etorri zitzaion, haren ospea ezagutu nahian eta nola bizi zen ikusteko irrikan. Parean zuela, Alejandrok, enperadorea izanik, desio bat beteko ziola esan zion, nahi zuena eskatzeko. Diogenesek, ordea, hauxe erantzun omen zion: «<b>Egin zaitez albo batera, eguzkia estaltzen didazu</b>».</p>
+  </div></details>
+  <div class="quiz" data-quiz="g5-2"></div>
+</section>
+
+<!-- =============================================================== -->
+<section class="atal" id="g5-3" data-n="5.3" data-title="Estoizismoa: Zenon, Seneka, Marko Aurelio">
+  <div class="laburrean">
+    <p><b>Zenon Zitiokoak</b> sortua (gaztetan zinikoa), Atenasen, <b>stoa</b> deituriko ataripe baten azpian. Naturak ordena bat du: <b>logosak</b> gidatzen du, eta destinoa zehaztuta dago. Hiru gako: <b>1) arrazoiak pasioak menderatu</b>, <b>2) destinoa onartu (amor fati)</b>, <b>3) humanismo unibertsala</b> (politikan parte hartu). Oinarrizko bertutea: <b>neurritasuna</b>. Gaurko hitza: <b>erresilientzia</b>.</p>
+  </div>
+  <div class="box">
+    <div class="box-h"><span class="tag">JOKOA</span> Nire esku dago? <small>estoiko baten moduan sailkatu</small></div>
+    <p class="hint">"Ez dugu kontrolatzen gertatzen zaiguna, gertatzen zaigunari nola erantzuten diogun baizik."</p>
+    <div class="sort" data-sort="kontrola"></div>
+  </div>
+  <div class="two-c">
+    <div class="quote-b">«Alda ezazu alda dezakezuna, eta onartu ezazu alda ezin dezakezuna.»<cite>Marko Aurelio</cite></div>
+    <div class="quote-b">«Gehien kezkatzen gaituen hori edo aspaldi jazo zen, edo oraindik ez da jazo, edo ez da sekula jazoko.»<cite>Seneka</cite></div>
+  </div>
+  <details class="sakonago"><summary>📚 Sakonago <small>garapen osoa</small></summary><div class="sak-body">
+    <p><b>Zenon Zitiokoa</b> hartu ohi da estoizismoaren lehen erakusletzat. Jaiotzez ziprotarra bazen ere, Atenasera emigratu eta han eman zituen irakaspenak, <b>stoa</b> deituriko arkupedun atari baten azpian; hortik eskolaren izena. Zenon gaztetan zinikoen jarraitzailea izan zen, eta haren pentsaerak antzekotasun batzuk ditu aurreko ikuspegiarekin, ideia eta ekarpen berriak eskaini bazituen ere.</p>
+    <p>Estoikoen mundu-ikuspegiaren arabera, natura batek <b>ordena</b> bat jarraitzen du: unibertsoan indar bat dago (<b>logos</b>), arrazoiaren bidez naturako fenomeno eta elementuak gidatzen dituena. Ondorioz, izate bakoitzaren <b>destinoa zehaztuta</b> dago, eta ezin da ezer egin hura aldatzeko. Ikuspegi teleologiko horren barruan, zoriontsu izateko bizitza-eredu bat zehazten saiatu ziren:</p>
+    <ol>
+      <li><b>Arrazoiaren nagusitasuna eta pasioen kontrola</b>: funtsezkoa da naturaren legeen arabera bizitzea, eta, arrazoia giza naturaren adierazpenik esanguratsuena denez, ezinbestekoa da arrazoiak gidatuta jokatzea, bulkadak eta pasioak menderatuz. Emozioak bat-batekoak, iragarrezinak eta neurrigabeak direla zioten: gure barne-lasaitasuna nahasten dute eta zentzugabe jokatzera eramaten gaituzte. Diziplina arrazionalak <b>serenitate emozionalera</b> eraman behar gaitu, pasioen zorakerian eror ez gaitezen, ez egoera lazgarrietan, ezta euforikoetan ere.</li>
+      <li><b>Destinoaren onarpena (amor fati)</b>: naturako elementuak eta gertaerak gure eskuetatik kanpo daude, eta alferrikakoa da haietaz kezkatzea. Jakintsuak ez du destinoaren aurka borrokatzen: patxadaz eta sosegatuta onartzen du gertatutakoa, jakinda ez dugula kontrolatzen gertatzen zaiguna, gertatzen zaigunari nola erantzuten diogun baizik. «Alda ezazu alda dezakezuna eta onartu ezazu alda ezin dezakezuna» (Marko Aurelio); «Gehien kezkatzen gaituen hori edo aspaldi jazo zen, edo oraindik ez da jazo, edo ez da sekula jazoko» (Seneka).</li>
+      <li><b>Humanismoaren unibertsaltasuna</b>: gizabanako guztiek partekatzen dute arrazoitzeko gaitasun bera; beraz, haien irakaspenak guztientzat dira baliagarriak, eta pertsona guztiak antzera tratatu beharko genituzke. Horregatik, zinikoek ez bezala, <b>ez zuten politika baztertu</b> eta komunitatearen ongizateari begiratu zioten: Marko Aurelio, Seneka edo Zizeron bezalako pentsalari estoikoak gobernuburu izan ziren.</li>
+    </ol>
+    <p>Zinikoen antzera, estoikoek ukatu egin zuten zoriontasuna kanpoko faktoreen menpe zegoenik: barne-sendotasunak, arrazoizko jokabide bertutetsuak eta pasio eta emozioen kontrolak bakarrik ekar zezaketen lasaitasun espirituala. Zentzu horretan, <b>neurritasuna</b> da bizitza-eredu estoikoaren oinarrizko bertutea. Gaur egun <b>erresilientzia</b> terminoa erabiltzen dugu aurkako egoerei positiboki erantzuteko dugun gaitasuna izendatzeko: horixe bera aldarrikatzen zuten filosofo estoikoek orain bi mila urte baino gehiago.</p>
+  </div></details>
+  <div class="quiz" data-quiz="g5-3"></div>
+</section>
+
+<!-- =============================================================== -->
+<section class="atal" id="g5-4" data-n="5.4" data-title="Epikureismoa: ataraxia eta aponia">
+  <div class="laburrean">
+    <p><b>Epikuro</b> (Samos, K.a. 341-270), Atenaseko "<b>Lorategia</b>" eskolan (gizon, emakume eta esklaboentzat irekia). Bizitza bakarra da: ongi aprobetxatu, jainkoen beldurrik gabe. Helburua: <b>plazera</b>, baina <b>arrazionala eta neurritsua</b>. Giza harremanak luxuaren, ospearen eta boterearen gainetik. Ez politikarik. Bi ardatz: <b>ataraxia</b> (arimaren lasaitasuna) eta <b>aponia</b> (gorputzaren minik eza).</p>
+  </div>
+  <div class="two-c">
+    <div class="flip" style="min-height:190px"><div class="fi"><div class="ff"><span class="e">🧘</span><b>ATARAXIA</b><small>arima</small></div><div class="fb">Espirituaren lanketa eta <b>ezinegonaren ausentzia</b>: arimaren lasaitasuna, kezka eta beldurren gaineko nagusitasuna. Bizitza bakarra denez, ez dago denborarik egonezinerako: ez zaitzala heriotzak edo minak kezkatu. Ezagutu zure burua eta ikasi zure gogamena kontrolatzen.</div></div></div>
+    <div class="flip" style="min-height:190px"><div class="fi"><div class="ff"><span class="e">💪</span><b>APONIA</b><small>gorputza</small></div><div class="fb">Gorputzaren lanketa eta <b>minaren ausentzia</b>. «Ez jokatu gorputzerako bakarrik bizi denaren moduan, baina jokatu hura gabe bizi ezin denaren moduan». Gorputza zure ibilgailua da: bizitza osasuntsua funtsezkoa da zoriontasunerako.</div></div></div>
+  </div>
+  <div class="box">
+    <div class="box-h"><span class="tag">SAILKATU</span> Epikureo batek zer lehenetsiko luke?</div>
+    <div class="sort" data-sort="plazerrak"></div>
+  </div>
+  <details class="sakonago"><summary>📚 Sakonago <small>garapen osoa</small></summary><div class="sak-body">
+    <p>Helenismoa ezegonkortasun eta eraldaketa sozio-politiko handiko garaia izan zen: iraganeko erreferente kultural eta erlijiosoek protagonismoa galdu zuten, eta mundua ulertzeko ikuskera berriak agertu ziren. Testuinguru nahasi horretan, eskola ezberdinek kezka berari egin zioten aurre: <b>nola eskuratu zoriontasuna eta zein da bizibide egokia?</b></p>
+    <p>Zinikoen eta estoikoen antzera, epikureoek ere galdera horri erantzuteko proiektu filosofikoa garatu zuten. <b>Epikuro</b>, korronte honen sortzailea, Samosen jaio zen (K.a. 341-270) eta Atenasen eman zituen irakaspenak, "<b>Lorategia</b>" izeneko eskolan, gizonak, emakumeak eta esklaboak ere joan zitezkeena. Bizi-ikuskera honek antzekotasun ugari ditu estoizismoarekin (asko elkarren eraginpean egon ziren historian zehar), eta bien jokabidearen oinarrizko balioa <b>neurritasuna</b> da.</p>
+    <p>Epikureoek, estoikoek bezala, mundu sentikorrari ematen zioten garrantzia jainkozko munduaren gainetik. <b>Bizitza bat eta bakarra</b> dela zioten, eta, beraz, funtsezkoa zela ondo aprobetxatzea, inolako jainko edo jeinuren beldurrik gabe. Estoikoek bezala, barne-sendotasuna, lasaitasuna eta emozioen kontrola funtsezkotzat jotzen zituzten bizitza onuragarri baterako, baina horien gainetik, gizabanakoaren azken helburua <b>plazera edo gozamena</b> izan behar zela argudiatzen zuten.</p>
+    <p>Emozio, sentsazio eta pentsamendu positiboetatik eratorritako plazera da epikureoentzat bizitzaren baliorik gorena; baina ez dugu nahastu behar plazer sentsual eta neurrigabearekin. Plazerak <b>arrazionala</b> izan behar du: gure bulkadak asetzen dituena, baina tentaldian eta adikzioan erori gabe; beraz, bertutea, beste behin ere, <b>neurriz jokatzen jakitea</b> da. Era berean, maila ezberdinetako gozamenak bereizi zituzten: objektu fisiko eta plazer materialek eman diezaguketen satisfakzioa ez da inoiz izango adiskidetasun, familia edo bikote-harreman batek ematen digunaren parekoa; horregatik, beti lehenetsi behar ditugu <b>giza harreman positiboak</b> luxua, ospea edo boterea bezalako atributu iragankor eta kaltegarrien gainetik. Estoikoek ez bezala, epikureoek uko egin zioten <b>politikan</b> parte hartzeari: gizabanako askoz osatutako talde handi baten gidari izateak kezka, beldur eta haserre ugari ekarri ohi ditu, eta askotan ustelkerian erortzeko arriskua dago.</p>
+    <p>Gakoa egonkortasuna eta lasaitasuna ematen diguten plazerak bilatzea da: eguneroko gozamen txikiak, beti neurriz jokatuz eta arrazoiaren bidez bulkadak eta emozioak asetuz. Zoriontasuna eskuratzeko bi ardatz hauek jarraitu behar zituela argudiatu zuten: <b>ataraxia</b> (espirituaren lanketa, ezinegonik eza: arimaren lasaitasuna, kezka eta beldurren gaineko nagusitasuna) eta <b>aponia</b> (gorputzaren lanketa, minik eza: gorputza zaindu, bizitza honetako ibilgailua delako; bizitza osasuntsua funtsezkoa da zoriontsu izateko).</p>
+  </div></details>
+  <div class="quiz" data-quiz="g5-4"></div>
+</section>
+
+<!-- =============================================================== -->
+<section class="atal" id="g5-5" data-n="5.5" data-title="Eszeptizismoa: afasia eta epokhē">
+  <div class="laburrean">
+    <p><b>Pirron</b> (K.a. 360-270): <b>ezer ezin da benetan ezagutu</b>. Zentzumenek gauzen itxura baino ez dute hautematen; giza adimena ez da gai naturaren enigmak argitzeko. Ezagutzak kezka dakar; hobe da harekiko axolagabe izatea. Bi jarrera: <b>afasia</b> (eztabaidetan isilik egotea) eta <b>epokhē</b> (judiziorik gabeko esperientziak: judizioa etetea). Helburua: <b>ataraxia</b>.</p>
+  </div>
+  <div class="box">
+    <div class="box-h"><span class="tag">JOKOA</span> Eszeptiko baten moduan erantzun <small>zer egingo luke Pirronek?</small></div>
+    <div class="epo" id="epo"></div>
+  </div>
+  <details class="sakonago"><summary>📚 Sakonago <small>garapen osoa</small></summary><div class="sak-body">
+    <p>Orain arte ikusi ditugun doktrina filosofiko askok, naturaren filosofoetatik hasi eta Sokrates, Platon, Aristoteles eta helenismoko eskoletaraino, mundua eta errealitatea ulertzeko ahaleginetan jardun zuten. Bizitza honetako jokabide egokia aurkitzeko, ezinbestekotzat jotzen zuten, lehenik eta behin, inguratzen gaituen unibertsoa ezagutzea. Ezagutza, zentzu horretan, kontrolerako ezinbesteko premisa bihurtzen da.</p>
+    <p><b>Eszeptikoek</b>, ordea, <b>Pirronen</b> (K.a. 360-270) irakaspenei jarraituz, ezer ezin dela benetan ezagutu aldarrikatzen zuten. Haien ustez, zentzumenek gauzen itxura baino ez dute hautematen, eta, ondorioz, egia ziurrak eskuratzea ezinezkoa da. Giza adimena ez da gai naturaren enigmak argitzeko. Eszeptikoen hitzetan, ezin gara ezertaz guztiz ziur egon, <b>ezta baieztapen honetaz ere</b>. Hori horrela, ezagutzak ezinegon eta kezka ugari sortzen dituela defendatzen zuten, eta bide horretatik jarraitzeak onura baino kalte gehiago egiten duela. Horregatik, <b>ezagutzarekiko axolagabekeria</b> aldarrikatu zuten: zalantzaz betetako bidea denez, hobe da hartaz ez arduratzea.</p>
+    <p>Bizitza zoriontsua izateko, Sokratesen esaldi ospetsuari jarraitu behar zitzaiola zioten eszeptikoek: «<b>Ezer ez dakidala soilik dakit</b>». Ezer ez da segurua, ezer ez da ziurra; ondorioz, komenigarriagoa da ezagutzari buruzko eztabaidetan isilik mantentzea (<b>afasia</b>) eta judiziorik gabeko esperientziak izatea (<b>epokhē</b>). Estoikoek eta epikureoek bezala, <b>ataraxiaren</b> balioa aldarrikatzen zuten: ezinegonik eta kezkarik gabeko adimena eta espiritua; eta, horretarako, funtsezkotzat jotzen zuten errealitatea ezagutzeko ametsa alde batera uztea.</p>
+  </div></details>
+  <div class="quiz" data-quiz="g5-5"></div>
+</section>
+
+<!-- =============================================================== -->
+<section class="atal" id="g5-6" data-n="5.6" data-title="Lau eskolak alderatuta">
+  <div class="laburrean">
+    <p>Lau eskolek galdera bera dute: <b>nola izan zoriontsu?</b> Zinikoak: beharrak murriztuz. Estoikoak: arrazoiaz eta destinoa onartuz. Epikureoak: plazer neurritsuaz. Eszeptikoak: judizioa etenez. <b>Ataraxia</b> hiru eskolatan agertzen da (estoikoak, epikureoak, eszeptikoak), eta <b>neurritasuna</b> estoikoen eta epikureoen oinarrizko bertutea da.</p>
+  </div>
+  <div class="box">
+    <div class="box-h"><span class="tag">LOTU</span> Aipua ↔ eskola</div>
+    <div class="match" data-match="aipuak"></div>
+  </div>
+  <div class="box">
+    <div class="box-h"><span class="tag">AZKEN ERRONKA</span> Kontzeptuak bere eskolara <small>sailkatu</small></div>
+    <div class="sort" data-sort="eskolak"></div>
+  </div>
+  <div class="quiz" data-quiz="g5-6"></div>
+</section>
+
+<div class="next-g">
+  <div><div class="kicker">Amaiera</div><b>🏆 Ikastaroa osatu duzu! Orain, frogatu jokoan.</b></div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-ghost" href="ikastaroa.html">Gai guztiak</a><a class="btn btn-gold" href="index.html#jokoa">⚡ Jokatu</a></div>
+</div>
+</main>
+</div>
+
+<script src="js/komuna.js"></script>
+<script src="js/ikastaroa.js"></script>
+<script>
+window.GAIA = {
+  izena: '5. Helenismoa',
+  hs: { inperioa: {
+    mazedonia: { t: 'Mazedonia', d: '<p>Greziako potentzien gainetik gailendu zen erreinua. <b>Alejandro Magno</b> (K.a. 356-323) hemengo tronura iritsi zen.</p>' },
+    atenas: { t: 'Atenas', d: '<p>Periklesen garaiko hegemonia galdu zuen, baina <b>korronte filosofiko berrien sorleku</b> izaten jarraitu zuen: zinismoa, estoizismoa (stoa), epikureismoa (Lorategia).</p>' },
+    alejandria: { t: 'Alejandria', d: '<p>Garaiko <b>zentro intelektual eta zientifiko handiena</b>: museoa eta liburutegia, unibertsitate baten antzera. Astronomia, matematika, biologia eta medikuntza.</p>' },
+    siria: { t: 'Siria', d: '<p>Konkistatutako lurraldeetako bat. Mugak hautsi eta eremu guztiak bateratu ziren: hiri-estatuen antolaketa politikoa desagertu zen.</p>' },
+    persia: { t: 'Persia eta Babilonia', d: '<p>Kultura grekoa ekialdean zabaldu zen, bertako ideiekin nahastuz: <b>sinkretismoa</b>. Korronte erlijioso, zientifiko eta filosofiko berriak.</p>' },
+    india: { t: 'India', d: '<p>Konkisten muga ekialdean. Mundu-ikuskeren arteko elkartrukea inoiz baino handiagoa izan zen.</p>' }
+  } },
+  stages: {
+    diogenes: [
+      { e: '🛢️', t: 'Upel batean bizi zen', l: 'upela', d: 'Atenasko kale-bazter batean botatako <b>upel</b> baten barruan, muturreko pobrezian.' },
+      { e: '🥣', t: 'Katilua bota zuen', l: 'katilua', d: 'Haur bat eskuekin ura edaten ikusi zuenean, bere katilua ere bota zuen: «<b>Ume batek gainditu nau sinpletasunean</b>».' },
+      { e: '👑', t: 'Alejandro Handia etortzen da', l: 'Alejandro', d: 'Enperadoreak desio bat beteko ziola esan zion, nahi zuena eskatzeko.' },
+      { e: '☀️', t: '«Egin zaitez albo batera»', l: 'eguzkia', d: '«<b>Egin zaitez albo batera, eguzkia estaltzen didazu.</b>» Parresia hutsa: boteretsuen aurrean ere, pentsatzen duena esaten du.' }
+    ]
+  },
+  sort: {
+    kontrola: { bins: ['✋ Nire esku dago', '🌪️ Ez dago nire esku (onartu)'], items: [
+      ['Azterketarako zenbat ikasten dudan', 0], ['Ekaitz bati nola erantzuten diodan', 0], ['Nire haserrea kontrolatzea', 0], ['Besteei nola tratatzen ditudan', 0],
+      ['Bihar euria egingo duen ala ez', 1], ['Iraganean gertatutakoa', 1], ['Beste batzuek nitaz zer pentsatzen duten', 1], ['Heriotza', 1]
+    ] },
+    plazerrak: { bins: ['😊 Lehenetsi (plazer egonkorrak)', '🚫 Saihestu (iragankorrak, kezka-iturri)'], items: [
+      ['Adiskideekin afari xume bat', 0], ['Familiarekin denbora pasatzea', 0], ['Gorputza zaintzea, osasuntsu bizitzea', 0], ['Lasai ibiltzea lorategian', 0],
+      ['Luxuzko jauregi bat lortzea', 1], ['Ospetsu izateko edozer egitea', 1], ['Boterea eta politikako karguak', 1], ['Neurririk gabeko jai eta gehiegikeriak', 1]
+    ] },
+    eskolak: { bins: ['🛢️ Zinismoa', '🏛️ Estoizismoa', '🌿 Epikureismoa', '❔ Eszeptizismoa'], items: [
+      ['Parresia', 0], ['Antistenes', 0], ['Aszetismoa', 0],
+      ['Amor fati', 1], ['Stoa', 1], ['Politikan parte hartu', 1],
+      ['Aponia', 2], ['Lorategia', 2], ['Plazer arrazionala', 2],
+      ['Epokhē', 3], ['Afasia', 3], ['Pirron', 3]
+    ] }
+  },
+  match: {
+    aipuak: { l: ['«Egin zaitez albo batera, eguzkia estaltzen didazu»', '«Alda ezazu alda dezakezuna...»', '«Ez zaitzala heriotzak kezkatu; gozatu ahal duzun heinean»', '«Ezin gara ezertaz ziur egon, ezta honetaz ere»'],
+              r: ['Zinismoa (Diogenes)', 'Estoizismoa (Marko Aurelio)', 'Epikureismoa', 'Eszeptizismoa (Pirron)'] }
+  },
+  quiz: {
+    'g5-1': [
+      { m: 'Zein erreinu gailendu zen Grezian Aristotelesen ondoren?', a: ['Mazedonia', 'Persia', 'Egipto', 'Esparta'], z: 0, az: 'Alejandro Magnoren erreinua.' },
+      { m: 'Zer da sinkretismoa?', a: ['Kultura ezberdinen arteko bateratze edo elkartruke erlijiosoa', 'Plazerra bilatzeko metodoa', 'Judizioa etetea', 'Gerra-estrategia bat'], z: 0, az: 'Mediterraneoko eta ekialdeko ideiak nahastu ziren.' },
+      { m: 'Nola ulertzen zen filosofia Helenismoan?', a: ['Bizitzaren arte gisa: zoriontasuna eta askatasuna', 'Arkhea bilatzeko zientzia gisa', 'Erretorika gisa', 'Matematikaren adar gisa'], z: 0, az: 'Arazo existentzial eta pertsonaletan zentratu ziren.' }
+    ],
+    'g5-2': [
+      { m: 'Nork bultzatu zuen zinismoa?', a: ['Antistenesek, Sokratesen dizipuluak', 'Epikurok', 'Zenonek', 'Pirronek'], z: 0, az: 'Sokratesen bizimodu apalaz miretsita.' },
+      { m: 'Zer da parresia?', a: ['Zintzotasun erradikala', 'Minik eza', 'Destinoaren onarpena', 'Isiltasuna'], z: 0, az: 'Pentsatzen dena esan, autoritateari men egin gabe.' },
+      { m: 'Zergatik bota zuen Diogenesek bere katilua?', a: ['Ume bat eskuekin ura edaten ikusi zuelako', 'Hautsi zitzaiolako', 'Alejandrok eskatu ziolako', 'Ez zuelako urik'], z: 0, az: '«Ume batek gainditu nau sinpletasunean».' }
+    ],
+    'g5-3': [
+      { m: 'Zer da amor fati?', a: ['Destinoaren onarpena', 'Plazeraren bilaketa', 'Zintzotasun erradikala', 'Judizioaren etetea'], z: 0, az: 'Gertatzen zaigunari nola erantzuten diogun kontrolatzen dugu, ez gertatzen zaiguna.' },
+      { m: 'Estoikoek, zinikoek bezala, politika baztertu zuten?', a: ['Ez: humanismo unibertsalaren ondorioz, parte hartu zuten', 'Bai, erabat', 'Bai, baina Senekak ez', 'Ez zuten iritzirik'], z: 0, az: 'Marko Aurelio, Seneka eta Zizeron gobernuburu izan ziren.' },
+      { m: 'Nondik dator "estoizismo" izena?', a: ['Stoa-tik: Zenonek irakasten zuen arkupedun ataritik', 'Estoiko izeneko filosofo batetik', 'Lasaitasuna esan nahi duen hitzetik', 'Alejandriako auzo batetik'], z: 0, az: 'Zenon Zitiokoak Atenasen irakatsi zuen.' }
+    ],
+    'g5-4': [
+      { m: 'Zer da ataraxia?', a: ['Arimaren lasaitasuna, ezinegonik eza', 'Gorputzaren minik eza', 'Isiltasuna', 'Destinoaren onarpena'], z: 0, az: 'Aponia, berriz, gorputzaren minik eza da.' },
+      { m: 'Nolakoa da epikureoen plazera?', a: ['Arrazionala eta neurritsua', 'Sentsuala eta neurrigabea', 'Ezinezkoa', 'Politikoa'], z: 0, az: 'Tentaldian eta adikzioan erori gabe.' },
+      { m: 'Zer lehenetsi behar da, epikureoen ustez?', a: ['Giza harreman positiboak (adiskidetasuna, familia)', 'Luxua', 'Ospea', 'Boterea'], z: 0, az: 'Atributu iragankorren gainetik.' }
+    ],
+    'g5-5': [
+      { m: 'Zer da epokhē?', a: ['Judiziorik gabeko esperientzia: judizioa etetea', 'Isilik egotea', 'Minik eza', 'Destinoa onartzea'], z: 0, az: 'Afasia, berriz, eztabaidetan isilik egotea da.' },
+      { m: 'Zergatik saihesten dute eszeptikoek ezagutza?', a: ['Ziurtasunik ez dagoenez, kezka eta ezinegona baino ez duelako sortzen', 'Debekatuta zegoelako', 'Alferrak zirelako', 'Jainkoek hala agindu zutelako'], z: 0, az: 'Horrela lortzen dute ataraxia.' }
+    ],
+    'g5-6': [
+      { m: 'Zein kontzeptu aldarrikatu zuten estoikoek, epikureoek eta eszeptikoek?', a: ['Ataraxia', 'Parresia', 'Aponia', 'Amor fati'], z: 0, az: 'Ezinegonik eta kezkarik gabeko adimena.' },
+      { m: 'Zinikoek eta estoikoek zer zuten komunean?', a: ['Zoriona ez dago kanpoko faktoreetan', 'Politikarekiko jarrera', 'Plazeraren gorespena', 'Ezagutzaren ukapena'], z: 0, az: 'Barne-sendotasuna da gakoa.' },
+      { m: 'Zein eskolak ukatu zuen politikan parte hartzea, kezka eta ustelkeria dakartzalako?', a: ['Epikureismoak', 'Estoizismoak', 'Akademiak', 'Sofistek'], z: 0, az: 'Estoikoek, aldiz, parte hartu zuten.' }
+    ]
+  },
+  after() {
+    const S = [
+      ['Bihar eguzkia aterako da.', 'Ziur zaude? Gaur arte atera da, baina zentzumenek itxura baino ez digute erakusten.'],
+      ['Ura beti 100 gradutan irakiten du.', 'Zure esperientzia mugatua da: nola dakizu beti eta nonahi gertatzen dela?'],
+      ['Ongia eta gaizkia badaude.', 'Platonek baietz, sofistek ezetz... Eztabaida amaigabea. Isilik egotea hobe (afasia).'],
+      ['Ezer ezin da ezagutu.', 'Ezta hori ere! Eszeptikoak ez dira ziur egoten ezta baieztapen honetaz ere.']
+    ];
+    const el = document.getElementById('epo');
+    el.innerHTML = S.map((s, i) => `<div class="st"><p>«${s[0]}»</p><div class="bt"><button type="button" class="chipb" data-i="${i}" data-v="e">✔ Egia</button><button type="button" class="chipb" data-i="${i}" data-v="g">✖ Gezurra</button><button type="button" class="chipb" data-i="${i}" data-v="p">🤐 Epokhē (judizioa eten)</button></div><div class="re" hidden></div></div>`).join('');
+    el.querySelectorAll('button').forEach(b => b.onclick = () => {
+      const st = b.closest('.st'), re = st.querySelector('.re'), i = +b.dataset.i;
+      st.querySelectorAll('button').forEach(x => x.classList.remove('done', 'bad'));
+      if (b.dataset.v === 'p') { b.classList.add('done'); re.innerHTML = '🧘 <b>Pirronek bezala!</b> Judizioa eten duzu: ataraxiarako bidean zaude.'; if (window.K) K.sfx.ok(); }
+      else { b.classList.add('bad'); re.innerHTML = '🤔 <b>Pirron:</b> ' + S[i][1]; if (window.K) K.sfx.bad(); }
+      re.hidden = false;
+    });
+  }
+};
+</script>
+</body>
+</html>

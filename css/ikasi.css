@@ -18,7 +18,7 @@
 
 .subnav {
   position: sticky; top: 61px; z-index: 15; display: flex; gap: 8px; overflow-x: auto;
-  padding: 10px clamp(16px, 4vw, 48px); background: rgba(11, 13, 31, .85); backdrop-filter: blur(8px);
+  padding: 10px clamp(16px, 4vw, 48px); background: rgba(15, 34, 66, .85); backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line); scrollbar-width: none;
 }
 .subnav a {
