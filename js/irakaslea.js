@@ -221,7 +221,6 @@
     G.state = 'lobby';
     const m = K.maila(G.level);
     const url = new URL('jokalaria.html?pin=' + G.pin, location.href).href;
-    $('#lobby-url').textContent = url.split('?')[0].replace(/^https?:\/\//, '');
     $('#lobby-pin').textContent = G.pin;
     $('#qr').innerHTML = '';
     if (window.QRCode) {
