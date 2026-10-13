@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="eu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Antzinako Filosofia · Filosofoaren Bidaia</title>
+  <meta name="description" content="Filosofoaren Bidaia: plataforma-jokoa. Gainditu oztopoak galderak asmatuz eta bete Greziako sei geldialdiak.">
+  <meta name="theme-color" content="#0b0d1f">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f5c542'/%3E%3Ctext x='32' y='46' font-size='40' text-anchor='middle' font-family='serif' font-weight='900' fill='%232a1c00'%3E%CE%9B%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estiloa.css">
+  <link rel="stylesheet" href="css/bidaia.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a class="logo" href="index.html"><span class="logo-mark">Λ</span> ANTZINAKO FILOSOFIA</a>
+  <div class="nav-links">
+    <a href="ikastaroa.html">Ikastaroa</a>
+    <a href="ikasi.html">Laburpena</a>
+    <a href="index.html#jokoa">Ikasgelako jokoa</a>
+  </div>
+  <button class="btn btn-icon" id="btn-soinua" title="Soinua">🔊</button>
+</nav>
+
+<main class="bd-wrap">
+  <div class="bd-hud" id="hud">
+    <div class="bd-pill" id="h-level">–</div>
+    <div class="bd-pill" id="h-lives" aria-label="Bizitzak">❤️❤️❤️</div>
+    <div class="bd-pill" id="h-obst" title="Gainditutako oztopoak">🍄 0/6</div>
+    <div class="bd-pill" id="h-coins" title="Txanponak">🪙 0</div>
+  </div>
+
+  <div class="bd-stage" id="stage">
+    <canvas id="cv" width="960" height="540" aria-label="Jokoaren eszenatokia"></canvas>
+
+    <!-- Mugikorreko kontrolak -->
+    <div class="bd-touch" id="touch" hidden>
+      <div class="lr">
+        <button type="button" data-k="left" aria-label="Ezkerrera">◀</button>
+        <button type="button" data-k="right" aria-label="Eskuinera">▶</button>
+      </div>
+      <button type="button" data-k="jump" class="jump" aria-label="Salto egin">⤒</button>
+    </div>
+
+    <div class="bd-banner" id="banner" hidden></div>
+
+    <!-- HASIERA -->
+    <div class="bd-ov" id="ov-start">
+      <div class="bd-card">
+        <div class="kicker">Jolas autonomoa</div>
+        <h1>Filosofoaren Bidaia</h1>
+        <p>Zeharkatu Grezia gai bat eta gero bestea. Oztopo bakoitzaren aurrean galdera bat erantzun beharko duzu: <b>asmatzen baduzu, aurrera!</b> Huts egiten baduzu, bizitza bat galduko duzu.</p>
+        <div class="bd-rules">
+          <span>❤️❤️❤️ hiru bizitza dituzu</span>
+          <span>💥 hirurak galduz gero, hutsetik hasi</span>
+          <span>🏁 erronka: sei geldialdiak gainditzea</span>
+        </div>
+        <div class="bd-route" id="route"></div>
+        <p class="bd-keys">Mugitu: <kbd>←</kbd> <kbd>→</kbd> (edo <kbd>A</kbd> <kbd>D</kbd>) · Salto: <kbd>Zuriunea</kbd> / <kbd>↑</kbd></p>
+        <button class="btn btn-gold btn-big" id="btn-hasi">▶ Hasi bidaia</button>
+        <small class="muted" id="best"></small>
+      </div>
+    </div>
+
+    <!-- GALDERA -->
+    <div class="bd-ov bd-quiz" id="ov-quiz" hidden>
+      <div class="bd-qcard">
+        <div class="bd-qtop"><span class="q-type" id="qz-type"></span><span class="bd-qlives" id="qz-lives"></span></div>
+        <div class="q-text bd-qtext" id="qz-text"></div>
+        <div class="answers bd-answers" id="qz-answers"></div>
+        <div class="bd-feedback" id="qz-fb" hidden>
+          <div class="bd-fbhead" id="qz-fbhead"></div>
+          <div class="explain" id="qz-az"></div>
+          <button class="btn btn-gold" id="qz-next">Jarraitu ▸</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAILA GAINDITUTA -->
+    <div class="bd-ov" id="ov-level" hidden>
+      <div class="bd-card">
+        <div class="big-emoji" id="lv-ico">🏁</div>
+        <h2 id="lv-title">Maila gaindituta!</h2>
+        <p id="lv-msg"></p>
+        <button class="btn btn-gold btn-big" id="lv-next">Hurrengo geldialdia ▸</button>
+      </div>
+    </div>
+
+    <!-- GAME OVER -->
+    <div class="bd-ov" id="ov-over" hidden>
+      <div class="bd-card">
+        <div class="big-emoji">💔</div>
+        <h2>Bizitzak amaitu dira</h2>
+        <p id="go-msg"></p>
+        <button class="btn btn-pink btn-big" id="go-again">↺ Hutsetik hasi</button>
+      </div>
+    </div>
+
+    <!-- IRABAZI -->
+    <div class="bd-ov" id="ov-win" hidden>
+      <div class="bd-card">
+        <div class="big-emoji">🏆</div>
+        <h2>Olinpora iritsi zara!</h2>
+        <p id="win-msg"></p>
+        <button class="btn btn-gold btn-big" id="win-again">↺ Berriro jolastu</button>
+      </div>
+    </div>
+  </div>
+
+  <p class="bd-help">Galderak <a href="ikastaroa.html">ikastaroan</a> eta <a href="ikasi.html">laburpenean</a> dituzu azalduta. Lasai: oker erantzutean, erantzun zuzena eta azalpena erakusten dira.</p>
+</main>
+
+<script src="js/galderak.js"></script>
+<script src="js/komuna.js"></script>
+<script src="js/bidaia.js"></script>
+</body>
+</html>

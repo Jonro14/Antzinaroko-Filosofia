@@ -408,3 +408,37 @@ footer { padding: 40px 0 60px; color: var(--muted); font-size: .9rem; text-align
   .nav .btn:not(.btn-icon) { padding: .6em 1em; font-size: .9rem; }
 }
 @media (max-width: 360px) { .logo { font-size: .8rem; } }
+
+/* Ikasleen emaitzak (irakaslea) */
+.em-note { max-width: 720px; margin: 0; font-size: .95rem; }
+.em-summary { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.em-stat { background: var(--card2); border-radius: 14px; padding: 10px 20px; min-width: 120px; }
+.em-stat b { display: block; font-size: 1.9rem; line-height: 1.1; color: var(--gold2); }
+.em-stat span { font-size: .85rem; color: var(--muted); }
+.em-list { width: 100%; max-width: 860px; display: flex; flex-direction: column; gap: 8px; text-align: left; }
+.em-row { background: var(--card2); border-radius: 14px; overflow: hidden; }
+.em-head {
+  width: 100%; display: grid; grid-template-columns: 36px 36px minmax(80px, 1.2fr) minmax(60px, 1fr) 64px 48px 20px; align-items: center; gap: 10px;
+  padding: 10px 16px; background: none; border: 0; cursor: pointer; text-align: left; font-size: 1.1rem; font-weight: 700;
+}
+.em-head:hover { background: rgba(255, 255, 255, .06); }
+.em-head .pos { font-weight: 900; color: var(--gold); }
+.em-head .av { font-size: 1.4rem; }
+.em-head .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.em-head .bar { height: 10px; border-radius: 6px; background: rgba(255, 255, 255, .12); overflow: hidden; }
+.em-head .bar i { display: block; height: 100%; background: var(--ok); border-radius: 6px; }
+.em-head .sc, .em-head .pc { font-variant-numeric: tabular-nums; text-align: right; }
+.em-head .pc { color: var(--muted); font-size: .95rem; }
+.em-head .chev { transition: transform .2s; color: var(--muted); }
+.em-row.open .chev { transform: rotate(180deg); }
+.em-det { list-style: none; margin: 0; padding: 4px 16px 14px; display: flex; flex-direction: column; gap: 6px; font-size: .95rem; font-weight: 400; }
+.em-det li { display: grid; grid-template-columns: 24px 1fr; gap: 8px; padding: 6px 10px; border-radius: 8px; background: rgba(0, 0, 0, .15); }
+.em-det li.ok .mk { color: var(--ok); } .em-det li.bad .mk { color: var(--bad); }
+.em-det li.bad { background: rgba(229, 72, 77, .14); }
+.em-ans { color: var(--muted); font-size: .88rem; }
+.em-ans b { color: var(--gold2); }
+.em-hard { width: 100%; max-width: 860px; text-align: left; }
+.em-hard h3 { margin: 8px 0; font-family: var(--font-d); color: var(--gold2); }
+.em-q { display: grid; grid-template-columns: 56px 1fr; gap: 8px; padding: 6px 12px; border-radius: 10px; background: rgba(0, 0, 0, .15); margin-bottom: 6px; font-size: .95rem; }
+.em-q .pc { font-weight: 900; color: var(--bad); }
+@media (max-width: 640px) { .em-head { grid-template-columns: 28px 30px 1fr 56px 20px; } .em-head .bar, .em-head .pc { display: none; } }

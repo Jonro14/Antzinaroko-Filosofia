@@ -12,10 +12,15 @@ kabuz lehiatzen du.
 | `index.html` | Webgunea: ibilbidea (5 gaiak), filosofoen txartelak, jokora sartzeko atea |
 | `irakaslea.html` | Irakaslearen pantaila (proiektagailua): mundu-mapa, lobbya, galderak, sailkapena, podioa |
 | `jokalaria.html` | Ikaslearen pantaila (mugikorra) |
-| `js/galderak.js` | **Galdera-bankua** (6 maila, ~100 galdera, azalpenekin) |
+| `bidaia.html`, `js/bidaia.js`, `css/bidaia.css` | **Filosofoaren Bidaia**: ikasleek bakarka jolasteko plataforma-jokoa (gai bakoitzeko maila bat, 3 bizitza, oztopo bakoitzeko galdera). Ez du Firebase-rik behar |
+| `js/galderak.js` | **Galdera-bankua** (6 maila, 100 galdera, azalpenekin) |
 | `js/firebase-config.js` | Firebase konfigurazioa (zuk bete behar duzu) |
 | `database.rules.json` | Datu-basearen segurtasun-arauak (Firebase kontsolan itsatsi) |
 | `js/backend.js`, `js/komuna.js`, `js/irakaslea.js`, `js/jokalaria.js`, `js/hasiera.js` | Jokoaren kodea |
+
+## Partidaren emaitzak (irakaslea)
+
+Partida amaitzean fitxategi bat (`emaitzak_<maila>_<data>_<ordua>.csv`) deskargatzen da automatikoki: ikasle bakoitzaren erantzun zuzenak, galdera bakoitzean ✔/✖/– eta galdera bakoitzaren asmatze-tasa. Podio-pantailan **📊 Ikasleen emaitzak** botoiak sailkapena erakusten du (erantzun zuzenen arabera, denbora kontuan hartu gabe) eta ikasle bakoitza sakatuta bere erantzun guztiak ikusten dira.
 
 ## Mailak (mundu-mapa)
 

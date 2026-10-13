@@ -1,0 +1,72 @@
+/* =====================================================================
+   FILOSOFOAREN BIDAIA · plataforma-jokoa (jolas autonomoa)
+   ===================================================================== */
+.bd-wrap { max-width: 1040px; margin: 0 auto; padding: 14px clamp(10px, 2vw, 20px) 40px; }
+.bd-hud { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 10px; }
+.bd-pill { background: rgba(0, 0, 0, .35); border: 1px solid var(--line); border-radius: 999px; padding: .3em 1em; font-weight: 800; font-size: 1rem; white-space: nowrap; }
+.bd-pill.hit { animation: bdhit .5s; }
+@keyframes bdhit { 30% { transform: scale(1.25); background: rgba(229, 72, 77, .6); } }
+
+.bd-stage { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 18px; overflow: hidden; border: 3px solid #d9c49a; box-shadow: var(--shadow); background: #7fd3f2; touch-action: none; user-select: none; -webkit-user-select: none; }
+.bd-stage canvas { display: block; width: 100%; height: 100%; }
+
+.bd-ov { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 14px; background: rgba(8, 18, 40, .72); backdrop-filter: blur(2px); z-index: 5; overflow: auto; }
+.bd-card { max-width: 640px; width: 100%; background: linear-gradient(180deg, #fbf3df, var(--papyrus)); color: var(--papyrus-ink); border: 2px solid #d9c49a; border-radius: 22px; padding: clamp(14px, 3vw, 28px); text-align: center; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 10px; align-items: center; margin: auto; }
+.bd-card h1, .bd-card h2 { margin: 0; font-family: var(--font-d); font-weight: 900; line-height: 1.1; }
+.bd-card h1 { font-size: clamp(1.6rem, 5vw, 2.6rem); }
+.bd-card h2 { font-size: clamp(1.4rem, 4vw, 2rem); }
+.bd-card p { margin: 0; font-size: clamp(.9rem, 2vw, 1.05rem); }
+.bd-card .kicker { color: #8a5a1c; }
+.bd-card .muted { color: #6d5a3a; }
+.bd-card .big-emoji { font-size: clamp(2.6rem, 8vw, 4.2rem); line-height: 1; }
+.bd-rules { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; font-size: .85rem; font-weight: 700; }
+.bd-rules span { background: rgba(43, 31, 16, .09); border-radius: 999px; padding: .25em .8em; }
+.bd-route { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+.bd-route .st { display: flex; align-items: center; gap: 4px; font-size: .8rem; font-weight: 800; padding: .25em .7em; border-radius: 999px; color: #fff; }
+.bd-route .st.dark { color: #2a1c00; }
+.bd-keys { font-size: .85rem !important; color: #5b4727; }
+kbd { background: #fff; border: 1px solid #c9b88f; border-bottom-width: 3px; border-radius: 6px; padding: 0 .45em; font-family: var(--font); font-weight: 800; font-size: .85em; }
+
+/* galdera */
+.bd-quiz { background: rgba(8, 18, 40, .55); align-items: flex-start; }
+.bd-qcard { width: 100%; max-width: 860px; margin: auto; display: flex; flex-direction: column; gap: 10px; }
+.bd-qtop { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.bd-qlives { font-size: 1.2rem; }
+.bd-qtext { font-size: clamp(1rem, 2.6vw, 1.7rem) !important; padding: clamp(10px, 2vw, 18px) !important; border-radius: 16px !important; text-align: left; }
+.bd-answers { gap: 8px; max-width: 100%; }
+.bd-answers.two { grid-template-columns: 1fr 1fr; }
+.bd-answers .ans { min-height: 56px; padding: 8px 14px; font-size: clamp(.85rem, 2vw, 1.15rem); cursor: pointer; box-shadow: 0 4px 0 rgba(0, 0, 0, .3); }
+.bd-answers .ans .shape { width: 28px; height: 28px; }
+.bd-answers .ans:active { transform: scale(.98); }
+.bd-answers .ans:disabled { cursor: default; }
+.bd-answers.reveal .ans.right { outline: 4px solid #fff; transform: scale(1.01); }
+.bd-answers.reveal .ans.picked-bad { outline: 4px solid #1b1b1b; }
+.bd-feedback { background: rgba(0, 0, 0, .35); border-radius: 14px; padding: 10px 14px; display: flex; flex-direction: column; gap: 8px; align-items: stretch; text-align: left; }
+.bd-fbhead { font-family: var(--font-d); font-weight: 900; font-size: 1.25rem; }
+.bd-fbhead.ok { color: #6ff0a6; } .bd-fbhead.bad { color: #ff8b8e; }
+.bd-feedback .explain { margin: 0; font-size: clamp(.85rem, 1.8vw, 1rem); }
+.bd-feedback .btn { align-self: flex-end; }
+
+/* mailaren izenburua */
+.bd-banner { position: absolute; left: 50%; top: 14%; transform: translateX(-50%); z-index: 4; text-align: center; padding: .5em 1.4em; border-radius: 16px; background: rgba(8, 18, 40, .8); border: 2px solid var(--gold); font-family: var(--font-d); font-weight: 900; font-size: clamp(1rem, 3vw, 1.8rem); animation: bdban 2.6s ease both; pointer-events: none; }
+.bd-banner small { display: block; font-family: var(--font); font-weight: 600; font-size: .55em; color: var(--muted); }
+@keyframes bdban { 0% { opacity: 0; transform: translate(-50%, -20px); } 12%, 80% { opacity: 1; transform: translate(-50%, 0); } 100% { opacity: 0; } }
+
+/* ukimen-kontrolak */
+.bd-touch { position: absolute; left: 0; right: 0; bottom: 8px; display: flex; justify-content: space-between; padding: 0 12px; z-index: 3; pointer-events: none; }
+.bd-touch .lr { display: flex; gap: 10px; }
+.bd-touch button { pointer-events: auto; width: clamp(54px, 14vw, 78px); height: clamp(54px, 14vw, 78px); border-radius: 50%; border: 3px solid rgba(255, 255, 255, .8); background: rgba(0, 0, 0, .4); color: #fff; font-size: 1.6rem; font-weight: 900; touch-action: none; }
+.bd-touch button.on { background: rgba(245, 197, 66, .75); color: #2a1c00; }
+.bd-touch .jump { background: rgba(229, 72, 77, .55); }
+
+.bd-help { text-align: center; color: var(--muted); font-size: .9rem; margin: 14px 0 0; }
+
+@media (max-width: 640px) {
+  .bd-stage { aspect-ratio: 4 / 3; }
+  .bd-pill { font-size: .85rem; padding: .25em .7em; }
+  .bd-answers { grid-template-columns: 1fr; }
+  .bd-answers.two { grid-template-columns: 1fr 1fr; }
+}
+@media (max-height: 520px) and (orientation: landscape) {
+  .bd-stage { aspect-ratio: auto; height: calc(100vh - 100px); }
+}

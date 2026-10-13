@@ -28,7 +28,7 @@
 
   const G = {
     pin: null, level: null, order: [], qIndex: -1, qKey: null, q: null, current: null, zuzena: null,
-    players: {}, scores: {}, answers: {}, startAt: 0, state: null,
+    players: {}, scores: {}, answers: {}, startAt: 0, state: null, log: [],
     loop: null, unsubPl: null, unsubAns: null, revealing: false, reselect: false
   };
   let selLevel = null;
@@ -166,7 +166,8 @@
         meta: { host: B.uid, createdAt: B.TS, level: m.id, izena: izenaLuzea(m), state: 'lobby', qIndex: -1, total: G.order.length },
         order: G.order
       });
-      Object.assign(G, { pin, level: m.id, qIndex: -1, scores: {}, players: {}, reselect: false });
+      Object.assign(G, { pin, level: m.id, qIndex: -1, scores: {}, players: {}, reselect: false, log: [] });
+      gordeLog();
       sessionStorage.setItem('logos-host-pin', pin);
       LS.set('logos-nire-gela', pin);
       entzunJokalariak();
@@ -180,7 +181,8 @@
   async function jarraituGelaBerean() {
     const m = K.maila(selLevel);
     G.order = eraikiOrdena(m);
-    Object.assign(G, { level: m.id, qIndex: -1, qKey: null, scores: {}, reselect: false });
+    Object.assign(G, { level: m.id, qIndex: -1, qKey: null, scores: {}, reselect: false, log: [] });
+    gordeLog();
     await B.update('rooms/' + G.pin, {
       'meta/state': 'lobby', 'meta/level': m.id, 'meta/izena': izenaLuzea(m), 'meta/qIndex': -1, 'meta/qKey': null, 'meta/total': G.order.length,
       order: G.order, answers: null, scores: null, current: null
@@ -256,7 +258,7 @@
   async function hurrengoGaldera() {
     K.musika.stop();
     G.qIndex++;
-    if (G.qIndex >= G.order.length) return amaiera();
+    if (G.qIndex >= G.order.length) return amaiera(true);
     const q = galdera(G.order[G.qIndex]);
     let idx = q.a.map((_, i) => i);
     if (q.mota !== 'eg') idx = K.shuffle(idx);
@@ -361,6 +363,11 @@
       const pts = K.puntuak(ok, ms, T, streak);
       G.scores[id] = { score: (prev.score || 0) + pts, streak, zuzenak: (prev.zuzenak || 0) + (ok ? 1 : 0), last: { q: G.qKey, ok, pts, erantzun } };
     });
+    // Galdera honen erregistroa (irakaslearentzako emaitzak): nork zer erantzun zuen eta zuzena zen ala ez
+    const erreg = { n: G.qIndex + 1, l: G.order[G.qIndex].l, m: G.q.m, mota: G.q.mota, a: G.current.a, z: G.zuzena, r: {} };
+    ids.forEach(id => { const l = G.scores[id].last; erreg.r[id] = { c: l.erantzun ? erantzunak[id].c : null, ok: l.ok }; });
+    G.log = G.log.filter(x => x.n !== erreg.n).concat(erreg);
+    gordeLog();
     const postuak = sailkatu(ids).postuak;
     const upd = {
       'meta/state': 'emaitza', 'meta/jokalariak': ids.length,
@@ -416,7 +423,104 @@
   // ------------------------------------------------------------------
   //  AMAIERA
   // ------------------------------------------------------------------
-  async function amaiera() {
+  function gordeLog() { if (G.pin) LS.set('logos-log-' + G.pin, G.log); }
+
+  // ------------------------------------------------------------------
+  //  IKASLEEN EMAITZAK (irakaslearentzat): erantzun zuzenak bakarrik, denbora kontuan hartu gabe
+  // ------------------------------------------------------------------
+  function emaitzakKalkulatu() {
+    const total = G.order.length;
+    const ids = Object.keys(G.players);
+    const log = G.log.slice().sort((a, b) => a.n - b.n);
+    const jok = ids.map(id => {
+      const p = G.players[id];
+      const xs = log.map(q => (q.r && q.r[id]) || { c: null, ok: false });
+      const zuzenak = xs.filter(x => x.ok).length;
+      return { id, izena: p.name, avatar: p.avatar, zuzenak, total, ehunekoa: total ? Math.round(100 * zuzenak / total) : 0, xs };
+    });
+    jok.sort((a, b) => b.zuzenak - a.zuzenak || a.izena.localeCompare(b.izena, 'eu'));
+    jok.forEach((j, i) => { j.postua = (i > 0 && jok[i - 1].zuzenak === j.zuzenak) ? jok[i - 1].postua : i + 1; });
+    const galderak = log.map(q => {
+      const zuz = ids.filter(id => q.r && q.r[id] && q.r[id].ok).length;
+      return { q, zuz, ehunekoa: ids.length ? Math.round(100 * zuz / ids.length) : 0 };
+    });
+    return { jok, galderak, total, jokalariak: ids.length };
+  }
+
+  const galderaTestua = q => q.mota === 'aipua' ? '«' + q.m.replace(/^"|"$/g, '') + '»' : q.m;
+
+  function erakutsiEmaitzak() {
+    const E = emaitzakKalkulatu();
+    const m = K.maila(G.level);
+    $('#em-level').textContent = `${m.ikonoa} ${m.zenbakia}. maila · ${m.izena}`;
+    if (!E.jokalariak) {
+      $('#em-summary').innerHTML = ''; $('#em-hard').innerHTML = '';
+      $('#em-list').innerHTML = '<p class="muted">Ez zegoen jokalaririk.</p>';
+      return K.show('s-emaitzak');
+    }
+    const batez = E.jok.reduce((t, j) => t + j.zuzenak, 0) / E.jokalariak;
+    $('#em-summary').innerHTML =
+      `<div class="em-stat"><b>${E.jokalariak}</b><span>ikasle</span></div>` +
+      `<div class="em-stat"><b>${E.total}</b><span>galdera</span></div>` +
+      `<div class="em-stat"><b>${batez.toFixed(1).replace('.', ',')}</b><span>zuzen batez beste</span></div>` +
+      `<div class="em-stat"><b>${E.total ? Math.round(100 * batez / E.total) : 0}%</b><span>asmatze-tasa</span></div>`;
+    $('#em-list').innerHTML = E.jok.map(j => {
+      const det = E.galderak.map((g, k) => {
+        const x = j.xs[k] || { c: null, ok: false };
+        const eman = (x.c === null || x.c === undefined) ? '<i>erantzunik gabe</i>' : esc(g.q.a[x.c] || '?');
+        return `<li class="${x.ok ? 'ok' : 'bad'}"><span class="mk">${x.ok ? '✔' : '✖'}</span><div><b>${g.q.n}.</b> ${esc(galderaTestua(g.q))}` +
+          `<div class="em-ans">${x.ok ? 'Erantzuna: ' + eman : 'Erantzun du: ' + eman + ' · <b>Zuzena: ' + esc(g.q.a[g.q.z]) + '</b>'}</div></div></li>`;
+      }).join('');
+      return `<div class="em-row"><button class="em-head" type="button" aria-expanded="false">` +
+        `<span class="pos">${j.postua}</span><span class="av">${esc(j.avatar)}</span><span class="nm">${esc(j.izena)}</span>` +
+        `<span class="bar"><i style="width:${j.ehunekoa}%"></i></span><span class="sc">${j.zuzenak} / ${j.total}</span><span class="pc">${j.ehunekoa}%</span><span class="chev">▾</span></button>` +
+        `<ol class="em-det" hidden>${det}</ol></div>`;
+    }).join('');
+    $$('#em-list .em-head').forEach(b => b.onclick = () => {
+      const det = b.nextElementSibling, ireki = det.hidden;
+      det.hidden = !ireki;
+      b.setAttribute('aria-expanded', ireki ? 'true' : 'false');
+      b.parentNode.classList.toggle('open', ireki);
+    });
+    const zailak = E.galderak.slice().sort((a, b) => a.ehunekoa - b.ehunekoa || a.q.n - b.q.n).slice(0, 5);
+    $('#em-hard').innerHTML = '<h3>Gutxien asmatutako galderak</h3>' + zailak.map(g =>
+      `<div class="em-q"><span class="pc">${g.ehunekoa}%</span><span>${g.q.n}. ${esc(galderaTestua(g.q))}</span></div>`).join('');
+    K.show('s-emaitzak');
+  }
+
+  // Partidaren fitxategia (CSV): ikasle bakoitzaren zuzenak + galdera bakoitzaren emaitza
+  function emaitzakCSV(automatikoa) {
+    const E = emaitzakKalkulatu();
+    const m = K.maila(G.level);
+    const d = new Date();
+    const pad = n => String(n).padStart(2, '0');
+    const dataTxt = `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+    const orduTxt = `${pad(d.getHours())}:${pad(d.getMinutes())}`;
+    const lerroak = [
+      ['Antzinako Filosofia · partidaren emaitzak'],
+      ['Maila', `${m.zenbakia}. ${m.izena}`], ['Data', `${dataTxt} ${orduTxt}`],
+      ['Ikasleak', E.jokalariak], ['Galderak', E.total],
+      ['Oharra', 'Sailkapena erantzun zuzenen arabera (denbora kontuan hartu gabe). ✔ = zuzena, ✖ = okerra, – = erantzunik gabe'],
+      [],
+      ['Postua', 'Izena', 'Zuzenak', 'Galderak', '% zuzen'].concat(E.galderak.map(g => 'G' + g.q.n))
+    ];
+    E.jok.forEach(j => lerroak.push([j.postua, j.izena, j.zuzenak, j.total, j.ehunekoa].concat(E.galderak.map((g, k) => {
+      const x = j.xs[k] || {};
+      return x.ok ? '✔' : ((x.c === null || x.c === undefined) ? '–' : '✖');
+    }))));
+    lerroak.push(['', 'Asmatze-tasa', '', '', ''].concat(E.galderak.map(g => g.ehunekoa + '%')));
+    lerroak.push([]);
+    lerroak.push(['Galderen zerrenda']);
+    E.galderak.forEach(g => lerroak.push(['G' + g.q.n, g.q.m, 'Zuzena: ' + g.q.a[g.q.z]]));
+    const txt = '﻿' + lerroak.map(r => r.map(c => '"' + String(c).replace(/"/g, '""') + '"').join(';')).join('\r\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([txt], { type: 'text/csv;charset=utf-8' }));
+    a.download = `emaitzak_${m.id}_${dataTxt}_${orduTxt.replace(':', '-')}.csv`;
+    document.body.appendChild(a); a.click(); a.remove();
+    if (automatikoa) K.toast('📄 Partidaren emaitzak fitxategi gisa deskargatu dira', 4500);
+  }
+
+  async function amaiera(berria) {
     G.qIndex = G.order.length;
     await B.update('rooms/' + G.pin, { 'meta/state': 'amaiera', 'meta/qIndex': G.qIndex, 'meta/jokalariak': Object.keys(G.players).length });
     G.state = 'amaiera';
@@ -432,23 +536,15 @@
     K.show('s-amaiera');
     K.sfx.fanfare();
     K.konfetia(5000);
+    if (berria) { try { emaitzakCSV(true); } catch (e) { console.warn(e); } }   // partida amaitzean fitxategia sortu
   }
 
   $('#btn-beste').onclick = () => { G.reselect = true; selLevel = null; erakutsiMapa(); };
 
-  $('#btn-csv').onclick = () => {
-    const ordena = sailkatu(Object.keys(G.players)).ordena;
-    const m = K.maila(G.level);
-    const rows = [['Postua', 'Izena', 'Puntuak', 'Zuzenak', 'Galderak', 'Maila']].concat(ordena.map(id => {
-      const s = G.scores[id] || {};
-      return [s.rank || '', G.players[id].name, s.score || 0, s.zuzenak || 0, G.order.length, m.izena];
-    }));
-    const txt = '﻿' + rows.map(r => r.map(c => '"' + String(c).replace(/"/g, '""') + '"').join(';')).join('\r\n');
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(new Blob([txt], { type: 'text/csv;charset=utf-8' }));
-    a.download = `logos-arena_${m.id}_${new Date().toISOString().slice(0, 10)}.csv`;
-    document.body.appendChild(a); a.click(); a.remove();
-  };
+  $('#btn-csv').onclick = () => emaitzakCSV(false);
+  $('#btn-emaitzak').onclick = erakutsiEmaitzak;
+  $('#btn-em-csv').onclick = () => emaitzakCSV(false);
+  $('#btn-em-atzera').onclick = () => K.show('s-amaiera');
 
   // ------------------------------------------------------------------
   //  TEKLATUA: Enter / Zuriunea = botoi nagusia (aurkezpenetarako)
@@ -471,7 +567,8 @@
     if (!gela || !gela.meta || gela.meta.host !== B.uid) { sessionStorage.removeItem('logos-host-pin'); return false; }
     Object.assign(G, {
       pin, level: gela.meta.level, order: gela.order || [], qIndex: gela.meta.qIndex, qKey: gela.meta.qKey || null,
-      scores: gela.scores || {}, players: gela.players || {}, current: gela.current || null
+      scores: gela.scores || {}, players: gela.players || {}, current: gela.current || null,
+      log: LS.get('logos-log-' + pin, [])
     });
     entzunJokalariak();
     $('#top-info').textContent = 'PIN ' + pin;
