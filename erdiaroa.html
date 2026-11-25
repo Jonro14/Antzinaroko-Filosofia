@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="eu" class="erdi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Erdi Aroko eta Aro Modernoko Filosofia · Filosofiaren Historia</title>
+  <meta name="description" content="Filosofiaren Historia (Batxilergoa 2) · 2. blokea: Erdi Aroa eta Aro Modernoa. Ikastaro interaktiboa eta ikasgelako galdera-erantzun jokoa, USaP prestatzeko.">
+  <meta name="theme-color" content="#1c1310">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c7353a'/%3E%3Ctext x='32' y='46' font-size='38' text-anchor='middle' font-family='serif' font-weight='900' fill='%23f1d070'%3E%E2%9C%A0%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=UnifrakturCook:wght@700&family=Cinzel:wght@600;700;900&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estiloa.css">
+  <link rel="stylesheet" href="css/erdiaroa.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a class="logo" href="erdiaroa.html"><span class="logo-mark">✠</span> <span class="logo-text">Erdi Aroko Filosofia</span></a>
+  <div class="nav-links">
+    <a href="index.html" title="Bi blokeen hasiera">⌂ Blokeak</a>
+    <a href="#ibilbidea">Ibilbidea</a>
+    <a href="#filosofoak">Pentsalariak</a>
+    <a href="erdi-ikastaroa.html">Ikastaroa</a>
+    <a href="erdi-ikasi.html">Laburpena</a>
+    <a href="#jokoa">Jokoa</a>
+    <a href="erdi-bidaia.html">Bidaia</a>
+  </div>
+  <a class="btn btn-gold" href="#jokoa">Jokatu ▸</a>
+</nav>
+
+<header class="hero">
+  <div class="floating" id="floating"></div>
+  <img class="rosa rosa-bg" src="img/rosetoia.svg" alt="" aria-hidden="true">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker">Filosofiaren Historia · 2. blokea</div>
+      <h1>Fedetik<br>arrazoira</h1>
+      <p class="lead">Agustin, Tomas, Descartes, Locke, Hobbes, Adam Smith... Jainkoaren Hiritik merkatu askeraino, mila urte baino gehiagoko bidaia, galderaz galdera. Erakutsi zenbat dakizun eta lortu podioa!</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold btn-big" href="#jokoa">⚡ Jokatu</a>
+        <a class="btn btn-ghost btn-big" href="erdi-ikastaroa.html">📖 Ikasi lehenik</a>
+      </div>
+    </div>
+
+    <div class="join-card" id="jokoa">
+      <h2>🎮 Sartu jokora</h2>
+      <small>Idatzi irakasleak pantailan erakusten duen PINa.</small>
+      <form class="row" id="join-form" autocomplete="off">
+        <input class="field pin" id="pin" inputmode="numeric" maxlength="6" placeholder="PIN" aria-label="Jokoaren PINa">
+        <button class="btn btn-pink" type="submit">Sartu</button>
+      </form>
+      <hr>
+      <h2>🏛️ Irakaslea zara?</h2>
+      <small>Sortu gela, aukeratu maila eta proiektatu pantaila. Ikasleak mugikorretik sartzen dira.</small>
+      <div class="row"><a class="btn btn-gold" href="irakaslea.html?b=erdi">Sortu gela ▸</a></div>
+    </div>
+  </div>
+</header>
+
+<div class="meandroa"></div>
+
+<section id="bidaia">
+  <div class="wrap">
+    <div class="kicker">Etxean praktikatzeko</div>
+    <h2 class="sec-title">Filosofoaren Bidaia</h2>
+    <p class="sec-sub">Plataforma-joko bat bakarka jolasteko: zeharkatu Erdi Aroa eta Aro Modernoa gai batetik bestera. Oztopo bakoitzaren aurrean galdera bat erantzun behar duzu; asmatuz gero aurrera, eta huts eginez gero bizitza bat galduko duzu. Hiru bizitza dituzu eta zortzi geldialdiak gainditzea da erronka.</p>
+    <div class="hero-cta"><a class="btn btn-gold btn-big" href="erdi-bidaia.html">🏃 Hasi bidaia</a></div>
+  </div>
+</section>
+
+<div class="meandroa"></div>
+
+<section id="ibilbidea">
+  <div class="wrap">
+    <div class="kicker">Ibilbidea</div>
+    <h2 class="sec-title">Zazpi gai, zortzi geldialdi</h2>
+    <p class="sec-sub">Hiponako Agustinengandik Adam Smithen merkatu askeraino. Sakatu gai bakoitza gakoak ikusteko: gero jokoan galdetuko zaizkizu! Ikasteko: <a href="erdi-ikastaroa.html">ikastaro interaktiboa</a> eta <a href="erdi-ikasi.html">laburpen bisuala</a>.</p>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<div class="meandroa"></div>
+
+<section id="filosofoak">
+  <div class="wrap">
+    <div class="kicker">Pentsalariak</div>
+    <h2 class="sec-title">Ezagutu protagonistak</h2>
+    <p class="sec-sub">Sakatu txartel bat buelta emateko: ideia nagusia eta aipu ospetsu bat ditu atzean.</p>
+    <div class="filters" id="filters"></div>
+    <div class="phil-grid" id="phil-grid"></div>
+  </div>
+</section>
+
+<div class="meandroa"></div>
+
+<section id="nola">
+  <div class="wrap">
+    <div class="kicker">Nola jokatu</div>
+    <h2 class="sec-title">Ikasgela osoa, lehia bakarra</h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Irakasleak gela sortzen du</h3><p>Maila bat aukeratu eta PINa eta QR kodea proiektatzen ditu.</p></div>
+      <div class="step"><div class="n">2</div><h3>Zu mugikorretik sartzen zara</h3><p>PINa idatzi edo QRa eskaneatu, ezizena eta abatarra aukeratu.</p></div>
+      <div class="step"><div class="n">3</div><h3>Erantzun azkar eta ondo</h3><p>Zuzen eta azkar erantzuteak puntu gehiago ematen ditu. Bolada luzeek bonusa dute. 🔥</p></div>
+    </div>
+    <div class="levels-strip" id="levels-strip"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="meandroa" style="margin-bottom:24px"></div>
+  Erdi Aroko eta Aro Modernoko Filosofia · Batxilergoa 2. maila · Filosofiaren Historia · USaP prestaketa<br>
+  2. blokea: Agustin eta Tomasetik liberalismora<br>
+  <a href="index.html">⌂ Bi blokeen hasierara</a> · <a href="antzinaroa.html">1. blokea: Antzinaroa</a>
+</footer>
+
+<script src="js/erdi-galderak.js"></script>
+<script src="js/erdi-hasiera.js"></script>
+</body>
+</html>

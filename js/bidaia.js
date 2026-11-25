@@ -22,14 +22,20 @@
   const ABIADURA = 270, GRAVITATEA = 1900, SALTOA = 700;
   const SKY = {
     mileto: ['#6ec6ef', '#d8f3ff'], agora: ['#f39a82', '#ffe3bd'], akademia: ['#efc04e', '#fff0c4'],
-    polis: ['#7567d6', '#ddd4ff'], alejandria: ['#35a57d', '#cbf1de'], olinpo: ['#ff7f3a', '#ffd9a8']
+    polis: ['#7567d6', '#ddd4ff'], alejandria: ['#35a57d', '#cbf1de'], olinpo: ['#ff7f3a', '#ffd9a8'],
+    // 2. blokea (Erdi Aroa eta Aro Modernoa)
+    hipona: ['#8fa6c9', '#ece0c2'], skriptoriuma: ['#6b7fb0', '#e8dcc0'], florentzia: ['#f0b25e', '#ffe9bf'], kanala: ['#6aa8b8', '#d6eef0'],
+    amsterdam: ['#9b86c2', '#eadff5'], leviatana: ['#d8825c', '#f6d1b0'], merkatua: ['#59b3ab', '#d4efe8'], gotorlekua: ['#e0b95a', '#fbeec5']
   };
-  const OZTOPOA = { mileto: '🍄', agora: '🏺', akademia: '🗿', polis: '⚖️', alejandria: '📜', olinpo: '⚡' };
+  const OZTOPOA = { mileto: '🍄', agora: '🏺', akademia: '🗿', polis: '⚖️', alejandria: '📜', olinpo: '⚡',
+    hipona: '⛪', skriptoriuma: '📜', florentzia: '🎨', kanala: '🌊', amsterdam: '🔭', leviatana: '🐉', merkatua: '⚖️', gotorlekua: '🏰' };
+  const ERDI = window.BLOKEA === 'erdi';
+  const ZENBAKIA = { 6: 'Sei', 8: 'Zortzi' };
   const MAILAK = window.LOGOS_MAILAK;
 
   const cv = $('#cv'), ctx = cv.getContext('2d');
   let onena = 0;
-  try { onena = +localStorage.getItem('bidaia-onena') || 0; } catch (e) {}
+  try { onena = +localStorage.getItem((ERDI ? 'bidaia-erdi-onena' : 'bidaia-onena')) || 0; } catch (e) {}
 
   // ------------------------------------------------------------------
   //  EGOERA
@@ -81,7 +87,7 @@
   }
 
   function saveOnena() {
-    if (G.lvl + 1 > onena) { onena = G.lvl + 1; try { localStorage.setItem('bidaia-onena', onena); } catch (e) {} }
+    if (G.lvl + 1 > onena) { onena = G.lvl + 1; try { localStorage.setItem((ERDI ? 'bidaia-erdi-onena' : 'bidaia-onena'), onena); } catch (e) {} }
   }
 
   function berrasi() {
@@ -213,7 +219,7 @@
     keys.left = keys.right = keys.jump = false;
     K.sfx.fanfare(); K.konfetia(2500);
     if (G.lvl >= MAILAK.length - 1) {
-      $('#win-msg').textContent = `Sei geldialdiak zeharkatu dituzu: ${G.zuzenak} erantzun zuzen, ${G.okerrak} oker eta ${G.txanponak} txanpon. Filosofo ona zara!`;
+      $('#win-msg').textContent = `${ZENBAKIA[MAILAK.length] || MAILAK.length} geldialdiak zeharkatu dituzu: ${G.zuzenak} erantzun zuzen, ${G.okerrak} oker eta ${G.txanponak} txanpon. Filosofo ona zara!`;
       saveOnena();
       jarri('ov-win'); K.konfetia(6000);
       return;
@@ -320,8 +326,9 @@
     ctx.beginPath(); ctx.moveTo(0, GROUND);
     for (let x = 0; x <= W; x += 40) { const wx = x + G.kam * 0.2; ctx.lineTo(x, GROUND - 90 - Math.sin(wx * 0.006) * 50 - Math.sin(wx * 0.017) * 22); }
     ctx.lineTo(W, GROUND); ctx.fill();
-    // erdiko planoa: tenplu eta zutabeak
+    // erdiko planoa: tenplu eta zutabeak (2. blokean: gotorlekuak eta katedralak)
     for (let i = -1; i < 7; i++) {
+      if (ERDI) { erdiPlanoErdia(i); continue; }
       const bx = ((i * 380 - G.kam * 0.5) % 2660 + 2660) % 2660 - 200;
       ctx.fillStyle = 'rgba(255,245,225,.38)';
       if (i % 2 === 0) {
@@ -334,10 +341,32 @@
     }
   }
 
+  // 2. blokea: gotorleku eta katedral-fatxadak atzealdean
+  function erdiPlanoErdia(i) {
+    const bx = ((i * 380 - G.kam * 0.5) % 2660 + 2660) % 2660 - 200;
+    ctx.fillStyle = 'rgba(58,38,28,.34)';
+    if (i % 2 === 0) {                         // gotorlekua
+      ctx.fillRect(bx, GROUND - 110, 150, 110);
+      for (let k = 0; k < 5; k++) ctx.fillRect(bx + k * 32, GROUND - 126, 20, 16);
+      ctx.fillRect(bx - 20, GROUND - 170, 46, 170); ctx.fillRect(bx + 124, GROUND - 170, 46, 170);
+      for (let k = 0; k < 2; k++) { ctx.fillRect(bx - 20 + k * 28, GROUND - 186, 16, 16); ctx.fillRect(bx + 124 + k * 28, GROUND - 186, 16, 16); }
+      ctx.fillStyle = 'rgba(255,200,110,.5)';
+      ctx.beginPath(); ctx.moveTo(bx + 56, GROUND); ctx.lineTo(bx + 56, GROUND - 40); ctx.quadraticCurveTo(bx + 75, GROUND - 80, bx + 94, GROUND - 40); ctx.lineTo(bx + 94, GROUND); ctx.fill();
+    } else {                                   // katedral-fatxada
+      ctx.fillRect(bx + 20, GROUND - 120, 90, 120);
+      ctx.beginPath(); ctx.moveTo(bx + 14, GROUND - 120); ctx.lineTo(bx + 65, GROUND - 196); ctx.lineTo(bx + 116, GROUND - 120); ctx.fill();
+      ctx.fillRect(bx + 116, GROUND - 150, 26, 150);
+      ctx.beginPath(); ctx.moveTo(bx + 112, GROUND - 150); ctx.lineTo(bx + 129, GROUND - 214); ctx.lineTo(bx + 146, GROUND - 150); ctx.fill();
+      ctx.fillStyle = 'rgba(255,200,110,.5)';
+      ctx.beginPath(); ctx.arc(bx + 65, GROUND - 92, 15, 0, 7); ctx.fill();
+      ctx.beginPath(); ctx.moveTo(bx + 52, GROUND); ctx.lineTo(bx + 52, GROUND - 34); ctx.quadraticCurveTo(bx + 65, GROUND - 62, bx + 78, GROUND - 34); ctx.lineTo(bx + 78, GROUND); ctx.fill();
+    }
+  }
+
   function lurra(m) {
     const k = m.kolorea || '#f5c542';
-    ctx.fillStyle = '#8b6a3f'; ctx.fillRect(0, GROUND, W, H - GROUND);
-    ctx.fillStyle = '#6fbf6a'; ctx.fillRect(0, GROUND, W, 12);
+    ctx.fillStyle = ERDI ? '#6b5440' : '#8b6a3f'; ctx.fillRect(0, GROUND, W, H - GROUND);
+    ctx.fillStyle = ERDI ? '#5b8f4a' : '#6fbf6a'; ctx.fillRect(0, GROUND, W, 12);
     ctx.fillStyle = 'rgba(0,0,0,.14)';
     const off = -(G.kam % 60);
     for (let x = off; x < W; x += 60) { ctx.fillRect(x, GROUND + 12, 2, H); }
@@ -374,6 +403,20 @@
   function marraztuHelmuga() {
     const sx = G.flag - G.kam;
     if (sx < -300 || sx > W + 100) return;
+    if (ERDI) {                                // gotorlekuaren atea
+      ctx.fillStyle = '#7d6a5a'; ctx.fillRect(sx + 120, GROUND - 170, 190, 170);
+      for (let k = 0; k < 6; k++) { ctx.fillRect(sx + 120 + k * 36, GROUND - 188, 22, 18); }
+      ctx.fillStyle = '#6a5848'; ctx.fillRect(sx + 100, GROUND - 230, 44, 230); ctx.fillRect(sx + 286, GROUND - 230, 44, 230);
+      for (let k = 0; k < 2; k++) { ctx.fillRect(sx + 100 + k * 28, GROUND - 246, 16, 16); ctx.fillRect(sx + 286 + k * 28, GROUND - 246, 16, 16); }
+      ctx.fillStyle = '#3a2418';
+      ctx.beginPath(); ctx.moveTo(sx + 180, GROUND); ctx.lineTo(sx + 180, GROUND - 70); ctx.quadraticCurveTo(sx + 215, GROUND - 130, sx + 250, GROUND - 70); ctx.lineTo(sx + 250, GROUND); ctx.fill();
+      ctx.fillStyle = '#ddd'; ctx.fillRect(sx, GROUND - 190, 6, 190);
+      const bat2 = G.gaindituak >= OZT_KOP;
+      ctx.fillStyle = bat2 ? '#2fbf71' : '#c7353a';
+      ctx.beginPath(); ctx.moveTo(sx + 6, GROUND - 188); ctx.lineTo(sx + 70 + Math.sin(G.t * 5) * 4, GROUND - 168); ctx.lineTo(sx + 6, GROUND - 148); ctx.fill();
+      ctx.fillStyle = '#f1d070'; ctx.beginPath(); ctx.arc(sx + 3, GROUND - 194, 7, 0, 7); ctx.fill();
+      return;
+    }
     // tenpluaren atea
     ctx.fillStyle = '#efe6cf'; ctx.fillRect(sx + 120, GROUND - 150, 190, 14);
     for (let k = 0; k < 4; k++) { ctx.fillStyle = '#f7f0df'; ctx.fillRect(sx + 128 + k * 46, GROUND - 136, 22, 136); }
@@ -401,18 +444,23 @@
     ctx.beginPath(); ctx.moveTo(-6, -22); ctx.lineTo(-6 + sw, air); ctx.moveTo(8, -22); ctx.lineTo(8 - sw, air); ctx.stroke();
     ctx.fillStyle = '#7a4b22'; ctx.fillRect(-6 + sw - 8, air - 3, 16, 7); ctx.fillRect(8 - sw - 8, air - 3, 16, 7);
     // toga
-    ctx.fillStyle = '#fbf6ea'; ctx.beginPath(); ctx.moveTo(-17, -22); ctx.lineTo(-12, -62); ctx.lineTo(14, -62); ctx.lineTo(19, -22); ctx.closePath(); ctx.fill();
-    ctx.strokeStyle = '#cdbf98'; ctx.lineWidth = 2; ctx.stroke();
-    ctx.fillStyle = '#d9a43a'; ctx.fillRect(-15, -40, 32, 6);
+    ctx.fillStyle = ERDI ? '#7a5532' : '#fbf6ea'; ctx.beginPath(); ctx.moveTo(-17, -22); ctx.lineTo(-12, -62); ctx.lineTo(14, -62); ctx.lineTo(19, -22); ctx.closePath(); ctx.fill();
+    ctx.strokeStyle = ERDI ? '#4a321c' : '#cdbf98'; ctx.lineWidth = 2; ctx.stroke();
+    ctx.fillStyle = ERDI ? '#e6d9b0' : '#d9a43a'; ctx.fillRect(-15, -40, 32, 6);
     // besoa
     ctx.strokeStyle = '#e8b684'; ctx.lineWidth = 7;
     ctx.beginPath(); ctx.moveTo(10, -56); ctx.lineTo(24 + sw * 0.4, -42 + (p.ground ? 0 : -14)); ctx.stroke();
     // burua
     ctx.fillStyle = '#e8b684'; ctx.beginPath(); ctx.arc(1, -74, 14, 0, 7); ctx.fill();
-    ctx.fillStyle = '#4a2f1b'; ctx.beginPath(); ctx.arc(-1, -78, 14, Math.PI * 1.05, Math.PI * 1.95); ctx.fill();   // ilea
-    // lorez egindako koroa
-    ctx.fillStyle = '#3fae5a';
-    for (let i = 0; i < 6; i++) { ctx.beginPath(); ctx.ellipse(-12 + i * 5, -87 + Math.abs(i - 2.5) * 1.3, 4, 2.4, -0.4, 0, 7); ctx.fill(); }
+    if (ERDI) {                                // monje-kapa
+      ctx.fillStyle = '#7a5532'; ctx.beginPath(); ctx.arc(-2, -76, 17, Math.PI * 0.92, Math.PI * 2.08); ctx.fill();
+      ctx.fillStyle = '#e8b684'; ctx.beginPath(); ctx.arc(4, -73, 11, 0, 7); ctx.fill();
+    } else {
+      ctx.fillStyle = '#4a2f1b'; ctx.beginPath(); ctx.arc(-1, -78, 14, Math.PI * 1.05, Math.PI * 1.95); ctx.fill();   // ilea
+      // lorez egindako koroa
+      ctx.fillStyle = '#3fae5a';
+      for (let i = 0; i < 6; i++) { ctx.beginPath(); ctx.ellipse(-12 + i * 5, -87 + Math.abs(i - 2.5) * 1.3, 4, 2.4, -0.4, 0, 7); ctx.fill(); }
+    }
     // begia
     ctx.fillStyle = '#222'; ctx.beginPath(); ctx.arc(8, -74, 2.2, 0, 7); ctx.fill();
     ctx.restore();

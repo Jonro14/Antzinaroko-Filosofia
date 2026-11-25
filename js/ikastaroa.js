@@ -24,13 +24,14 @@
   const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
   const sfx = n => { try { if (window.K && K.sfx[n]) K.sfx[n](); } catch (e) {} };
 
-  const KEY = 'ikastaroa-v1';
+  let KEY = 'ikastaroa-v1';          // 2. blokeak beste gako bat erabiltzen du (IK.gakoa)
   const load = () => { try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { return {}; } };
   const save = p => { try { localStorage.setItem(KEY, JSON.stringify(p)); } catch (e) {} };
   let prog = load();
 
   const IK = {};
-  IK.progress = load;
+  IK.progress = () => load();
+  IK.gakoa = k => { KEY = k; prog = load(); };
 
   // ------------------------------------------------------------------
   //  Urrats-zerrenda eta aurrerapen-barra
@@ -51,7 +52,7 @@
     const g = window.GAIA || {};
     st.innerHTML = `<div class="st-title">${esc(g.izena || '')}</div>` + atalak().map(a =>
       `<a href="#${a.id}"><span class="dot"><span>${esc(a.dataset.n || '')}</span></span><span class="lbl">${esc(a.dataset.title || '')}</span></a>`).join('') +
-      `<a class="st-back" href="ikastaroa.html">← Gai guztiak</a>`;
+      `<a class="st-back" href="${esc(g.atzera || 'ikastaroa.html')}">← Gai guztiak</a>`;
     // atalen goiburuak
     atalak().forEach(a => {
       if ($('.atal-h', a)) return;
@@ -233,7 +234,7 @@
       const m = msgs[i++]; if (!m) return;
       const d = document.createElement('div');
       if (m.w === 'f') { d.className = 'phase'; d.textContent = m.t; }
-      else { d.className = 'msg ' + m.w; d.innerHTML = `<div class="who">${m.w === 's' ? 'SOKRATES' : (m.who || 'SOLASKIDEA')}</div>${esc(m.t)}`; }
+      else { d.className = 'msg ' + m.w; d.innerHTML = `<div class="who">${m.who || (m.w === 's' ? 'SOKRATES' : 'SOLASKIDEA')}</div>${esc(m.t)}`; }
       list.appendChild(d);
       if (i >= msgs.length) { next.hidden = true; again.hidden = false; }
     };
@@ -281,6 +282,7 @@
   // ------------------------------------------------------------------
   IK.init = function () {
     const G = window.GAIA || {};
+    if (G.gakoa) IK.gakoa(G.gakoa);
     eraikiUrratsak();
     $$('[data-quiz]').forEach(el => G.quiz && G.quiz[el.dataset.quiz] && quiz(el, G.quiz[el.dataset.quiz]));
     $$('[data-match]').forEach(el => G.match && G.match[el.dataset.match] && match(el, G.match[el.dataset.match]));

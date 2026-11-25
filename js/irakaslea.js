@@ -119,8 +119,11 @@
     eginak = []; LS.set('logos-eginak', eginak); selLevel = null; marraztuMapa();
   };
 
+  const ERDI = window.BLOKEA === 'erdi';
+  const GOIZA = ERDI ? '🕯️' : '🦉';
   function erakutsiMapa() {
     G.state = 'mapa';
+    $('#mapa-bidea').textContent = MAILAK.map(m => m.izena).join(' → ');
     K.musika.stop();
     $('#mapa-kicker').textContent = G.reselect ? `Gela bera (PIN ${G.pin}) · jokalariak mantentzen dira` : 'Irakaslearen panela';
     $('#btn-sortu').textContent = G.reselect ? 'Jarraitu gela berean ▸' : 'Sortu gela ▸';
@@ -163,7 +166,7 @@
       if (zaharra && zaharra !== pin) B.remove('rooms/' + zaharra).catch(() => {});
       G.order = eraikiOrdena(m);
       await B.set('rooms/' + pin, {
-        meta: { host: B.uid, createdAt: B.TS, level: m.id, izena: izenaLuzea(m), state: 'lobby', qIndex: -1, total: G.order.length },
+        meta: { host: B.uid, createdAt: B.TS, blokea: window.BLOKEA, level: m.id, izena: izenaLuzea(m), state: 'lobby', qIndex: -1, total: G.order.length },
         order: G.order
       });
       Object.assign(G, { pin, level: m.id, qIndex: -1, scores: {}, players: {}, reselect: false, log: [] });
@@ -222,7 +225,7 @@
   function erakutsiLobby() {
     G.state = 'lobby';
     const m = K.maila(G.level);
-    const url = new URL('jokalaria.html?pin=' + G.pin, location.href).href;
+    const url = new URL('jokalaria.html?pin=' + G.pin + (ERDI ? '&b=erdi' : ''), location.href).href;
     $('#lobby-pin').textContent = G.pin;
     $('#qr').innerHTML = '';
     if (window.QRCode) {
@@ -243,7 +246,7 @@
     $('#btn-hasi').disabled = !ids.length;
     $('#lobby-players').innerHTML = ids.length
       ? ids.map(id => `<span class="pl kick" data-id="${esc(id)}" title="Sakatu kanporatzeko"><span class="av">${esc(G.players[id].avatar)}</span>${esc(G.players[id].name)}</span>`).join('')
-      : '<span class="muted">Jokalarien zain... 🦉</span>';
+      : '<span class="muted">Jokalarien zain... ' + GOIZA + '</span>';
     $$('#lobby-players .pl').forEach(el => el.onclick = () => {
       const p = G.players[el.dataset.id];
       if (p && confirm('Kanporatu "' + p.name + '"?')) B.remove('rooms/' + G.pin + '/players/' + el.dataset.id);
@@ -497,7 +500,7 @@
     const dataTxt = `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
     const orduTxt = `${pad(d.getHours())}:${pad(d.getMinutes())}`;
     const lerroak = [
-      ['Antzinako Filosofia · partidaren emaitzak'],
+      [(ERDI ? 'Erdi Aroko eta Aro Modernoko Filosofia' : 'Antzinako Filosofia') + ' · partidaren emaitzak'],
       ['Maila', `${m.zenbakia}. ${m.izena}`], ['Data', `${dataTxt} ${orduTxt}`],
       ['Ikasleak', E.jokalariak], ['Galderak', E.total],
       ['Oharra', 'Sailkapena erantzun zuzenen arabera (denbora kontuan hartu gabe). ✔ = zuzena, ✖ = okerra, – = erantzunik gabe'],
@@ -565,6 +568,7 @@
     if (!pin) return false;
     const gela = await B.get('rooms/' + pin);
     if (!gela || !gela.meta || gela.meta.host !== B.uid) { sessionStorage.removeItem('logos-host-pin'); return false; }
+    if (!K.maila(gela.meta.level)) return false;   // beste blokeko gela: ez da hemen berreskuratzen
     Object.assign(G, {
       pin, level: gela.meta.level, order: gela.order || [], qIndex: gela.meta.qIndex, qKey: gela.meta.qKey || null,
       scores: gela.scores || {}, players: gela.players || {}, current: gela.current || null,

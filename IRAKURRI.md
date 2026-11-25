@@ -1,9 +1,32 @@
-# Antzinako Filosofia · Filosofiaren Historia (1. blokea)
+# Filosofiaren Historia · Batxilergoa 2 (1. blokea: Antzinaroa · 2. blokea: Erdi Aroa eta Aro Modernoa)
 
 Ikasgelarako galdera-erantzun jokoa (Kahoot estiloa), USaP prestatzeko.
 Irakasleak gela bat sortu eta proiektagailuan erakusten du; ikasleak
 mugikorretik sartzen dira PINarekin edo QR kodearekin, eta bakoitzak bere
 kabuz lehiatzen du.
+
+## Bi blokeak
+
+| Orria | Edukia |
+|---|---|
+| `index.html` | **Hasierako atea**: bi blokeen artean aukeratu |
+| `antzinaroa.html` | 1. blokearen hasiera (lehen `index.html` zena; edukia aldatu gabe) |
+| `erdiaroa.html` | 2. blokearen hasiera (Erdi Aroa eta Aro Modernoa), eskuizkribu miniatuatuaren itxurarekin |
+| `erdi-ikastaroa.html`, `erdi-gaia1.html` ... `erdi-gaia7.html` | 2. blokeko ikastaroa (7 gai, 41 atal) |
+| `erdi-ikasi.html`, `js/erdi-ikasi.js` | 2. blokeko apunte bisualak eta denbora-lerroa |
+| `erdi-bidaia.html` | 2. blokeko Filosofoaren Bidaia (8 geldialdi) |
+| `js/erdi-galderak.js` | 2. blokeko galdera-bankua (124 galdera, 8 maila) |
+| `js/erdi-hasiera.js` | `erdiaroa.html`-en kodea (ibilbidea, pentsalariak, sartzeko formularioa) |
+| `css/erdiaroa.css`, `img/katedrala.svg`, `img/pergamino.svg`, `img/rosetoia.svg` | 2. blokearen itxura (soilik `<html class="erdi">` denean aplikatzen da) |
+| `js/blokea.js` | Jokoak eta Bidaiak zein banku erabili aukeratzen du (`?b=erdi` helbide-parametroa) |
+
+**Jokoa bi blokeetan**: `irakaslea.html` (1. blokea) eta `irakaslea.html?b=erdi` (2. blokea). Gelaren QR kodeak ere `b=erdi` darama, eta ikasleen mugikorrak automatikoki Erdi Aroko itxura hartzen du. Datu-basearen arauak ez dira aldatu behar.
+
+**Aurrerapena**: ikastaroko aurrerapena bi blokeetan bereizita gordetzen da (`ikastaroa-v1` eta `ikastaroa-erdi-v1`), baita Bidaiako marka ere.
+
+Irakaslearentzako galdera-bankuak (inprimatzeko): `Galdera-bankua_Irakaslea.html` (1. blokea) eta `Galdera-bankua_Irakaslea_2.html` (2. blokea).
+
+---
 
 ## Fitxategiak
 

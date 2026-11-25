@@ -1,0 +1,171 @@
+/* =====================================================================
+   ERDI AROA ETA ARO MODERNOA · 2. blokearen itxura
+   ---------------------------------------------------------------------
+   Eskuizkribu miniatuatua kandela-argitan: larru iluneko hondoa,
+   pergamino-koloreko zatiak, urre-hostoa, gorri-urdin harribitxiak.
+   Estiloa.css-en gainean kargatzen da eta soilik <html class="erdi">
+   denean aplikatzen da; horrela, 1. blokea ukitu gabe geratzen da.
+   ===================================================================== */
+
+html.erdi, html.erdi body {
+  /* Kolore-sistema: Antzinaroko "Egeoko gaua" ordez, "scriptorium-a" */
+  --bg: #1c1310;
+  --bg2: #281a15;
+  --card: #34231c;
+  --card2: #4a3327;
+  --line: rgba(240, 214, 160, .2);
+  --ink: #f7ebd0;
+  --muted: #d3bf9a;
+  --terra: #b8512c;
+  --papyrus: #efdfb9;
+  --papyrus-ink: #2a1a0c;
+  --gold: #d9a930;
+  --gold2: #f1d070;
+  --pink: #c7353a;       /* bermelloia */
+  --cyan: #4a82cc;       /* lapislazuli */
+  --violet: #8d55b3;     /* purpura tiriarra */
+  --green: #3f9660;      /* berdigrisa */
+  --orange: #d27a2a;
+  --a0: #b8262c;
+  --a1: #2d57a8;
+  --a2: #d9a21b;
+  --a3: #3a8a56;
+  --ok: #3aa86b;
+  --bad: #c7353a;
+  --font-d: 'MedievalSharp', 'Cinzel', 'Times New Roman', serif;
+  --font-b: 'UnifrakturCook', 'MedievalSharp', serif;
+  --ok-bg: rgba(58, 168, 107, .18);
+  --bad-bg: rgba(199, 53, 58, .18);
+  --panel: rgba(40, 26, 20, .78);
+  --ik-sky: #3b2a44;
+  --ik-rock: #3a2a22;
+  --ik-cave: #1d1410;
+  --ik-wall: #54392c;
+  --ik-shadow: #0a0605;
+  --ik-fig: #f1d9a4;
+  --ik-chain: #a58a63;
+  --ik-limb: #5a3f2e;
+  --ik-n1: rgba(63, 150, 96, .14);
+  --ik-n2: rgba(199, 53, 58, .16);
+  --ik-n3: rgba(217, 169, 48, .18);
+}
+
+html.erdi body {
+  background:
+    url("../img/katedrala.svg") center bottom / max(1100px, 100%) auto no-repeat,
+    url("../img/pergamino.svg") 0 0 / 600px 600px repeat,
+    radial-gradient(120% 55% at 50% 108%, rgba(255, 170, 70, .34) 0%, rgba(255, 150, 60, .1) 45%, transparent 70%),
+    radial-gradient(900px 520px at 90% -8%, rgba(217, 169, 48, .16) 0%, transparent 60%),
+    radial-gradient(800px 600px at -8% 20%, rgba(150, 40, 45, .24) 0%, transparent 60%),
+    linear-gradient(180deg, #170f0c 0%, #24160f 55%, #34201a 100%);
+  background-attachment: fixed;
+  background-color: var(--bg);
+}
+
+html.erdi a { color: var(--gold2); }
+html.erdi ::selection { background: var(--gold); color: #2a1c00; }
+
+/* ---------- Tipografia ---------- */
+html.erdi .sec-title, html.erdi .big-title, html.erdi .ik-title, html.erdi h1, html.erdi h2 { letter-spacing: .01em; }
+html.erdi .logo { font-family: var(--font-b); font-weight: 400; font-size: 1.7rem; letter-spacing: .01em; line-height: 1; }
+html.erdi .logo .logo-text { transform: translateY(2px); }
+html.erdi .logo-mark { font-family: var(--font-b); font-size: 1.25rem; border-radius: 8px 8px 18px 18px; background: linear-gradient(160deg, var(--gold2), var(--gold) 55%, #9a6a14); box-shadow: inset 0 0 0 2px rgba(60, 30, 5, .35); }
+html.erdi .kicker { color: var(--gold2); letter-spacing: .16em; }
+html.erdi .hero h1 {
+  font-family: var(--font-b); font-weight: 400; line-height: .98; letter-spacing: 0;
+  font-size: clamp(3rem, 8.4vw, 6rem);
+  background: linear-gradient(100deg, var(--gold2) 0%, var(--gold) 38%, #e0603a 72%, var(--pink) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* ---------- Nabigazioa eta botoiak ---------- */
+html.erdi .nav { background: rgba(24, 15, 11, .86); border-bottom: 1px solid var(--line); box-shadow: 0 1px 0 rgba(217, 169, 48, .25), 0 3px 0 rgba(24, 15, 11, .9), 0 4px 0 rgba(217, 169, 48, .12); }
+html.erdi .topbar { background: rgba(20, 12, 9, .7); }
+html.erdi .btn { border-radius: 10px; letter-spacing: .01em; }
+html.erdi .btn-icon { border-radius: 50%; }
+html.erdi .btn-gold { background: linear-gradient(180deg, #f6dc8a, var(--gold) 60%, #b9831c); color: #2a1900; box-shadow: 0 4px 0 #6b4510, inset 0 1px 0 rgba(255, 255, 255, .45); }
+html.erdi .btn-pink { background: linear-gradient(180deg, #e0575c, var(--pink) 60%, #8f1f27); color: #fff3df; box-shadow: 0 4px 0 #5a1219; }
+html.erdi .btn-ghost { border-color: rgba(240, 214, 160, .35); box-shadow: none; }
+html.erdi .chip.on { background: var(--gold); border-color: var(--gold); }
+
+/* ---------- Apaingarriak ---------- */
+/* Bitxigintza-lerroa: bi soka korapilatuta (meandroaren ordez) */
+html.erdi .meandroa {
+  height: 16px; opacity: .85; background-color: transparent !important; background-position: 0 0 !important;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='16' viewBox='0 0 32 16'%3E%3Cpath d='M0 8 C8 -2 8 18 16 8 S24 -2 32 8' fill='none' stroke='%23d9a930' stroke-width='2.4'/%3E%3Cpath d='M0 8 C8 18 8 -2 16 8 S24 18 32 8' fill='none' stroke='%23c7353a' stroke-width='2.4' opacity='.9'/%3E%3C/svg%3E") repeat-x center;
+}
+html.erdi .floating span { color: rgba(217, 169, 48, .10); font-family: var(--font-b); font-weight: 400; }
+
+/* Arrosa-leihoa (hasierako irudia) */
+.rosa { display: block; width: min(100%, 420px); margin: 0 auto; filter: drop-shadow(0 0 28px rgba(255, 170, 70, .35)); animation: rosa-biratu 160s linear infinite; }
+@keyframes rosa-biratu { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .rosa { animation: none; } }
+
+/* ---------- Txartelak ---------- */
+html.erdi .tl-card, html.erdi .phil-face, html.erdi .join-card, html.erdi .step, html.erdi .lvl { border-radius: 14px; }
+html.erdi .tl-dot { box-shadow: 0 0 0 6px rgba(28, 19, 16, .95), 0 0 24px color-mix(in srgb, var(--c) 50%, transparent); border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; }
+html.erdi .tl-card ul { color: #ecdcba; }
+html.erdi .timeline { grid-template-columns: repeat(4, 1fr); row-gap: 28px; }
+html.erdi .timeline::before { display: none; }
+html.erdi .join-card { background: linear-gradient(160deg, #4d3528, #33231c); border: 1px solid rgba(240, 214, 160, .3); box-shadow: var(--shadow), inset 0 0 0 4px rgba(28, 19, 16, .6), inset 0 0 0 5px rgba(217, 169, 48, .35); }
+html.erdi .phil-face { box-shadow: inset 0 0 0 3px rgba(28, 19, 16, .55), inset 0 0 0 4px rgba(217, 169, 48, .22); }
+html.erdi .medal { box-shadow: 0 0 0 3px rgba(28, 19, 16, .8), 0 0 0 5px color-mix(in srgb, var(--c) 50%, transparent); }
+
+/* Pergamino-zatiak: letra kapital apaindua */
+html.erdi .laburrean, html.erdi .hs-panel, html.erdi .pin-box, html.erdi .bd-card, html.erdi .flip .fb {
+  background: linear-gradient(180deg, #f5e9c8, var(--papyrus));
+  border: 2px solid #c9a96a;
+  box-shadow: inset 0 0 0 3px rgba(255, 245, 215, .6), inset 0 0 0 4px rgba(150, 100, 30, .35), 0 6px 18px rgba(0, 0, 0, .3);
+}
+html.erdi .laburrean { border-radius: 8px; padding: 18px 22px 16px; }
+html.erdi .laburrean > p:first-child::first-letter {
+  font-family: var(--font-b); font-size: 3.1em; line-height: .8; float: left; margin: .08em .1em 0 0; padding: .05em .12em .02em;
+  color: var(--pink); background: linear-gradient(160deg, #fbf1cf, #ecd28e); border: 2px solid #b8923f; border-radius: 4px;
+}
+html.erdi .laburrean::after { content: ''; display: block; clear: both; }
+html.erdi .phase { font-family: var(--font-d); }
+
+/* Ikastaroko aurrerapen-barrak */
+html.erdi .progress .bar i, html.erdi #tot-b { background: linear-gradient(90deg, var(--gold), var(--pink)); }
+
+/* ---------- Jokoa (irakaslea / jokalaria) ---------- */
+html.erdi .lvl { border-width: 2px; background: linear-gradient(160deg, color-mix(in srgb, var(--c) 26%, var(--card2)), var(--card)); }
+html.erdi .map-path path { stroke: var(--gold); }
+html.erdi .q-card, html.erdi .qcard { border-radius: 10px; }
+html.erdi .pin-box { border-radius: 10px; }
+html.erdi .qr { border-radius: 8px; border: 4px solid var(--gold); }
+html.erdi .result.none { background: linear-gradient(160deg, #6a5a48, #3a2e24); }
+html.erdi .spinner { border-top-color: var(--gold); }
+html.erdi .pod .blk { border-radius: 10px 10px 0 0; }
+html.erdi .pod.p2 .blk { background: linear-gradient(180deg, #f4efe6, #bfb9ad); }
+html.erdi .badge-demo { background: var(--gold); color: #2a1900; }
+
+/* ---------- Laburpen bisuala ---------- */
+html.erdi .subnav { background: rgba(24, 15, 11, .9); }
+html.erdi .gaia-n, html.erdi .g-badge { font-family: var(--font-b); font-weight: 400; }
+html.erdi .gaia-n { color: #22140b; }
+
+/* ---------- 2. blokearen hasierako orriko txartel nagusia ---------- */
+html.erdi .nav-links a.on { color: var(--gold2); }
+
+/* ---------- Mugikorra ---------- */
+@media (max-width: 900px) {
+  html.erdi .timeline { grid-template-columns: 1fr; }
+  html.erdi .timeline::before { display: block; left: 34px; right: auto; top: 0; bottom: 0; width: 4px; height: auto; background: linear-gradient(180deg, var(--gold), var(--pink), var(--cyan), var(--green)); }
+  html.erdi .logo { font-size: 1.4rem; }
+}
+
+/* ---------- Hasierako irudi biribila (arrosa-leihoa) ---------- */
+.rosa-bg { position: absolute; right: -150px; top: -100px; width: 580px; max-width: none; opacity: .24; z-index: 0; pointer-events: none; }
+html.erdi .hero-grid { position: relative; z-index: 1; }
+@media (max-width: 900px) { .rosa-bg { width: 420px; right: -160px; top: -60px; opacity: .18; } }
+
+html.erdi .stepper .st-title { color: var(--gold2); }
+html.erdi .stepper a.cur { color: var(--gold2); }
+
+/* Maila-mapa: 8 maila (3 zutabe): 1-2-3 goian, 6-5-4 erdian (eskuinetik ezkerrera), 7-8 behean */
+@media (min-width: 761px) {
+  html.erdi .map .lvl:nth-of-type(7) { grid-area: 3 / 1; }
+  html.erdi .map .lvl:nth-of-type(8) { grid-area: 3 / 2; }
+}

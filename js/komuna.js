@@ -50,6 +50,14 @@
     { e: '🏺', i: 'Anfora' }, { e: '🌊', i: 'Heraklitoren ibaia' }, { e: '🦁', i: 'Ausardia' }, { e: '🌀', i: 'Apeirona' }
   ];
 
+  K.ABATARRAK_ERDI = [
+    { e: '🕯️', i: 'Skriptoriumeko kandela' }, { e: '⛪', i: 'Hiponako eliza' }, { e: '📜', i: 'Eskuizkribua' },
+    { e: '🏰', i: 'Gotorlekua' }, { e: '🦁', i: 'Maquiavelo: lehoia' }, { e: '🦊', i: 'Maquiavelo: azeria' },
+    { e: '🐉', i: 'Hobbesen Leviatana' }, { e: '🔭', i: 'Galileoren teleskopioa' }, { e: '🎨', i: 'Berpizkundeko artea' },
+    { e: '🧠', i: 'Cogitoa' }, { e: '⚖️', i: 'Botere-banaketa' }, { e: '🪙', i: 'Merkatua' },
+    { e: '🍎', i: 'Lockeren sagarra' }, { e: '🌳', i: 'Berkeleyren zuhaitza' }, { e: '🗡️', i: 'Zalduna' }, { e: '👑', i: 'Koroa' }
+  ];
+
   K.maila = id => (window.LOGOS_MAILAK || []).find(m => m.id === id);
 
   // ------------------------------------------------------------------

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-200 -200 400 400">
+<defs><radialGradient id="g" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff2c8" stop-opacity=".95"/><stop offset="1" stop-color="#fff2c8" stop-opacity="0"/></radialGradient></defs>
+<circle r="196" fill="#1a0f0b"/>
+<circle r="190" fill="#2a1a12"/>
+<path d="M150.00 0.00 L190.00 0.00 A190 190 0 0 1 183.53 49.18 L144.89 38.82 A150 150 0 0 0 150.00 0.00 Z" fill="#b8262c" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M144.89 38.82 L183.53 49.18 A190 190 0 0 1 164.54 95.00 L129.90 75.00 A150 150 0 0 0 144.89 38.82 Z" fill="#d2692a" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M129.90 75.00 L164.54 95.00 A190 190 0 0 1 134.35 134.35 L106.07 106.07 A150 150 0 0 0 129.90 75.00 Z" fill="#7b3fa0" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M106.07 106.07 L134.35 134.35 A190 190 0 0 1 95.00 164.54 L75.00 129.90 A150 150 0 0 0 106.07 106.07 Z" fill="#3a8a56" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M75.00 129.90 L95.00 164.54 A190 190 0 0 1 49.18 183.53 L38.82 144.89 A150 150 0 0 0 75.00 129.90 Z" fill="#d9a21b" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M38.82 144.89 L49.18 183.53 A190 190 0 0 1 0.00 190.00 L0.00 150.00 A150 150 0 0 0 38.82 144.89 Z" fill="#2d57a8" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M0.00 150.00 L0.00 190.00 A190 190 0 0 1 -49.18 183.53 L-38.82 144.89 A150 150 0 0 0 0.00 150.00 Z" fill="#b8262c" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M-38.82 144.89 L-49.18 183.53 A190 190 0 0 1 -95.00 164.54 L-75.00 129.90 A150 150 0 0 0 -38.82 144.89 Z" fill="#d2692a" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M-75.00 129.90 L-95.00 164.54 A190 190 0 0 1 -134.35 134.35 L-106.07 106.07 A150 150 0 0 0 -75.00 129.90 Z" fill="#7b3fa0" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M-106.07 106.07 L-134.35 134.35 A190 190 0 0 1 -164.54 95.00 L-129.90 75.00 A150 150 0 0 0 -106.07 106.07 Z" fill="#3a8a56" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M-129.90 75.00 L-164.54 95.00 A190 190 0 0 1 -183.53 49.18 L-144.89 38.82 A150 150 0 0 0 -129.90 75.00 Z" fill="#d9a21b" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M-144.89 38.82 L-183.53 49.18 A190 190 0 0 1 -190.00 0.00 L-150.00 0.00 A150 150 0 0 0 -144.89 38.82 Z" fill="#2d57a8" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M-150.00 0.00 L-190.00 0.00 A190 190 0 0 1 -183.53 -49.18 L-144.89 -38.82 A150 150 0 0 0 -150.00 0.00 Z" fill="#b8262c" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M-144.89 -38.82 L-183.53 -49.18 A190 190 0 0 1 -164.54 -95.00 L-129.90 -75.00 A150 150 0 0 0 -144.89 -38.82 Z" fill="#d2692a" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M-129.90 -75.00 L-164.54 -95.00 A190 190 0 0 1 -134.35 -134.35 L-106.07 -106.07 A150 150 0 0 0 -129.90 -75.00 Z" fill="#7b3fa0" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M-106.07 -106.07 L-134.35 -134.35 A190 190 0 0 1 -95.00 -164.54 L-75.00 -129.90 A150 150 0 0 0 -106.07 -106.07 Z" fill="#3a8a56" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M-75.00 -129.90 L-95.00 -164.54 A190 190 0 0 1 -49.18 -183.53 L-38.82 -144.89 A150 150 0 0 0 -75.00 -129.90 Z" fill="#d9a21b" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M-38.82 -144.89 L-49.18 -183.53 A190 190 0 0 1 -0.00 -190.00 L-0.00 -150.00 A150 150 0 0 0 -38.82 -144.89 Z" fill="#2d57a8" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M-0.00 -150.00 L-0.00 -190.00 A190 190 0 0 1 49.18 -183.53 L38.82 -144.89 A150 150 0 0 0 -0.00 -150.00 Z" fill="#b8262c" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M38.82 -144.89 L49.18 -183.53 A190 190 0 0 1 95.00 -164.54 L75.00 -129.90 A150 150 0 0 0 38.82 -144.89 Z" fill="#d2692a" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M75.00 -129.90 L95.00 -164.54 A190 190 0 0 1 134.35 -134.35 L106.07 -106.07 A150 150 0 0 0 75.00 -129.90 Z" fill="#7b3fa0" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M106.07 -106.07 L134.35 -134.35 A190 190 0 0 1 164.54 -95.00 L129.90 -75.00 A150 150 0 0 0 106.07 -106.07 Z" fill="#3a8a56" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M129.90 -75.00 L164.54 -95.00 A190 190 0 0 1 183.53 -49.18 L144.89 -38.82 A150 150 0 0 0 129.90 -75.00 Z" fill="#d9a21b" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M144.89 -38.82 L183.53 -49.18 A190 190 0 0 1 190.00 -0.00 L150.00 -0.00 A150 150 0 0 0 144.89 -38.82 Z" fill="#2d57a8" fill-opacity=".92" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M59.89 -16.05 Q147.82 -17.96 150.00 0.00 Q147.82 17.96 59.89 16.05 Z" fill="#d9a21b" fill-opacity=".9" stroke="#1a0f0b" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="108.00" cy="0.00" r="13" fill="#d2692a" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M59.89 16.05 Q136.99 58.36 129.90 75.00 Q119.03 89.46 43.84 43.84 Z" fill="#3a8a56" fill-opacity=".9" stroke="#1a0f0b" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="93.53" cy="54.00" r="13" fill="#b8262c" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M43.84 43.84 Q89.46 119.03 75.00 129.90 Q58.36 136.99 16.05 59.89 Z" fill="#7b3fa0" fill-opacity=".9" stroke="#1a0f0b" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="54.00" cy="93.53" r="13" fill="#2d57a8" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M16.05 59.89 Q17.96 147.82 0.00 150.00 Q-17.96 147.82 -16.05 59.89 Z" fill="#d2692a" fill-opacity=".9" stroke="#1a0f0b" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="0.00" cy="108.00" r="13" fill="#d9a21b" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M-16.05 59.89 Q-58.36 136.99 -75.00 129.90 Q-89.46 119.03 -43.84 43.84 Z" fill="#b8262c" fill-opacity=".9" stroke="#1a0f0b" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="-54.00" cy="93.53" r="13" fill="#3a8a56" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M-43.84 43.84 Q-119.03 89.46 -129.90 75.00 Q-136.99 58.36 -59.89 16.05 Z" fill="#2d57a8" fill-opacity=".9" stroke="#1a0f0b" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="-93.53" cy="54.00" r="13" fill="#7b3fa0" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M-59.89 16.05 Q-147.82 17.96 -150.00 0.00 Q-147.82 -17.96 -59.89 -16.05 Z" fill="#d9a21b" fill-opacity=".9" stroke="#1a0f0b" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="-108.00" cy="0.00" r="13" fill="#d2692a" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M-59.89 -16.05 Q-136.99 -58.36 -129.90 -75.00 Q-119.03 -89.46 -43.84 -43.84 Z" fill="#3a8a56" fill-opacity=".9" stroke="#1a0f0b" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="-93.53" cy="-54.00" r="13" fill="#b8262c" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M-43.84 -43.84 Q-89.46 -119.03 -75.00 -129.90 Q-58.36 -136.99 -16.05 -59.89 Z" fill="#7b3fa0" fill-opacity=".9" stroke="#1a0f0b" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="-54.00" cy="-93.53" r="13" fill="#2d57a8" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M-16.05 -59.89 Q-17.96 -147.82 -0.00 -150.00 Q17.96 -147.82 16.05 -59.89 Z" fill="#d2692a" fill-opacity=".9" stroke="#1a0f0b" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="-0.00" cy="-108.00" r="13" fill="#d9a21b" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M16.05 -59.89 Q58.36 -136.99 75.00 -129.90 Q89.46 -119.03 43.84 -43.84 Z" fill="#b8262c" fill-opacity=".9" stroke="#1a0f0b" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="54.00" cy="-93.53" r="13" fill="#3a8a56" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M43.84 -43.84 Q119.03 -89.46 129.90 -75.00 Q136.99 -58.36 59.89 -16.05 Z" fill="#2d57a8" fill-opacity=".9" stroke="#1a0f0b" stroke-width="5" stroke-linejoin="round"/>
+<circle cx="93.53" cy="-54.00" r="13" fill="#7b3fa0" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M22.00 0.00 L62.00 0.00 A62 62 0 0 1 43.84 43.84 L15.56 15.56 A22 22 0 0 0 22.00 0.00 Z" fill="#2d57a8" fill-opacity=".95" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M15.56 15.56 L43.84 43.84 A62 62 0 0 1 0.00 62.00 L0.00 22.00 A22 22 0 0 0 15.56 15.56 Z" fill="#7b3fa0" fill-opacity=".95" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M0.00 22.00 L0.00 62.00 A62 62 0 0 1 -43.84 43.84 L-15.56 15.56 A22 22 0 0 0 0.00 22.00 Z" fill="#2d57a8" fill-opacity=".95" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M-15.56 15.56 L-43.84 43.84 A62 62 0 0 1 -62.00 0.00 L-22.00 0.00 A22 22 0 0 0 -15.56 15.56 Z" fill="#7b3fa0" fill-opacity=".95" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M-22.00 0.00 L-62.00 0.00 A62 62 0 0 1 -43.84 -43.84 L-15.56 -15.56 A22 22 0 0 0 -22.00 0.00 Z" fill="#2d57a8" fill-opacity=".95" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M-15.56 -15.56 L-43.84 -43.84 A62 62 0 0 1 -0.00 -62.00 L-0.00 -22.00 A22 22 0 0 0 -15.56 -15.56 Z" fill="#7b3fa0" fill-opacity=".95" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M-0.00 -22.00 L-0.00 -62.00 A62 62 0 0 1 43.84 -43.84 L15.56 -15.56 A22 22 0 0 0 -0.00 -22.00 Z" fill="#2d57a8" fill-opacity=".95" stroke="#1a0f0b" stroke-width="4"/>
+<path d="M15.56 -15.56 L43.84 -43.84 A62 62 0 0 1 62.00 -0.00 L22.00 -0.00 A22 22 0 0 0 15.56 -15.56 Z" fill="#7b3fa0" fill-opacity=".95" stroke="#1a0f0b" stroke-width="4"/>
+<circle r="22" fill="#f0cf6e" stroke="#1a0f0b" stroke-width="5"/>
+<circle r="190" fill="url(#g)" opacity=".28"/>
+</svg>

@@ -24,9 +24,11 @@
   // ------------------------------------------------------------------
   //  SARTZEKO FORMULARIOA
   // ------------------------------------------------------------------
-  let abatarra = K.ABATARRAK[Math.floor(Math.random() * K.ABATARRAK.length)].e;
+  const ERDI = () => document.documentElement.classList.contains('erdi');
+  const ABAT = () => (ERDI() ? K.ABATARRAK_ERDI : K.ABATARRAK);
+  let abatarra = ABAT()[Math.floor(Math.random() * ABAT().length)].e;
   function marraztuAbatarrak() {
-    $('#av-grid').innerHTML = K.ABATARRAK.map(a =>
+    $('#av-grid').innerHTML = ABAT().map(a =>
       `<button type="button" class="${a.e === abatarra ? 'on' : ''}" data-e="${a.e}" title="${esc(a.i)}" aria-label="${esc(a.i)}">${a.e}</button>`).join('');
     $$('#av-grid button').forEach(b => b.onclick = () => { abatarra = b.dataset.e; marraztuAbatarrak(); });
   }
@@ -80,7 +82,11 @@
     $('#me').hidden = false; $('#me-score').hidden = false; $('#me-score').textContent = '0';
     $('#top-logo').hidden = window.innerWidth < 420;
     const base = 'rooms/' + pin + '/';
-    P.unsubs.push(B.on(base + 'meta', v => { P.meta = v; marraztu(); }));
+    P.unsubs.push(B.on(base + 'meta', v => {
+      P.meta = v;
+      if (v && window.BLOKEA_EGUNERATU && ERDI() !== (v.blokea === 'erdi')) window.BLOKEA_EGUNERATU(v.blokea === 'erdi');
+      marraztu();
+    }));
     P.unsubs.push(B.on(base + 'current', v => { P.current = v; marraztu(); }));
     P.unsubs.push(B.on(base + 'scores/' + B.uid, v => {
       P.score = v;
@@ -94,7 +100,7 @@
       B.get(base + 'meta').then(meta => {
         if (!P.joined) return;
         if (meta) kanpoan('Kanporatu egin zaituzte', 'Irakasleak gelatik atera zaitu. Berriro sar zaitezke beste izen batekin.');
-        else kanpoan('Gela itxi egin da', 'Eskerrik asko jokatzeagatik! 🦉');
+        else kanpoan('Gela itxi egin da', 'Eskerrik asko jokatzeagatik! ' + (ERDI() ? '🕯️' : '🦉'));
       });
     }));
   }
@@ -112,7 +118,7 @@
   function marraztu() {
     if (!P.joined) return;
     const m = P.meta;
-    if (m === null) return kanpoan('Gela itxi egin da', 'Eskerrik asko jokatzeagatik! 🦉');
+    if (m === null) return kanpoan('Gela itxi egin da', 'Eskerrik asko jokatzeagatik! ' + (ERDI() ? '🕯️' : '🦉'));
     if (!m) return;
     const c = P.current || {};
     const st = m.state;
@@ -169,7 +175,7 @@
       P.renderedKey = 'amaiera';
       const s = P.score || {};
       const r = s.rank || 0;
-      $('#f-medal').textContent = r === 1 ? '🥇' : r === 2 ? '🥈' : r === 3 ? '🥉' : (P.me.avatar || '🦉');
+      $('#f-medal').textContent = r === 1 ? '🥇' : r === 2 ? '🥈' : r === 3 ? '🥉' : (P.me.avatar || (ERDI() ? '🕯️' : '🦉'));
       $('#f-rank').textContent = r ? r + '.' : '–';
       $('#f-of').textContent = m.jokalariak ? `${m.jokalariak} jokalaritik` : '';
       $('#f-score').textContent = K.fmt(s.score) + ' puntu';
@@ -183,7 +189,7 @@
 
   function mezuaPostua(s) {
     if (!s.rank) return '';
-    if (s.rank === 1) return 'Lehenengo zaude! Sokratesek ere ez luke hobeto egingo 🦉';
+    if (s.rank === 1) return ERDI() ? 'Lehenengo zaude! Tomas Akinokoak ere txalotuko zintuzke 🕯️' : 'Lehenengo zaude! Sokratesek ere ez luke hobeto egingo 🦉';
     if (s.prevRank && s.prevRank > s.rank) return `${s.prevRank - s.rank} postu igo zara! 🚀`;
     if (s.rank <= 3) return 'Podioan zaude! Eutsi! 🔥';
     return 'Aurrera! Hurrengo galderan gora egin dezakezu 💪';
@@ -213,7 +219,9 @@
     try { sessionStorage.setItem('logos-erantzunak', JSON.stringify(P.erantzunak)); } catch (e) {}
     if (navigator.vibrate) navigator.vibrate(30);
     K.sfx.pop();
-    const mezuak = ['Ikus dezagun besteek zer diote...', 'Logosak gidatu zaitu? 🤔', 'Ataraxia... lasai itxaron 🧘', 'Zure erantzuna Ideien Mundura bidean ✨'];
+    const mezuak = ERDI()
+      ? ['Ikus dezagun besteek zer diote...', 'Fedeak ala arrazoiak gidatu zaitu? 🤔', 'Cogito... pentsatzen ari zara 🧠', 'Zure erantzuna skriptoriumera bidean ✒️']
+      : ['Ikus dezagun besteek zer diote...', 'Logosak gidatu zaitu? 🤔', 'Ataraxia... lasai itxaron 🧘', 'Zure erantzuna Ideien Mundura bidean ✨'];
     $('#b-msg').textContent = mezuak[Math.floor(Math.random() * mezuak.length)];
     P.renderedKey = 'bidalita' + qKey;
     K.show('p-bidalita');

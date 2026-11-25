@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="eu" class="erdi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ikastaroa · Erdi Aroko eta Aro Modernoko Filosofia</title>
+  <meta name="description" content="Filosofiaren Historia, 2. blokea: ikastaro interaktiboa, gaiez gai. Agustin eta Tomas, fedea eta arrazoia, Berpizkundea eta Ilustrazioa, arrazionalismoa eta enpirismoa, Descartes, gizartea eta boterea, liberalismoa.">
+  <meta name="theme-color" content="#1c1310">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c7353a'/%3E%3Ctext x='32' y='46' font-size='38' text-anchor='middle' font-family='serif' font-weight='900' fill='%23f1d070'%3E%E2%9C%A0%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=UnifrakturCook:wght@700&family=Cinzel:wght@600;700;900&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estiloa.css">
+  <link rel="stylesheet" href="css/ikastaroa.css">
+  <link rel="stylesheet" href="css/erdiaroa.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a class="logo" href="erdiaroa.html"><span class="logo-mark">✠</span> <span class="logo-text">Erdi Aroko Filosofia</span></a>
+  <div class="nav-links"><a href="index.html" title="Bi blokeen hasiera">⌂ Blokeak</a><a href="erdi-ikastaroa.html">Ikastaroa</a><a href="erdi-ikasi.html">Laburpena</a><a href="erdiaroa.html#jokoa">Jokoa</a></div>
+  <a class="btn btn-gold" href="erdiaroa.html#jokoa">Jokatu ▸</a>
+</nav>
+
+<main class="wrap" style="padding-block:48px 80px">
+  <div class="kicker">Filosofiaren Historia · 2. blokea · ikastaro interaktiboa</div>
+  <h1 class="sec-title" style="font-size:clamp(2.2rem,6vw,3.6rem);margin:.15em 0">Ikastaroa, gaiez gai</h1>
+  <p class="sec-sub">Apunte osoak, modu bisual eta interaktiboan. Gai bakoitza ataletan dago banatuta: irakurri laburpena, arakatu irudiak, jokatu, sakondu nahi duzuna eta egiaztatu ikasitakoa. Zure aurrerapena nabigatzaile honetan gordetzen da.</p>
+
+  <div class="progress" style="max-width:640px;margin:18px 0 28px"><span id="tot-t">0 / 41 atal</span><div class="bar"><i id="tot-b" style="background:linear-gradient(90deg,var(--pink),var(--cyan),var(--gold),var(--green),var(--violet),var(--orange))"></i></div></div>
+
+  <div class="course-map" id="cmap"></div>
+
+  <div class="two-c" style="margin-top:36px">
+    <div class="mini-card"><b>Nola ikasi</b>
+      <ol style="margin:.5em 0 0;padding-left:1.2em;display:grid;gap:4px">
+        <li><b>Laburrean</b> (pergamino-kolorea): ideia nagusia, minutu batean.</li>
+        <li><b>Irudiak eta jokoak</b>: sakatu puntuak, txartelak eta botoiak.</li>
+        <li><b>📚 Sakonago</b>: apunteetako garapen osoa, azterketarako.</li>
+        <li><b>✍️ Egiaztatu</b>: galdera guztiak asmatzean, atala ✓ ikasita.</li>
+      </ol></div>
+    <div class="mini-card"><b>Eta gero?</b>
+      <p style="margin:.5em 0 0">Errepaso azkarra egiteko: <a href="erdi-ikasi.html">apunte bisualen laburpena</a>. Ikaskideen aurka lehiatzeko: <a href="erdiaroa.html#jokoa">ikasgelako jokoa</a>.</p>
+      <p style="margin:.6em 0 0"><button type="button" class="btn btn-ghost btn-s" id="reset">↺ Aurrerapena berrezarri</button> <span class="hint" id="reset-t"></span></p></div>
+  </div>
+</main>
+
+<footer>
+  <div class="meandroa" style="margin-bottom:24px"></div>
+  Erdi Aroko eta Aro Modernoko Filosofia · Batxilergoa 2. maila · Filosofiaren Historia · USaP prestaketa<br>
+  <a href="index.html">⌂ Bi blokeen hasierara</a>
+</footer>
+
+<script src="js/ikastaroa.js"></script>
+<script>
+(function () {
+  const KEY = 'ikastaroa-erdi-v1';
+  IK.gakoa(KEY);
+  const GAIAK = [
+    { n: 1, f: 'erdi-gaia1.html', t: 'Agustin eta Tomas', d: 'Agustinen Jainkoa, askatasuna eta gaitzaren arazoa, Jainkoaren Hiria; Tomasen bost ibilbideak, lege naturala eta Aristotelesen eragina.', c: '#c7353a', a: 9 },
+    { n: 2, f: 'erdi-gaia2.html', t: 'Fedea eta arrazoia', d: 'Ezagutzeko sinetsi, hiru ezagutza-mailak eta Tomasen hiru egia-motak.', c: '#4a82cc', a: 4 },
+    { n: 3, f: 'erdi-gaia3.html', t: 'Berpizkundea eta Ilustrazioa', d: 'Antropozentrismoa, Estatu modernoa, iraultza zientifikoa eta Argien Mendea.', c: '#d9a930', a: 5 },
+    { n: 4, f: 'erdi-gaia4.html', t: 'Arrazionalismoa eta enpirismoa', d: 'Descartes eta Spinoza, Locke, Berkeley eta Hume: arrazoia ala esperientzia?', c: '#3f9660', a: 6 },
+    { n: 5, f: 'erdi-gaia5.html', t: 'Descartes eta substantziak', d: 'Metodoa, zalantza metodikoa eta cogitoa, ideia motak, Jainkoaren frogak, res cogitans eta extensa, grinak.', c: '#8d55b3', a: 6 },
+    { n: 6, f: 'erdi-gaia6.html', t: 'Gizartea eta boterea', d: 'Animalia soziala, Maquiavelo, Hobbes, Locke eta Rousseau (hitzarmen soziala) eta Marx.', c: '#d27a2a', a: 6 },
+    { n: 7, f: 'erdi-gaia7.html', t: 'Liberalismoa eta kapitalismoa', d: 'Liberalismo politikoa, Adam Smith, lehia eta lankidetza, burgesia eta liberalismoaren ifrentzua.', c: '#1fa5a0', a: 5 }
+  ];
+  const draw = () => {
+    const p = IK.progress();
+    let tot = 0, done = 0;
+    document.getElementById('cmap').innerHTML = GAIAK.map(g => {
+      const d = Object.keys(p).filter(k => k.startsWith('e' + g.n + '-') && p[k]).length;
+      tot += g.a; done += d;
+      const pct = Math.round(d / g.a * 100);
+      return `<a class="cm-card" href="${g.f}" style="--c:${g.c}"><span class="n">${g.n}</span><h3>${g.t}</h3><p>${g.d}</p><span class="pct">${pct === 100 ? '✓ Osatuta' : d + ' / ' + g.a + ' atal'}</span><div class="bar"><i style="width:${pct}%"></i></div></a>`;
+    }).join('');
+    document.getElementById('tot-t').textContent = `${done} / ${tot} atal`;
+    document.getElementById('tot-b').style.width = (done / tot * 100) + '%';
+  };
+  draw();
+  let arm = false;
+  document.getElementById('reset').onclick = () => {
+    const t = document.getElementById('reset-t');
+    if (!arm) { arm = true; t.textContent = 'Ziur? Sakatu berriro ezabatzeko.'; setTimeout(() => { arm = false; t.textContent = ''; }, 4000); return; }
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    arm = false; t.textContent = 'Aurrerapena ezabatuta.'; draw();
+  };
+})();
+</script>
+</body>
+</html>
